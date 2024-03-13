@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>set - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="set" class="main-title"></div></div></header><article><code-block id="oQD59sKG6M1gdPHRRKYk5v" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">显示、设置或删除 cmd<span class="token punctuation">.</span><span class="token property-access">exe</span> 环境变量。
+
+<span class="token constant">SET</span> <span class="token punctuation">[</span>variable<span class="token operator">=</span><span class="token punctuation">[</span>string<span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+  variable  指定环境变量名。
+  string    指定要指派给变量的一系列字符串。
+
+要显示当前环境变量，键入不带参数的 <span class="token constant">SET</span>。
+
+如果命令扩展被启用，<span class="token constant">SET</span> <span class="token literal-property property">会如下改变</span><span class="token operator">:</span>
+
+可仅用一个变量激活 <span class="token constant">SET</span> 命令，等号或值不显示所有前缀匹配
+<span class="token constant">SET</span> <span class="token literal-property property">命令已使用的名称的所有变量的值。例如</span><span class="token operator">:</span>
+
+    <span class="token constant">SET</span> <span class="token constant">P</span>
+
+会显示所有以字母 <span class="token constant">P</span> 打头的变量
+
+如果在当前环境中找不到该变量名称，<span class="token constant">SET</span> 命令将把 <span class="token constant">ERRORLEVEL</span>
+设置成 <span class="token number">1</span>。
+
+<span class="token constant">SET</span> 命令不允许变量名含有等号。
+
+在 <span class="token constant">SET</span> <span class="token literal-property property">命令中添加了两个新命令行开关</span><span class="token operator">:</span>
+
+    <span class="token constant">SET</span> <span class="token operator">/</span><span class="token constant">A</span> expression
+    <span class="token constant">SET</span> <span class="token operator">/</span><span class="token constant">P</span> variable<span class="token operator">=</span><span class="token punctuation">[</span>promptString<span class="token punctuation">]</span>
+
+<span class="token operator">/</span><span class="token constant">A</span> 命令行开关指定等号右边的字符串为被评估的数字表达式。该表达式
+<span class="token literal-property property">评估器很简单并以递减的优先权顺序支持下列操作</span><span class="token operator">:</span>
+
+    <span class="token punctuation">(</span><span class="token punctuation">)</span>                  <span class="token operator">-</span> 分组
+    <span class="token operator">!</span> <span class="token operator">~</span> <span class="token operator">-</span>               <span class="token operator">-</span> 一元运算符
+    <span class="token operator">*</span> <span class="token operator">/</span> <span class="token operator">%</span>               <span class="token operator">-</span> 算数运算符
+    <span class="token operator">+</span> <span class="token operator">-</span>                 <span class="token operator">-</span> 算数运算符
+    <span class="token operator">&lt;&lt;</span> <span class="token operator">>></span>               <span class="token operator">-</span> 逻辑移位
+    <span class="token operator">&amp;</span>                   <span class="token operator">-</span> 按位“与”
+    <span class="token operator">^</span>                   <span class="token operator">-</span> 按位“异”
+    <span class="token operator">|</span>                   <span class="token operator">-</span> 按位“或”
+    <span class="token operator">=</span> <span class="token operator">*=</span> <span class="token operator">/=</span> <span class="token operator">%=</span> <span class="token operator">+=</span> <span class="token operator">-=</span>    <span class="token operator">-</span> 赋值
+      <span class="token operator">&amp;=</span> <span class="token operator">^=</span> <span class="token operator">|=</span> <span class="token operator">&lt;&lt;=</span> <span class="token operator">>>=</span>
+    <span class="token punctuation">,</span>                   <span class="token operator">-</span> 表达式分隔符
+
+如果你使用任何逻辑或取余操作符， 你需要将表达式字符串用
+引号扩起来。在表达式中的任何非数字字符串键作为环境变量
+名称，这些环境变量名称的值已在使用前转换成数字。如果指定
+了一个环境变量名称，但未在当前环境中定义，那么值将被定为
+零。这使你可以使用环境变量值做计算而不用键入那些 <span class="token operator">%</span> 符号
+来得到它们的值。如果 <span class="token constant">SET</span> <span class="token operator">/</span><span class="token constant">A</span> 在命令脚本外的命令行执行的，
+那么它显示该表达式的最后值。该分配的操作符在分配的操作符
+左边需要一个环境变量名称。除十六进制有 0x 前缀，八进制
+有 <span class="token number">0</span> 前缀的，数字值为十进位数字。因此，<span class="token number">0x12</span> 与 <span class="token number">18</span> 和 <span class="token number">022</span>
+<span class="token literal-property property">相同。请注意八进制公式可能很容易搞混</span><span class="token operator">:</span> <span class="token number">08</span> 和 <span class="token number">09</span> 是无效的数字，
+因为 <span class="token number">8</span> 和 <span class="token number">9</span> <span class="token function">不是有效的八进制位数。</span><span class="token punctuation">(</span><span class="token operator">&amp;</span> <span class="token punctuation">)</span>
+
+<span class="token operator">/</span><span class="token constant">P</span> 命令行开关允许将变量数值设成用户输入的一行输入。读取输入
+行之前，显示指定的 promptString。promptString 可以是空的。
+
+<span class="token literal-property property">环境变量替换已如下增强</span><span class="token operator">:</span>
+
+    <span class="token operator">%</span><span class="token constant">PATH</span><span class="token operator">:</span>str1<span class="token operator">=</span>str2<span class="token operator">%</span>
+
+会扩展 <span class="token constant">PATH</span> 环境变量，用 <span class="token string">"str2"</span> 代替扩展结果中的每个 <span class="token string">"str1"</span>。
+要有效地从扩展结果中删除所有的 <span class="token string">"str1"</span>，<span class="token string">"str2"</span> 可以是空的。
+<span class="token string">"str1"</span> 可以以星号打头；在这种情况下，<span class="token string">"str1"</span> 会从扩展结果的
+开始到 str1 剩余部分第一次出现的地方，都一直保持相配。
+
+也可以为扩展名指定子字符串。
+
+    <span class="token operator">%</span><span class="token constant">PATH</span><span class="token operator">:</span><span class="token operator">~</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token operator">%</span>
+
+会扩展 <span class="token constant">PATH</span> 环境变量，然后只使用在扩展结果中从第 <span class="token number">11</span> <span class="token function">个</span><span class="token punctuation">(</span>偏
+移量 <span class="token number">10</span><span class="token punctuation">)</span>字符开始的五个字符。如果没有指定长度，则采用默认
+<span class="token function">值，即变量数值的余数。如果两个数字</span><span class="token punctuation">(</span>偏移量和长度<span class="token punctuation">)</span>都是负数，
+使用的数字则是环境变量数值长度加上指定的偏移量或长度。
+
+    <span class="token operator">%</span><span class="token constant">PATH</span><span class="token operator">:</span><span class="token operator">~</span><span class="token operator">-</span><span class="token number">10</span><span class="token operator">%</span>
+
+会提取 <span class="token constant">PATH</span> 变量的最后十个字符。
+
+    <span class="token operator">%</span><span class="token constant">PATH</span><span class="token operator">:</span><span class="token operator">~</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token operator">%</span>
+
+会提取 <span class="token constant">PATH</span> 变量的所有字符，除了最后两个。
+
+终于添加了延迟环境变量扩充的支持。
+该支持总是按默认值被停用，但也可以
+通过 <span class="token constant">CMD</span><span class="token punctuation">.</span><span class="token constant">EXE</span> 的 <span class="token operator">/</span><span class="token constant">V</span> 命令行开关而被启用<span class="token operator">/</span>停用。请参阅 <span class="token constant">CMD</span> <span class="token operator">/</span><span class="token operator">?</span>
+
+考虑到读取一行文本时所遇到的目前扩充的限制时，延迟环境
+变量扩充是很有用的，而不是执行的时候。
+以下例子
+<span class="token literal-property property">说明直接变量扩充的问题</span><span class="token operator">:</span>
+
+ <span class="token keyword">set</span> <span class="token constant">VAR</span><span class="token operator">=</span>before
+ <span class="token keyword control-flow">if</span> <span class="token string">"%VAR%"</span> <span class="token operator">==</span> <span class="token string">"before"</span> <span class="token punctuation">(</span>
+<span class="token keyword">set</span> <span class="token constant">VAR</span><span class="token operator">=</span>after
+ <span class="token keyword control-flow">if</span> <span class="token string">"%VAR%"</span> <span class="token operator">==</span> <span class="token string">"after"</span> @echo <span class="token maybe-class-name">If</span> you see <span class="token keyword">this</span><span class="token punctuation">,</span> it worked <span class="token punctuation">)</span>
+
+
+不会显示消息，因为在读到第一个 <span class="token constant">IF</span> 语句时，<span class="token constant">BOTH</span> <span class="token constant">IF</span> 语句中的 <span class="token operator">%</span><span class="token constant">VAR</span><span class="token operator">%</span> 会被代替；
+<span class="token literal-property property">原因是</span><span class="token operator">:</span> 它包含 <span class="token constant">IF</span> 的文体
+，<span class="token constant">IF</span> 是一个复合语句。所以，
+复合语句中的 <span class="token constant">IF</span> 实际上是在比较 <span class="token string">"before"</span>
+和<span class="token string">"after"</span>，这两者永远不会相等。同样，以下这个例子
+<span class="token literal-property property">也不会达到预期效果</span><span class="token operator">:</span>
+
+ <span class="token keyword">set</span> <span class="token constant">LIST</span><span class="token operator">=</span>
+ <span class="token keyword control-flow">for</span><span class="token operator">%</span> i <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword control-flow">do</span> <span class="token keyword">set</span> <span class="token constant">LIST</span><span class="token operator">=</span><span class="token operator">%</span><span class="token constant">LIST</span><span class="token operator">%</span><span class="token operator">%</span>i
+ echo<span class="token operator">%</span><span class="token constant">LIST</span><span class="token operator">%</span>
+
+ 原因是，它不会在目前的目录中建立一个文件列表，
+而只是将<span class="token constant">LIST</span> 变量设成找到的最后一个文件。
+这也是因为 <span class="token operator">%</span><span class="token constant">LIST</span><span class="token operator">%</span> 在
+<span class="token constant">FOR</span> 语句被读取时，只被扩充了一次；而且，那时的 <span class="token constant">LIST</span> 变量是空的。
+因此，我们真正执行的 <span class="token constant">FOR</span> <span class="token literal-property property">循环是</span><span class="token operator">:</span>
+
+ <span class="token keyword control-flow">for</span><span class="token operator">%</span> i <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword control-flow">do</span> <span class="token keyword">set</span> <span class="token constant">LIST</span><span class="token operator">=</span> <span class="token operator">%</span>i
+
+这个循环继续将 <span class="token constant">LIST</span> 设成找到的最后一个文件。
+
+延迟环境变量扩充允许你使用一个不同的
+<span class="token function">字符</span><span class="token punctuation">(</span>惊叹号<span class="token punctuation">)</span>在
+执行时间扩充环境变量。如果延迟的变量扩充被启用，
+<span class="token literal-property property">可以将上面例子写成以下所示，以达到预期效果</span><span class="token operator">:</span>
+
+ <span class="token keyword">set</span> <span class="token constant">VAR</span><span class="token operator">=</span>before
+<span class="token keyword control-flow">if</span> <span class="token string">"%VAR%"</span> <span class="token operator">==</span> <span class="token string">"before"</span> <span class="token punctuation">(</span>
+ <span class="token keyword">set</span> <span class="token constant">VAR</span><span class="token operator">=</span>after
+ <span class="token keyword control-flow">if</span> <span class="token string">"!VAR!"</span> <span class="token operator">==</span> <span class="token string">"after"</span> @echo <span class="token maybe-class-name">If</span> you see <span class="token keyword">this</span><span class="token punctuation">,</span> it worked
+ <span class="token punctuation">)</span>
+
+ <span class="token keyword">set</span> <span class="token constant">LIST</span><span class="token operator">=</span>
+ <span class="token keyword control-flow">for</span><span class="token operator">%</span> i <span class="token keyword">in</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">)</span> <span class="token keyword control-flow">do</span> <span class="token keyword">set</span> <span class="token constant">LIST</span><span class="token operator">=</span><span class="token operator">!</span><span class="token constant">LIST</span><span class="token operator">!</span> <span class="token operator">%</span>i
+ echo <span class="token operator">%</span><span class="token constant">LIST</span><span class="token operator">%</span>
+
+如果命令扩展被启用，有几个动态环境变量可以被扩展，但不会出现在 <span class="token constant">SET</span> 显示的变
+量列表中。每次变量数值被扩展时，这些变量数值都会被动态计算。如果用户用这些
+<span class="token literal-property property">名称中任何一个明确定义变量，那个定义会替代下面描述的动态定义</span><span class="token operator">:</span>
+
+<span class="token operator">%</span><span class="token constant">CD</span><span class="token operator">%</span> <span class="token operator">-</span> 扩展到当前目录字符串。
+
+<span class="token operator">%</span><span class="token constant">DATE</span><span class="token operator">%</span> <span class="token operator">-</span> 用跟 <span class="token constant">DATE</span> 命令同样的格式扩展到当前日期。
+
+<span class="token operator">%</span><span class="token constant">TIME</span><span class="token operator">%</span> <span class="token operator">-</span> 用跟 <span class="token constant">TIME</span> 命令同样的格式扩展到当前时间。
+
+<span class="token operator">%</span><span class="token constant">RANDOM</span><span class="token operator">%</span> <span class="token operator">-</span> 扩展到 <span class="token number">0</span> 和 <span class="token number">32767</span> 之间的任意十进制数字。
+
+<span class="token operator">%</span><span class="token constant">ERRORLEVEL</span><span class="token operator">%</span> <span class="token operator">-</span> 扩展到当前 <span class="token constant">ERRORLEVEL</span> 数值。
+
+<span class="token operator">%</span><span class="token constant">CMDEXTVERSION</span><span class="token operator">%</span> <span class="token operator">-</span> 扩展到当前命令处理器扩展版本号。
+
+<span class="token operator">%</span><span class="token constant">CMDCMDLINE</span><span class="token operator">%</span> <span class="token operator">-</span> 扩展到调用命令处理器的原始命令行。
+
+<span class="token operator">%</span><span class="token constant">HIGHESTNUMANODENUMBER</span><span class="token operator">%</span> <span class="token operator">-</span> 扩展到此计算机上的最高 <span class="token constant">NUMA</span> 节点号。
+</pre></div></code-block></article><footer></footer></body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>安装 - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="安装" class="main-title"></div></div></header><article><h1 id="6pc5KqcAiQvWgXNnGGcgdV" class="wolai-block"><span class="inline-wrap">Centos7<span class="jill"></span>安装<span class="jill"></span>DB2 V11.5</span></h1><ol class="wolai-block"><li id="vEYMdJWGQriBuRr61L5L5M"><div class="marker"></div><span class="inline-wrap">安装依赖</span><code-block id="5z9vTm3e7MeNyE4e8oE8G8" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">sudo</span> yum <span class="token function">install</span> pam.i686 pam pam.i686 ncurses-libs.i68 <span class="token function">file</span>     libaio libstdc++-devel.i686 nscd cpp.x86_64 gcc.x86_64 gcc-c++.x86_64 libstdc++.i686gcc gcc-c++ libstdc++*.i686 numactl sg3_utils kernel-devel compat-libstdc++-33.i686 compat-libstdc++-33.x86_64 pam-devel.i686 pam-devel.x86_64 </pre></div></code-block></li><li id="na25E3RtfaigpGUi6CwHAw"><div class="marker"></div><span class="inline-wrap">获取响应文件</span><code-block id="2mZjVqa3gFz4SuvA57P5pV" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">wget</span> https://file.xunyang.site/set/db2/db2server_11.5.rsp</pre></div></code-block></li><li id="8mUgqQAtY7JoFPrkhJdwBr"><div class="marker"></div><span class="inline-wrap">安装</span><blockquote id="81tBWxdi4eT7wDPigYRvY9" class="wolai-block"><span class="inline-wrap">注：每次重新<span class="jill"></span>db2setup<span class="jill"></span>时需要删除/etc/services<span class="jill"></span>新增文件内容</span></blockquote><code-block id="i99KFHgjuLuaMG7kGnrJuz" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>./db2setup <span class="token parameter variable">-r</span> db2server_11.5.rsp setup.log <span class="token parameter variable">-t</span> tracert.log</pre></div></code-block></li><li id="4sxCwzfwrX9Pfmb14Z9KTB"><div class="marker"></div><span class="inline-wrap">修改系统内核，</span><span class="inline-wrap"><a href="https://www.ibm.com/support/knowledgecenter/SSEPGG_11.5.0/com.ibm.db2.luw.qb.server.doc/doc/r0052441.html"><span>参考修改项</span></a></span><code-block id="18wrofUfjqH9foCFm8BLoT" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">vi</span> /etc/sysctl.conf
+<span class="token assign-left variable">kernel.shmmni</span><span class="token operator">=</span><span class="token number">4096</span>
+<span class="token assign-left variable">kernel.shmmax</span><span class="token operator">=</span><span class="token number">17179869184</span>
+<span class="token assign-left variable">kernel.shmall</span><span class="token operator">=</span><span class="token number">8388608</span>
+<span class="token comment">#kernel.sem=&lt;SEMMSL> &lt;SEMMNS> &lt;SEMOPM> &lt;SEMMNI></span>
+<span class="token assign-left variable">kernel.sem</span><span class="token operator">=</span><span class="token number">250</span> <span class="token number">1024000</span> <span class="token number">32</span> <span class="token number">4096</span>
+<span class="token assign-left variable">kernel.msgmni</span><span class="token operator">=</span><span class="token number">16384</span>
+<span class="token assign-left variable">kernel.msgmax</span><span class="token operator">=</span><span class="token number">65536</span>
+<span class="token assign-left variable">kernel.msgmnb</span><span class="token operator">=</span><span class="token number">65536</span>
+:exit
+<span class="token function">sysctl</span> <span class="token parameter variable">-p</span></pre></div></code-block></li><li id="h9k4RZD4PnHrE7LyJ2GBDb"><div class="marker"></div><span class="inline-wrap">创建用户</span><blockquote id="2qxNRVcC56D8hjpWyXYC7D" class="wolai-block"><span class="inline-wrap">注：如果在安装时已经制定用户，则无需创建</span></blockquote><code-block id="ojMrqtiu7dr2VMvG2iEAgp" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">groupadd</span> db2adm1 <span class="token operator">&amp;&amp;</span> <span class="token function">groupadd</span> db2fen1
+<span class="token function">useradd</span> <span class="token parameter variable">-d</span> /home/db2inst1 <span class="token parameter variable">-m</span> db2inst1 <span class="token parameter variable">-g</span> db2adm1
+<span class="token function">useradd</span> <span class="token parameter variable">-d</span> /home/db2fenc1 <span class="token parameter variable">-m</span> db2fenc1 <span class="token parameter variable">-g</span> db2fen1
+<span class="token function">passwd</span> db2inst1 <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+bb123456
+bb123456
+EOF</span></pre></div></code-block></li><li id="9rb4qx26RCMxVHFf5gAb8o"><div class="marker"></div><span class="inline-wrap">创建实例</span><blockquote id="2xg3ezFQ7B2z7AsojickoE" class="wolai-block"><span class="inline-wrap">Q:无效主机名</span><span class="inline-wrap">
+</span><span class="inline-wrap">A:将当前主机名在/etc/hosts<span class="jill"></span>文件中添加解析到<span class="jill"></span>127.0.0.1</span></blockquote><code-block id="4Vzap37m5ZsCSF6u1LEXYA" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>/opt/ibm/db2/V11.5/instance/db2icrt <span class="token parameter variable">-u</span> db2fenc1 db2inst1</pre></div></code-block></li><li id="ebge43rTSaAKkKNgdhk6nR"><div class="marker"></div><span class="inline-wrap">启动实例</span><code-block id="1zWZukHdSg5DaFsKQn49hu" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">su</span> - db2inst1
+db2start</pre></div></code-block></li><li id="pxYFrbXB6wxY3CEWCbRmU1"><div class="marker"></div><span class="inline-wrap">创建数据库</span><code-block id="rnE5cmpgBarZiTPqSN5vym" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>db2 create db mydb</pre></div></code-block></li></ol><h2 id="donVS86EEK53RJ5u18HURR" class="wolai-block"><span class="inline-wrap">补充：开机自启</span></h2><div id="fALJyLNK6ZFWKgTiRQpsJf" class="wolai-block wolai-text"><div><span class="inline-wrap">使用<span class="jill"></span>db2inst1<span class="jill"></span>用户执行</span></div></div><code-block id="siLHUsTyyYCgVrZXj8NHsV" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre>db2set <span class="token constant">DB2_EXTENDED_OPTIMIZATION</span><span class="token operator">=</span><span class="token constant">ON</span>
+db2set <span class="token constant">DB2_DISABLE_FLUSH_LOG</span><span class="token operator">=</span><span class="token constant">ON</span>
+db2set <span class="token constant">AUTOSTART</span><span class="token operator">=</span><span class="token constant">YES</span>
+db2set <span class="token constant">DB2_STRIPED_CONTAINERS</span><span class="token operator">=</span><span class="token constant">ON</span>
+db2set <span class="token constant">DB2_HASH_JOIN</span><span class="token operator">=</span><span class="token constant">Y</span>
+db2set <span class="token constant">DB2COMM</span><span class="token operator">=</span>tcpip
+db2set <span class="token constant">DB2_PARALLEL_IO</span><span class="token operator">=</span><span class="token operator">*</span>
+db2set <span class="token constant">DB2CODEPAGE</span><span class="token operator">=</span><span class="token number">819</span></pre></div></code-block><div id="15At1hMfXU9ECNx8JvqEW4" class="wolai-block wolai-text"><div><span class="inline-wrap">使用<span class="jill"></span>root<span class="jill"></span>用户执行：添加<span class="jill"></span>db2autostart<span class="jill"></span>文件</span></div></div><code-block id="98hP59bexUNWMs6gzM76JM" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token comment"># 安装db2用户的安装目录</span>
+<span class="token assign-left variable">DB2_HOME</span><span class="token operator">=</span>/home/db2inst1/sqllib
+<span class="token comment"># db2用户名</span>
+<span class="token assign-left variable">DB2_OWNER</span><span class="token operator">=</span>db2inst1   
+<span class="token function">cat</span> <span class="token operator">></span> /etc/init.d/db2autostart <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+#!/bin/bash
+# chkconfig: 2345 99 01
+# processname:IBMDB2
+# description:db2 start
+
+# 安装db2用户的安装目录
+DB2_HOME=/home/db2inst1/sqllib
+# db2用户名
+DB2_OWNER=db2inst1
+
+case "\<span class="token variable">$1</span>" in
+start)
+    echo -n "starting IBM db2"
+    su - <span class="token variable">$DB2_OWNER</span> -c <span class="token variable">$DB2_HOME</span>/adm/db2start
+
+    touch /var/lock/db2
+    echo "ok"
+    ;;
+stop)
+    echo -n "shutdown IBM db2"
+    su - <span class="token variable">$DB2_OWNER</span> -c <span class="token variable">$DB2_HOME</span>/adm/db2stop
+    rm -f /var/lock/db2
+    echo "ok"
+    ;;
+restart | reload)
+    <span class="token variable">$0</span> stop
+    <span class="token variable">$0</span> start
+    ;;
+*)
+
+    echo "usage:<span class="token variable">$0</span> start|stop|restart|reload"
+    exit 1
+    ;;
+esac
+exit 0
+
+EOF</span>
+</pre></div></code-block><div id="dxdouu78uf1Luz9mbDCY5K" class="wolai-block wolai-text"><div><span class="inline-wrap">使用<span class="jill"></span>root<span class="jill"></span>用户执行</span></div></div><code-block id="nmL4TgiyQmuxLFaVpCFzdY" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre>chmod <span class="token operator">-</span><span class="token constant">R</span> <span class="token number">777</span> <span class="token operator">/</span>etc<span class="token operator">/</span>init<span class="token punctuation">.</span><span class="token property-access">d</span><span class="token operator">/</span>db2autostart
+chkconfig <span class="token operator">--</span>add db2autostart</pre></div></code-block></article><footer></footer></body></html>

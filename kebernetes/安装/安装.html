@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>安装 - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="安装" class="main-title"></div></div></header><article><details id="mpb2QjhSFoCU1VEBeQNNem" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">1.29（未完成）</span></summary><div id="iRE1fTDaubuPbHTJ8PRsKo" class="wolai-block wolai-text"><div><span class="inline-wrap">使用<span class="jill"></span>systemd<span class="jill"></span>作为<span class="jill"></span>cgroup driver、并使用</span><span class="inline-wrap"><b>containerd</b></span><span class="inline-wrap">容器运行时的<span class="jill"></span>centos7<span class="jill"></span>的</span><span class="inline-wrap"><b>在线安装</b></span><span class="inline-wrap">方法</span></div></div><div id="bBoSHS7kmUyXjh2kemTpv7" class="wolai-block wolai-text"><div><span class="blue inline-wrap">Docker<span class="jill"></span>弃用：</span><span class="inline-wrap">Kubernetes 在 1.20 版本开始，将 Dockershim 模块标记为弃用。Dockershim 是 Kubernetes 中一个用于支持 Docker 容器的模块。在 1.23 版本中，Dockershim 被移除。因此，在 Kubernetes 1.23 版本之后，用户必须使用其他容器运行时来运行容器。</span></div></div><details id="ocJrwYSQyycdrcWQhiJtoB" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">linux（x86）</span></summary><details id="5CQeMwrnwkwhBuRxeU66bt" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">系统配置</span></summary><div id="rDertipVn8G5FBXRRQRKGV" class="wolai-block wolai-text"><div><span class="inline-wrap">配置</span><span class="inline-wrap"><code>/etc/hosts</code></span><span class="inline-wrap">，添加主机名的解析</span></div></div><code-block id="3J7WwmC78caw9zCEyJ5WpN" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">vi</span> /etc/hosts</pre></div></code-block><div id="sFfMoPVQxcsshf5b5pQtAd" class="wolai-block wolai-text"><div><span class="inline-wrap">关闭<span class="jill"></span>swap，配置</span><span class="inline-wrap"><code>/etc/fstab</code></span><span class="inline-wrap">并执行以下命令</span></div></div><code-block id="wegvXTYwzQVFg4cWSvcKCS" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">swapoff <span class="token parameter variable">-a</span> <span class="token operator">&amp;&amp;</span> <span class="token function">sysctl</span> <span class="token parameter variable">-w</span> <span class="token assign-left variable">vm.swappiness</span><span class="token operator">=</span><span class="token number">0</span></pre></div></code-block><div id="3Y56b8XLr1HKuKgnkRQLPm" class="wolai-block wolai-text"><div><span class="inline-wrap">关闭<span class="jill"></span>SELINUX</span></div></div><code-block id="2UQDsWG61Yw4o6JxdVYt7h" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">setenforce <span class="token number">0</span>
+sed <span class="token operator">-</span>i <span class="token string">'s/=enforcing/=disabled/g'</span>  <span class="token operator">/</span>etc<span class="token operator">/</span>selinux<span class="token operator">/</span>config</pre></div></code-block><details id="oFH7G84uAS9xrTUyAAFhK1" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">内核设置</span></summary><div id="2qSYZkpEjDWwcyh9KNfHvg" class="wolai-block wolai-text"><div><span class="inline-wrap">添加模块</span></div></div><code-block id="8XZ8TZk2YgZ3KhHxP4GHme" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/modules-load.d/k8s.conf</span>
+overlay
+br_netfilter
+EOF</span></pre></div></code-block><div id="omsA6t8ug1q6At2DNkDFNK" class="wolai-block wolai-text"><div><span class="inline-wrap">应用模块</span></div></div><code-block id="66v17qKYBweTgJGD9mz45i" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">sudo</span> modprobe overlay
+<span class="token function">sudo</span> modprobe br_netfilter</pre></div></code-block><div id="vssLsR5FmygFvQX81MeG7V" class="wolai-block wolai-text"><div><span class="inline-wrap">添加内核参数</span></div></div><code-block id="3iZn4TeMc6XBoaH418CdiB" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/sysctl.d/k8s.conf</span>
+net.bridge.bridge-nf-call-iptables  = 1
+net.bridge.bridge-nf-call-ip6tables = 1
+net.ipv4.ip_forward                 = 1
+EOF</span></pre></div></code-block><div id="evZ1FRuYkBAUiAhbpZB2nq" class="wolai-block wolai-text"><div><span class="inline-wrap">引用内核参数，注：无需重启</span></div></div><code-block id="iUteM93hQBbkjyktGCSv7V" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">sudo</span> <span class="token function">sysctl</span> <span class="token parameter variable">--system</span></pre></div></code-block><div id="rzgXJFDjnUKaFx1pfyPoTD" class="wolai-block wolai-text"><div><span class="inline-wrap">检查云心</span></div></div><code-block id="3dtMS2Acwqr9y1XC8pzpuN" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">lsmod <span class="token operator">|</span> <span class="token function">grep</span> br_netfilter
+lsmod <span class="token operator">|</span> <span class="token function">grep</span> overlay</pre></div></code-block></details><div id="3rfUXTfnJ3LP6Jmb6ur7VH" class="wolai-block wolai-text"><div><span class="inline-wrap">开放防火墙</span></div></div><code-block id="rSacP7sf33CpdYYYoZknjt" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">sudo</span> firewall-cmd --add-port<span class="token operator">=</span><span class="token number">6443</span>/tcp --add-port<span class="token operator">=</span><span class="token number">10250</span>/tcp <span class="token parameter variable">--permanent</span>
+<span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--reload</span>
+</pre></div></code-block></details><aside id="4RaNnseaR5nfsLNxa9Hjih" class="bg-cultured wolai-block"><div data-symbol="📌" class="icon"></div><span class="inline-wrap">注：</span><span class="inline-wrap">版本要求：1.6.11 或更高版本</span></aside><details id="hyYBYUX9fFFymsSk9nsyP7" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">containerd<span class="jill"></span>相关组件</span></summary><div class="block-ref"><div class="decorator"></div><details id="kGSFnTV4HTq4nWdxct8Ybj" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装<span class="jill"></span>containerd</span></summary><div id="en52pMbNXnP9UJX5sq36Yj" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span></div></div><code-block id="phEBxiWu61nGrw55ZRqu5" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://github.com/containerd/containerd/releases/download/v1.7.12/containerd-1.7.12-linux-amd64.tar.gz</pre></div></code-block><div id="a4wFQW7s1SRfWH8qAuNKe9" class="wolai-block wolai-text"><div><span class="inline-wrap">安装位置</span></div></div><code-block id="4xaQJfsiuUYXiUa3XzKc2J" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable">install_path</span><span class="token operator">=</span>/usr/local/service/containerd-1.7.12
+</pre></div></code-block><div id="hU5m99PNETvSgVQtCDTeR2" class="wolai-block wolai-text"><div><span class="inline-wrap">解压</span></div></div><code-block id="ap4SS6hKBCz6wLZzbJL6bu" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">tar</span> xf containerd-1.7.12-linux-amd64.tar.gz <span class="token parameter variable">-C</span> <span class="token string">"<span class="token variable">${install_path}</span>"</span></pre></div></code-block><div id="oEe9eGyCq2JjDG8bKNJbUD" class="wolai-block wolai-text"><div><span class="inline-wrap">添加配置文件</span></div></div><code-block id="td9kAdveACDrgmrBmvhXh7" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token builtin class-name">echo</span> <span class="token string">'[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+  [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+    SystemdCgroup = true'</span> <span class="token operator">></span> <span class="token string">"<span class="token variable">$install_path</span>"</span>/containerd.toml</pre></div></code-block><div id="2DcBGuDp6ACGNuMdkJ6zJC" class="wolai-block wolai-text"><div><span class="inline-wrap">添加配置文件</span><span class="inline-wrap"><code>containerd.service</code></span></div></div><code-block id="hprinjby63krRnRxB47Aem" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token builtin class-name">echo</span> <span class="token string">"
+# Copyright The containerd Authors.
+#
+# Licensed under the Apache License, Version 2.0 (the "</span>License<span class="token string">");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "</span>AS IS<span class="token string">" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+[Unit]
+Description=containerd container runtime
+Documentation=https://containerd.io
+After=network.target local-fs.target
+
+[Service]
+ExecStartPre=-/sbin/modprobe overlay
+ExecStart=<span class="token variable">${install_path}</span>/bin/containerd --config <span class="token variable">${install_path}</span>/containerd.toml
+
+Type=notify
+Delegate=yes
+KillMode=process
+Restart=always
+RestartSec=5
+
+# Having non-zero Limit*s causes performance problems due to accounting overhead
+# in the kernel. We recommend using cgroups to do container-local accounting.
+LimitNPROC=infinity
+LimitCORE=infinity
+
+# Comment TasksMax if your systemd version does not supports it.
+# Only systemd 226 and above support this version.
+TasksMax=infinity
+OOMScoreAdjust=-999
+
+[Install]
+WantedBy=multi-user.target
+"</span> <span class="token operator">></span> /usr/lib/systemd/system/containerd.service</pre></div></code-block><div id="kra3ExhLtx2FECsj63nBJv" class="wolai-block wolai-text"><div><span class="inline-wrap">启动服务</span></div></div><code-block id="63v8LMk7oSmyN1AjUqXxZm" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> containerd</pre></div></code-block></details></div><div class="block-ref"><div class="decorator"></div><details id="3aikTsCfLhwmdCrL5o63Kt" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装</span><span class="inline-wrap">runc</span></summary><div id="nKm1cYR1c2JdnvD99y82Tn" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span></div></div><code-block id="sXejXLb5psUFY8ZuLqtMdq" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://github.com/opencontainers/runc/releases/download/v1.1.11/runc.amd64</pre></div></code-block><div id="8BW1aajYNVksytuHpC446Q" class="wolai-block wolai-text"><div><span class="inline-wrap">安装</span></div></div><code-block id="hqrR8giMkGVSRnuxPaG6QN" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">install</span> <span class="token parameter variable">-m</span> <span class="token number">755</span> runc.amd64 /usr/local/sbin/runc</pre></div></code-block></details></div><div class="block-ref"><div class="decorator"></div><details id="x9ygbXWhpu9wbHdddvSSX2" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装<span class="jill"></span>CNI<span class="jill"></span>插件</span></summary><div id="mCGs2EmWXzqxzxmviPyQmE" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span></div></div><code-block id="kfJR838kyKRW9YHfZsnQqc" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://github.com/containernetworking/plugins/releases/download/v1.4.0/cni-plugins-linux-amd64-v1.4.0.tgz</pre></div></code-block><div id="u42QnBYZ3Gr2AkLYHMaBL2" class="wolai-block wolai-text"><div><span class="inline-wrap">设定安装目录</span></div></div><code-block id="rhBvE7584gjRvc8ZdPZmdg" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable">containerd_home</span><span class="token operator">=</span>/usr/local/service/containerd-1.7.12
+<span class="token assign-left variable">cni_home</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${containerd_home}</span>"</span>/cni
+<span class="token function">mkdir</span> <span class="token string">"<span class="token variable">${cni_home}</span>"</span></pre></div></code-block><div id="ioxbp6yuRHcPJXFb2ycJYT" class="wolai-block wolai-text"><div><span class="inline-wrap">添加到<span class="jill"></span>PATH<span class="jill"></span>环境变量</span></div></div><code-block id="4xVCmZ6UWwNn4nLBVVWKQy" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+<span class="token assign-left variable">containerd_home</span><span class="token operator">=</span>/usr/local/service/containerd-1.7.12
+<span class="token assign-left variable">cni_home</span><span class="token operator">=</span><span class="token string">"<span class="token variable">${containerd_home}</span>"</span>/cni
+<span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$containerd_home</span>/bin:<span class="token variable">$cni_home</span>
+<span class="token builtin class-name">export</span> <span class="token environment constant">PATH</span></pre></div></code-block></details></div></details><details id="22nNw1wXYkVcWdtvGBP7dx" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">k8s</span></summary><details id="665X5MYrMfEFosnRv2byyQ" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装方式：yum</span></summary><div id="uH3TnxYnt3Z8B7VNspwe52" class="wolai-block wolai-text"><div><span class="inline-wrap">添加源</span></div></div><code-block id="94JEc4UhWAWgtrUEz363hW" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token comment"># This overwrites any existing configuration in /etc/yum.repos.d/kubernetes.repo</span>
+<span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/yum.repos.d/kubernetes.repo</span>
+[kubernetes]
+name=Kubernetes
+baseurl=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/
+enabled=1
+gpgcheck=1
+gpgkey=https://pkgs.k8s.io/core:/stable:/v1.29/rpm/repodata/repomd.xml.key
+EOF</span></pre></div></code-block><div id="fwqYLFR8PtMKX1N6bVAL3s" class="wolai-block wolai-text"><div><span class="inline-wrap">安装，注：确保存在</span><span class="inline-wrap"><code>kubelet</code></span></div></div><div id="iYnsgUrBymKBWhgz5MsKRs" class="wolai-block wolai-text"><div><span class="inline-wrap">注：最好安装是</span><span class="inline-wrap">yum -y install kubernetes-master etcd</span></div></div><code-block id="fvytavyufp5HKURSuiZxpo" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token comment"># 注：确保安装后存在命令kubelet、kube-apiserver、kubeadm</span>
+<span class="token function">sudo</span> yum <span class="token function">install</span> <span class="token parameter variable">-y</span> kubelet kubeadm kubectl <span class="token parameter variable">--disableexcludes</span><span class="token operator">=</span>kubernetes</pre></div></code-block><div id="2atVhmxMcTNcA9ZcyHMqwu" class="wolai-block wolai-text"><div><span class="inline-wrap">启动服务</span></div></div><code-block id="jacvGaLLDMF5rgiBLcDxP2" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> kubelet
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> kube-apiserver
+<span class="token function">sudo</span> systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> kube-controller-manager
+</pre></div></code-block></details><details id="2P1WgNTEReb65PCfqo456" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装方式：二进制安装</span></summary><div id="21e2tcDegKHSu5FLo3hQ1a" class="wolai-block wolai-text"><div><span class="inline-wrap">相关变量</span></div></div><code-block id="woXhatQxHazRKazTZ7gS8F" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable">master_ip</span><span class="token operator">=</span><span class="token string">"192.168.119.170"</span>
+<span class="token assign-left variable">etcd_master_name</span><span class="token operator">=</span><span class="token string">"etcd01"</span>
+<span class="token assign-left variable">node1_ip</span><span class="token operator">=</span><span class="token string">"192.168.119.171"</span>
+<span class="token assign-left variable">etcd_node1_name</span><span class="token operator">=</span><span class="token string">"etcd02"</span>
+<span class="token assign-left variable">node2_ip</span><span class="token operator">=</span><span class="token string">"192.168.119.172"</span>
+<span class="token assign-left variable">etcd_node2_name</span><span class="token operator">=</span><span class="token string">"etcd03"</span></pre></div></code-block><details id="sX7VsmoCvUrttEgKFSgnqQ" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">etcd</span></summary><details id="mCkREMmZUcrLyKePhdojs1" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">三个节点分别执行</span></summary><div id="fT82Re8BF6Y6cFA9oSgcu1" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span></div></div><code-block id="iWzyfMsVvsSc1jidy2oBcY" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://github.com/etcd-io/etcd/releases/download/v3.5.10/etcd-v3.5.10-linux-amd64.tar.gz</pre></div></code-block><div id="5TB9Htp1DusXX4KyR3cqrB" class="wolai-block wolai-text"><div><span class="inline-wrap">创建文件夹</span></div></div><code-block id="i69FokyAaJaCpPb1MwxPSP" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable">install_path</span><span class="token operator">=</span>/usr/local/services
+<span class="token assign-left variable">etcd_home</span><span class="token operator">=</span><span class="token variable">${install_path}</span>/etcd-v3.5.10
+<span class="token function">mkdir</span> <span class="token string">"<span class="token variable">${install_path}</span>"</span>
+<span class="token function">tar</span> xf etcd-v3.5.10-linux-amd64.tar.gz <span class="token parameter variable">-C</span>  <span class="token string">"<span class="token variable">${install_path}</span>"</span>
+<span class="token function">mv</span> <span class="token string">"<span class="token variable">${install_path}</span>"</span>/etcd-v3.5.10-linux-amd64/ <span class="token string">"<span class="token variable">${etcd_home}</span>"</span>
+<span class="token builtin class-name">cd</span> <span class="token string">"<span class="token variable">${etcd_home}</span>"</span>
+<span class="token function">mkdir</span> data/</pre></div></code-block><div id="igzDbW2dtDULK8gxyboBD1" class="wolai-block wolai-text"><div><span class="inline-wrap">添加防火墙端口</span></div></div><code-block id="71JJZ6Bo4ZJKZ9D3Fr5qJq" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">firewall-cmd --add-port<span class="token operator">=</span><span class="token number">2379</span>/tcp --add-port<span class="token operator">=</span><span class="token number">2380</span>/tcp <span class="token parameter variable">--permanent</span>
+<span class="token function">sudo</span> firewall-cmd <span class="token parameter variable">--reload</span></pre></div></code-block></details><details id="fbA65VoVe5tCyvQmDCHTUn" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">master<span class="jill"></span>节点</span></summary><div id="e7q21NWZPYjP4NSX4N3xig" class="wolai-block wolai-text"><div><span class="inline-wrap">创建配置文件</span></div></div><code-block id="mDPoGLCCLHZuu1hdckPiM3" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">tee</span> <span class="token string">"<span class="token variable">${etcd_home}</span>"</span>/etcd.conf</span>
+name: '<span class="token variable">${etcd_master_name}</span>'
+data-dir: /usr/local/services/etcd-v3.5.10/data
+wal-dir:
+snapshot-count: 10000
+heartbeat-interval: 100
+election-timeout: 1000
+quota-backend-bytes: 0
+listen-peer-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2380
+listen-client-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2379
+max-snapshots: 5
+max-wals: 5
+cors:
+advertise-client-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2379,http://127.0.0.1:2379
+initial-advertise-peer-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2380
+initial-cluster: <span class="token variable">${etcd_master_name}</span>=http://<span class="token variable">${master_ip}</span>:2380,<span class="token variable">${etcd_node1_name}</span>=http://<span class="token variable">${node1_ip}</span>:2380,<span class="token variable">${etcd_node2_name}</span>=http://<span class="token variable">${node2_ip}</span>:2380
+initial-cluster-token: 'etcd-cluster'
+initial-cluster-state: 'new'
+discovery:
+discovery-fallback: 'proxy'
+discovery-proxy:
+discovery-srv:
+strict-reconfig-check: false
+enable-v2: true
+enable-pprof: true
+proxy: 'off'
+proxy-failure-wait: 5000
+proxy-refresh-interval: 30000
+proxy-dial-timeout: 1000
+proxy-write-timeout: 5000
+proxy-read-timeout: 0
+client-transport-security:
+  cert-file:
+  key-file:
+  client-cert-auth: false
+  trusted-ca-file:
+  auto-tls: false
+peer-transport-security:
+  cert-file:
+  key-file:
+  client-cert-auth: false
+  trusted-ca-file:
+  auto-tls: false
+debug: false
+logger: zap
+log-outputs: [stderr]
+force-new-cluster: false
+auto-compaction-mode: periodic
+auto-compaction-retention: "1"
+EOF</span></pre></div></code-block></details><details id="4axoyvvz9VSagGmqKXhxFR" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">node1<span class="jill"></span>节点</span></summary><div id="snwx5EFYJMBfJTgmnyWbGY" class="wolai-block wolai-text"><div><span class="inline-wrap">创建配置文件</span></div></div><code-block id="hnRt7V55qMVXFfmTxEDns9" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">tee</span> <span class="token string">"<span class="token variable">${etcd_home}</span>"</span>/etcd.conf</span>
+name: '<span class="token variable">${etcd_node1_name}</span>'
+data-dir: /usr/local/services/etcd-v3.5.10/data
+wal-dir:
+snapshot-count: 10000
+heartbeat-interval: 100
+election-timeout: 1000
+quota-backend-bytes: 0
+listen-peer-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2380
+listen-client-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2379
+max-snapshots: 5
+max-wals: 5
+cors:
+advertise-client-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2379,http://127.0.0.1:2379
+initial-advertise-peer-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2380
+initial-cluster: <span class="token variable">${etcd_master_name}</span>=http://<span class="token variable">${master_ip}</span>:2380,<span class="token variable">${etcd_node1_name}</span>=http://<span class="token variable">${node1_ip}</span>:2380,<span class="token variable">${etcd_node2_name}</span>=http://<span class="token variable">${node2_ip}</span>:2380
+initial-cluster-token: 'etcd-cluster'
+initial-cluster-state: 'new'
+discovery:
+discovery-fallback: 'proxy'
+discovery-proxy:
+discovery-srv:
+strict-reconfig-check: false
+enable-v2: true
+enable-pprof: true
+proxy: 'off'
+proxy-failure-wait: 5000
+proxy-refresh-interval: 30000
+proxy-dial-timeout: 1000
+proxy-write-timeout: 5000
+proxy-read-timeout: 0
+client-transport-security:
+  cert-file:
+  key-file:
+  client-cert-auth: false
+  trusted-ca-file:
+  auto-tls: false
+peer-transport-security:
+  cert-file:
+  key-file:
+  client-cert-auth: false
+  trusted-ca-file:
+  auto-tls: false
+debug: false
+logger: zap
+log-outputs: [stderr]
+force-new-cluster: false
+auto-compaction-mode: periodic
+auto-compaction-retention: "1"
+EOF</span></pre></div></code-block></details><details id="xAM1tiPwUUMo9UrFHvA7Jz" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">node2<span class="jill"></span>节点</span></summary><div id="nUV7Hyh13fxUPYLY7xWYUg" class="wolai-block wolai-text"><div><span class="inline-wrap">创建配置文件</span></div></div><code-block id="6riN59jqmctUjTcTQFqkEc" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">cat</span> <span class="token operator">&lt;&lt;</span><span class="token string">EOF<span class="token bash punctuation"> <span class="token operator">|</span> <span class="token function">tee</span> <span class="token string">"<span class="token variable">${etcd_home}</span>"</span>/etcd.conf</span>
+name: '<span class="token variable">${etcd_node2_name}</span>'
+data-dir: /usr/local/services/etcd-v3.5.10/data
+wal-dir:
+snapshot-count: 10000
+heartbeat-interval: 100
+election-timeout: 1000
+quota-backend-bytes: 0
+listen-peer-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2380
+listen-client-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2379
+max-snapshots: 5
+max-wals: 5
+cors:
+advertise-client-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2379,http://127.0.0.1:2379
+initial-advertise-peer-urls: http://<span class="token variable"><span class="token variable">$(</span><span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">hostname</span><span class="token variable">)</span></span>"</span> /etc/hosts <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"[[:digit:]]*\.[[:digit:]]*.[[:digit:]]*.[[:digit:]]*"</span> <span class="token parameter variable">-o</span><span class="token variable">)</span></span>:2380
+initial-cluster: <span class="token variable">${etcd_master_name}</span>=http://<span class="token variable">${master_ip}</span>:2380,<span class="token variable">${etcd_node1_name}</span>=http://<span class="token variable">${node1_ip}</span>:2380,<span class="token variable">${etcd_node2_name}</span>=http://<span class="token variable">${node2_ip}</span>:2380
+initial-cluster-token: 'etcd-cluster'
+initial-cluster-state: 'new'
+discovery:
+discovery-fallback: 'proxy'
+discovery-proxy:
+discovery-srv:
+strict-reconfig-check: false
+enable-v2: true
+enable-pprof: true
+proxy: 'off'
+proxy-failure-wait: 5000
+proxy-refresh-interval: 30000
+proxy-dial-timeout: 1000
+proxy-write-timeout: 5000
+proxy-read-timeout: 0
+client-transport-security:
+  cert-file:
+  key-file:
+  client-cert-auth: false
+  trusted-ca-file:
+  auto-tls: false
+peer-transport-security:
+  cert-file:
+  key-file:
+  client-cert-auth: false
+  trusted-ca-file:
+  auto-tls: false
+debug: false
+logger: zap
+log-outputs: [stderr]
+force-new-cluster: false
+auto-compaction-mode: periodic
+auto-compaction-retention: "1"
+EOF</span></pre></div></code-block></details><details id="uPn42Us2asnMLWXQE4k5P1" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">三节点执行</span></summary><div id="h5hURkm7ZJbhxgGBq9Q2qR" class="wolai-block wolai-text"><div><span class="inline-wrap">添加文件</span></div></div><code-block id="7uLnaSWYFCrMDeh8c6DnNc" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token builtin class-name">echo</span> <span class="token string">"[Unit]
+Description=etcd
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+ExecStart=<span class="token variable">${etcd_home}</span>/etcd --config-file <span class="token variable">${etcd_home}</span>/etcd.conf
+Restart=always
+RestartSec=10s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+"</span> <span class="token operator">></span> /usr/lib/systemd/system/etcd.service</pre></div></code-block><div id="6bAJyTgRN5oe9YAXG9Kxtu" class="wolai-block wolai-text"><div><span class="inline-wrap">启动服务</span></div></div><code-block id="pqCPG9XLfHrin5AWPLx6Wd" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> etcd</pre></div></code-block></details><details id="rFi7w7XLagXZmScnxiDKw9" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">检查集群</span></summary><code-block id="yjYeuLBPsz5FRraFoQSEk" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">./etcdctl <span class="token parameter variable">--endpoints</span><span class="token operator">=</span><span class="token number">192.168</span>.119.170:2379 endpoint health</pre></div></code-block><div id="2WWeQHrBPBsUbLaKEEQ2eA" class="wolai-block wolai-text"><div><span class="inline-wrap">返回参考</span></div></div><code-block id="pwAq3nNhY8oTMWsYnVmzHv" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token number">192.168</span>.119.170:2379 is healthy: successfully committed proposal: took <span class="token operator">=</span> <span class="token number">3</span>.87686ms</pre></div></code-block></details><details id="vk55EirCQZehJxNwdBY66m" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">写入集群消息</span></summary><code-block id="wQnHKWz2tQw7o4uJsAWLR2" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">etcdctl put <span class="token parameter variable">--endpoints</span><span class="token operator">=</span><span class="token number">192.168</span>.119.171:2379 /coreos.com/network/config <span class="token string">'{ "Network": "172.18.0.0/16", "Backend": {"Type": "vxlan"}}'</span>
+</pre></div></code-block></details></details><details id="wgbvb9Z5yZaE4hcM5AJ9PB" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">flannel</span></summary><div id="95xfESwJn1UuaE5XjZTrc3" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span></div></div><code-block id="bKEF4GKTcYeFmbX7kwrUXa" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://github.com/flannel-io/flannel/releases/download/v0.24.0/flannel-v0.24.0-linux-amd64.tar.gz</pre></div></code-block><div id="6zTAib5XzAzdXKRXeArTCp" class="wolai-block wolai-text"><div><span class="inline-wrap">设定安装路径</span></div></div><code-block id="wCSCUWxTLUDTjUhcHpWm8g" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable">install_path</span><span class="token operator">=</span>/usr/local/services/flannel-v0.24.0
+<span class="token function">mkdir</span> <span class="token string">"<span class="token variable">$install_path</span>"</span>
+</pre></div></code-block><div id="hRQrqF5SUeT5FCYPHvSYcd" class="wolai-block wolai-text"><div><span class="inline-wrap">压缩</span></div></div><code-block id="5EH6N4UTihPfC9C4xe9DVu" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">tar</span> xf flannel-v0.24.0-linux-amd64.tar.gz <span class="token parameter variable">-C</span> <span class="token string">"<span class="token variable">$install_path</span>"</span></pre></div></code-block><div id="6MbE7MrdPK1UDWgSFtmaFV" class="wolai-block wolai-text"><div><span class="inline-wrap">配置文件</span><span class="inline-wrap"><code>flanneld.conf</code></span></div></div><code-block id="aQEe1vpJN78ZJ4XDZTa7aj" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable">ETCD_ENDPOINTS</span><span class="token operator">=</span><span class="token string">"http://192.168.119.170:2379,http://192.168.119.171:2379,http://192.168.119.172:2379"</span> </pre></div></code-block><code-block id="rMHDeU3P2B9tJ5mBr9Sxq6" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token builtin class-name">echo</span> <span class="token parameter variable">-n</span> <span class="token string">"[Unit]
+Description=flannel
+Requires=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+Environment=<span class="token variable">${install_path}</span>/flanneld.conf
+ExecStart=<span class="token variable">${install_path}</span>/flanneld -etcd-endpoints "</span> <span class="token operator">></span> /usr/lib/systemd/system/flannel.service
+<span class="token builtin class-name">echo</span> <span class="token string">'${ENCD_ENDPOINTS}
+Restart=always
+RestartSec=10s
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
+'</span> <span class="token operator">>></span> /usr/lib/systemd/system/flannel.service
+</pre></div></code-block><div id="kaGWsRkdYauASri89b5bZH" class="wolai-block wolai-text"><div><span class="inline-wrap">启动服务</span></div></div><code-block id="jKcahotfThutwR8U5fPkvB" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> flannel</pre></div></code-block></details><details id="tdn6hj45niR7d6Y9BTvvpy" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">k8s<span class="jill"></span>核心组件</span></summary><div id="ppMXGmv1fQeC35e8ktMZ6w" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span></div></div><code-block id="ryEWksfSLEy949ZuqZanA8" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://cdn.dl.k8s.io/release/v1.29.0/kubernetes-server-linux-amd64.tar.gz</pre></div></code-block><div id="45ApxUB3bUX9aXoyMe1ZZL" class="wolai-block wolai-text"><div><span class="inline-wrap">解压</span></div></div><code-block id="wszdZLzU9Vq8X63RbW5A5S" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">tar</span> xf kubernetes-server-linux-amd64.tar.gz <span class="token parameter variable">-C</span> /usr/local</pre></div></code-block><div id="mSJMAmtTGQ22yVZQV3G9TF" class="wolai-block wolai-text"><div><span class="inline-wrap">重命名</span></div></div><code-block id="nWDg3qBrRNmACXNEnuCG9G" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">mv</span> /usr/local/kubernetes /usr/local/kubernetes-1.29.0</pre></div></code-block><div id="gscr9UhrXHUtWmQiCGfRvp" class="wolai-block wolai-text"><div><span class="inline-wrap">编辑</span><span class="inline-wrap"><code>/usr/lib/systemd/system/kube-apiserver.service</code></span></div></div><code-block id="uPDxNdRtygUGsKZrQjryBt" class="wolai-block"><div class="wolai-pre"><div data-lang="Ini" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Unit</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">Description</span><span class="token punctuation">=</span><span class="token value attr-value">kubelet: The Kubernetes Node Agent</span>
+<span class="token key attr-name">Documentation</span><span class="token punctuation">=</span><span class="token value attr-value">https://kubernetes.io/docs/</span>
+<span class="token key attr-name">Wants</span><span class="token punctuation">=</span><span class="token value attr-value">network-online.target</span>
+<span class="token key attr-name">After</span><span class="token punctuation">=</span><span class="token value attr-value">network-online.target</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Service</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">ExecStart</span><span class="token punctuation">=</span><span class="token value attr-value">/usr/local/kubernetes /usr/local/kubernetes-1.29.0/server/bin/kube-apiserver</span>
+<span class="token key attr-name">Restart</span><span class="token punctuation">=</span><span class="token value attr-value">always</span>
+<span class="token key attr-name">StartLimitInterval</span><span class="token punctuation">=</span><span class="token value attr-value">0</span>
+<span class="token key attr-name">RestartSec</span><span class="token punctuation">=</span><span class="token value attr-value">10</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Install</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">WantedBy</span><span class="token punctuation">=</span><span class="token value attr-value">multi-user.target</span></pre></div></code-block><div id="ryZfnCVCsub6bbSgbpB5aJ" class="wolai-block wolai-text"><div><span class="inline-wrap">重启服务并开机自启</span></div></div><code-block id="jdii46LQKQuM38kCW68cz5" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">systemctl daemon-reload 
+systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> kubelet</pre></div></code-block><div id="pq5NcSzaGmbwWqz5zKmamT" class="wolai-block wolai-text"><div><span class="inline-wrap">创建私钥文件</span></div></div><code-block id="nBKFfb3SGS7Si5QEshrz36" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">kubeadm certs generate-csr --cert-dir <span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span><span class="token variable">`</span></span>/certs --kubeconfig-dir <span class="token variable"><span class="token variable">`</span><span class="token builtin class-name">pwd</span><span class="token variable">`</span></span> <span class="token parameter variable">--v</span><span class="token operator">=</span><span class="token number">6</span>
+</pre></div></code-block><details id="fdZq8q8qZZcD2ZsEkieibY" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">启动<span class="jill"></span>kube-controller-manager</span></summary><div id="cf5STCew1eoPTwQYoFCXeq" class="wolai-block wolai-text"><div><span class="inline-wrap">编辑</span><span class="inline-wrap"><code>kube-controller-manager.service</code></span></div></div><code-block id="LwHcYQP82DBnv39sXvCMc" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>Kubernetes Controller Manager
+<span class="token assign-left variable">Wants</span><span class="token operator">=</span>network-online.target
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network-online.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">type</span><span class="token operator">=</span>folk
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/local/services/kubernetes-1.29.0/server/bin/kube-controller-manager  <span class="token parameter variable">--kubeconfig</span> /usr/local/services/kubernetes-1.29.0/server/controller-manager.conf
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>always
+<span class="token assign-left variable">RestartSec</span><span class="token operator">=</span><span class="token number">5</span>
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target</pre></div></code-block><code-block id="4ke76sCQRqgXzAnUMuVGiM" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">kube-controller-manager  <span class="token parameter variable">--kubeconfig</span> /usr/local/services/kubernetes-1.29.0/server/controller-manager.conf</pre></div></code-block></details></details><div id="7e1n54HNjgutkyriyTa41" class="wolai-block wolai-text"><div><span class="inline-wrap">编辑</span><span class="inline-wrap"><code>/usr/lib/systemd/system/kubelet.service</code></span></div></div><code-block id="uQoy4HUzAXPo5K2AR4dMyU" class="wolai-block"><div class="wolai-pre"><div data-lang="Ini" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Unit</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">Description</span><span class="token punctuation">=</span><span class="token value attr-value">kubelet: The Kubernetes Node Agent</span>
+<span class="token key attr-name">Documentation</span><span class="token punctuation">=</span><span class="token value attr-value">https://kubernetes.io/docs/</span>
+<span class="token key attr-name">Wants</span><span class="token punctuation">=</span><span class="token value attr-value">network-online.target</span>
+<span class="token key attr-name">After</span><span class="token punctuation">=</span><span class="token value attr-value">network-online.target</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Service</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">ExecStart</span><span class="token punctuation">=</span><span class="token value attr-value">/usr/local/kubernetes /usr/local/kubernetes-1.29.0/server/bin/kubelet</span>
+<span class="token key attr-name">Restart</span><span class="token punctuation">=</span><span class="token value attr-value">always</span>
+<span class="token key attr-name">StartLimitInterval</span><span class="token punctuation">=</span><span class="token value attr-value">0</span>
+<span class="token key attr-name">RestartSec</span><span class="token punctuation">=</span><span class="token value attr-value">10</span>
+
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">Install</span><span class="token punctuation">]</span></span>
+<span class="token key attr-name">WantedBy</span><span class="token punctuation">=</span><span class="token value attr-value">multi-user.target</span></pre></div></code-block><div id="9HZiqD3ECLtDGHhTwgUngR" class="wolai-block wolai-text"><div></div></div></details><details id="naz14jNmBDdYq8u7Qf69Mr" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装方式：</span><span class="inline-wrap">kubeadm</span></summary><div id="kQ6GbFWx7tcJPoaX5EUihb" class="wolai-block wolai-text"><div><span class="inline-wrap">安装依赖</span></div></div><code-block id="rc82BwxwNzZquyRpziWgmG" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">yum <span class="token parameter variable">-y</span> <span class="token function">install</span> socat conntrack-tools</pre></div></code-block><details id="sn6gatMLcXAQrccMREQxGG" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装<span class="jill"></span>crictl</span></summary><div id="aD5Et4MZTjbNnQkD2wtGZ2" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span></div></div><code-block id="dHYgTYxiyUMpeDr6RGngFM" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.29.0/crictl-v1.29.0-linux-amd64.tar.gz</pre></div></code-block><div id="wvDxGT3HoD4AwWvfrUBQGq" class="wolai-block wolai-text"><div><span class="inline-wrap">安装</span></div></div><code-block id="cuH7HcUNWC2v6yeZ9uWPPb" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">tar</span> xf crictl-v1.29.0-linux-amd64.tar.gz <span class="token parameter variable">-C</span> /usr/sbin/</pre></div></code-block></details><details id="bFB5oFUN5hM68TejbtuDGW" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">安装 kubelet</span></summary><div id="m3X38a3KY32KgSLpd7dNzQ" class="wolai-block wolai-text"><div><span class="inline-wrap">添加到</span><span class="inline-wrap"><code>/usr/lib/systemd/system/kubelet.service</code></span></div></div><code-block id="hyBxec74sBPWyptR1e8ejv" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token punctuation">[</span>Unit<span class="token punctuation">]</span>
+<span class="token assign-left variable">Description</span><span class="token operator">=</span>kubelet: The Kubernetes Node Agent
+<span class="token assign-left variable">Documentation</span><span class="token operator">=</span>https://kubernetes.io/docs/
+<span class="token assign-left variable">Wants</span><span class="token operator">=</span>network-online.target
+<span class="token assign-left variable">After</span><span class="token operator">=</span>network-online.target
+
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/kubelet
+<span class="token assign-left variable">Restart</span><span class="token operator">=</span>always
+<span class="token assign-left variable">StartLimitInterval</span><span class="token operator">=</span><span class="token number">0</span>
+<span class="token assign-left variable">RestartSec</span><span class="token operator">=</span><span class="token number">10</span>
+
+<span class="token punctuation">[</span>Install<span class="token punctuation">]</span>
+<span class="token assign-left variable">WantedBy</span><span class="token operator">=</span>multi-user.target</pre></div></code-block><div id="7rZP6NXjB19Q19KS2kLUrZ" class="wolai-block wolai-text"><div><span class="inline-wrap">添加到</span><span class="inline-wrap"><code>/usr/lib/systemd/system/kubelet.service.d/10-kubeadm.conf</code></span></div></div><code-block id="g1GSHkev9X5MkwuYtNY7ZW" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token comment"># Note: This dropin only works with kubeadm and kubelet v1.11+</span>
+<span class="token punctuation">[</span>Service<span class="token punctuation">]</span>
+<span class="token assign-left variable">Environment</span><span class="token operator">=</span><span class="token string">"KUBELET_KUBECONFIG_ARGS=--bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf"</span>
+<span class="token assign-left variable">Environment</span><span class="token operator">=</span><span class="token string">"KUBELET_CONFIG_ARGS=--config=/var/lib/kubelet/config.yaml"</span>
+<span class="token comment"># This is a file that "kubeadm init" and "kubeadm join" generates at runtime, populating the KUBELET_KUBEADM_ARGS variable dynamically</span>
+<span class="token assign-left variable">EnvironmentFile</span><span class="token operator">=</span>-/var/lib/kubelet/kubeadm-flags.env
+<span class="token comment"># This is a file that the user can use for overrides of the kubelet args as a last resort. Preferably, the user should use</span>
+<span class="token comment"># the .NodeRegistration.KubeletExtraArgs object in the configuration files instead. KUBELET_EXTRA_ARGS should be sourced from this file.</span>
+<span class="token assign-left variable">EnvironmentFile</span><span class="token operator">=</span>-/etc/sysconfig/kubelet
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>
+<span class="token assign-left variable">ExecStart</span><span class="token operator">=</span>/usr/bin/kubelet <span class="token variable">$KUBELET_KUBECONFIG_ARGS</span> <span class="token variable">$KUBELET_CONFIG_ARGS</span> <span class="token variable">$KUBELET_KUBEADM_ARGS</span> <span class="token variable">$KUBELET_EXTRA_ARGS</span></pre></div></code-block><div id="jTtJLC77xXFDdXQMgA4pVs" class="wolai-block wolai-text"><div><span class="inline-wrap">启动服务</span></div></div><code-block id="26oSt9Wdn7d3nGkKoZwGNu" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">systemctl daemon-reload
+systemctl <span class="token builtin class-name">enable</span> <span class="token parameter variable">--now</span> kubelet</pre></div></code-block></details><div id="vsA9H524VAFffFr4z9kEL8" class="wolai-block wolai-text"><div><span class="inline-wrap">下载</span><span class="inline-wrap">kubeadm</span></div></div><code-block id="aWr3yHEw315gw3Wk3DPLUH" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> </pre></div></code-block><div id="oYW6c8ViXYizEbyG88sA9u" class="wolai-block wolai-text"><div><span class="inline-wrap">手动下载镜像</span></div></div><code-block id="2KvsziitbcoiGMSHr1UKEx" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token comment"># 查看镜像列表</span>
+<span class="token comment"># kubeadm config images list --image-repository registry.cn-hangzhou.aliyuncs.com/google_containers</span>
+kubeadm config images pull --image-repository registry.cn-hangzhou.aliyuncs.com/google_containers <span class="token parameter variable">--v</span><span class="token operator">=</span><span class="token number">5</span>
+</pre></div></code-block><div id="h3GwfU84srjiHEXWF9mPff" class="wolai-block wolai-text"><div><span class="inline-wrap">获取默认初始化配置文件</span></div></div><code-block id="8cnsoq3kTQKNmFjj5AKiMH" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">kubeadm config print init-defaults <span class="token operator">></span> init.default.yaml</pre></div></code-block><div id="dUv3a49xSJx1rPtFLKj3sV" class="wolai-block wolai-text"><div><span class="inline-wrap">init.default.yaml 配置文件</span></div></div><code-block id="gZEHbx42SqgMCSMwGeCn7j" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">apiVersion: kubeadm.k8s.io/v1beta3
+bootstrapTokens:
+- groups:
+  - system:bootstrappers:kubeadm:default-node-token
+  token: abcdef.0123456789abcdef
+  ttl: 24h0m0s
+  usages:
+  - signing
+  - authentication
+kind: InitConfiguration
+localAPIEndpoint:
+  <span class="token comment"># 请修改</span>
+  advertiseAddress: <span class="token number">192.168</span>.119.170 
+  bindPort: <span class="token number">6443</span>
+nodeRegistration:
+  criSocket: unix:///var/run/containerd/containerd.sock
+  imagePullPolicy: IfNotPresent
+  <span class="token comment"># 请修改</span>
+  name: controller 
+  taints: null
+---
+apiServer:
+  timeoutForControlPlane: 4m0s
+apiVersion: kubeadm.k8s.io/v1beta3
+certificatesDir: /etc/kubernetes/pki
+clusterName: kubernetes
+controllerManager: 
+  extraArgs:
+        horizontal-pod-autoscaler-use-rest-clients: <span class="token string">"true"</span>
+        horizontal-pod-autoscaler-sync-period: <span class="token string">"10s"</span>
+        node-monitor-grace-period: <span class="token string">"10s"</span>
+dns:
+  type: CoreDNS
+etcd:
+  local:
+    dataDir: /var/lib/etcd
+imageRepository: registry.cn-hangzhou.aliyuncs.com/google_containers 
+kind: ClusterConfiguration
+kubernetesVersion: <span class="token number">1.29</span>.0
+networking:
+  dnsDomain: cluster.local
+  serviceSubnet: <span class="token number">10.96</span>.0.0/12
+  podSubnet: <span class="token number">10.244</span>.0.0/16
+scheduler: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+---
+<span class="token comment"># 开启 IPVS 模式</span>
+<span class="token comment"># IPVS（IP Virtual Server）是一种高级网络负载均衡技术，用于管理集群中的服务发现和流量路由。它是一种内核级别的负载均衡技术，通过重写数据包的目标IP地址和端口来进行流量转发，从而实现高性能的负载均衡。</span>
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: KubeProxyConfiguration
+featureGates:
+  supportipvsproxymodedm.ymlvim kubeadm.yml: <span class="token boolean">true</span>
+  mode: ipvs
+  
+ ---
+ <span class="token comment"># 注意：从 v1.22 及更高版本开始，使用 kubeadm 创建集群时，</span>
+<span class="token comment"># 如果用户未设置 cgroupDriver KubeletConfiguration</span>
+<span class="token comment"># kubeadm 默认为 systemd</span>
+kind: KubeletConfiguration
+apiVersion: kubelet.config.k8s.io/v1beta1
+cgroupDriver: systemd
+
+</pre></div></code-block><div id="vYpLa4an7eeJgS8pvvWdgM" class="wolai-block wolai-text"><div><span class="inline-wrap">生成集群配置文件</span></div></div><code-block id="ofoGLyNo5iiWAiCFH8RTjd" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">kubeadm init --dry-run <span class="token parameter variable">--config</span><span class="token operator">=</span>init.default.yaml <span class="token parameter variable">--v</span><span class="token operator">=</span><span class="token number">6</span></pre></div></code-block><div id="mhFHepfrkVzMh3bGDt7tYH" class="wolai-block wolai-text"><div><span class="inline-wrap">通过配置文件初始化</span></div></div><code-block id="wzFv3k6Q61w66viUrr1v7L" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">sudo</span> kubeadm init <span class="token parameter variable">--config</span><span class="token operator">=</span>init.default.yaml <span class="token parameter variable">--v</span><span class="token operator">=</span><span class="token number">6</span></pre></div></code-block><aside id="soUKWwUkSzM8CWtyUQAzpD" class="bg-cultured wolai-block"><div data-symbol="📌" class="icon"></div><span class="inline-wrap">这里并不太推荐用命令的方式进行初始化，比如</span><div id="tDn7Q7TNgvbBWudtiZSfK8" class="wolai-block wolai-text"><div><span class="inline-wrap">kubeadm init \
+--service-cidr=10.96.0.0/12 \
+--pod-network-cidr=10.244.0.0/16 \
+--v=6 \
+--cri-socket=unix:///run/containerd/containerd.sock 
+--apiserver-advertise-address=192.168.119.170 \
+--image-repository registry.cn-hangzhou.aliyuncs.com/google_containers \
+--kubernetes-version=v1.29.0
+因为这条命令依然回去从官方的源中去下载，但总是下载失败</span></div></div></aside><div id="o9RT4YiDJ9vgdkcxNtujbo" class="wolai-block wolai-text"><div><span class="inline-wrap">日志错误时，可通过查看</span><span class="inline-wrap"><code>/var/log/message</code></span><span class="inline-wrap">查看</span></div></div><div id="kzQsbPqbbQeGeV7zF4KipV" class="wolai-block wolai-text"><div><span class="inline-wrap">初始化的错误重置：如果提示<span class="jill"></span>10250<span class="jill"></span>被占用，则使用如下命令进行重置 </span></div></div><code-block id="kqm3mDkzo5JVyjZNmEZN8M" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">kubeadm reset</pre></div></code-block><div id="vsUy4X1q3aoWEKDqWyXrtU" class="wolai-block wolai-text"><div><span class="inline-wrap">初始化的错误重置</span></div></div><code-block id="oSBc64XTWheqPX5mcRxrTv" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">rm</span> <span class="token parameter variable">-rf</span> .kube/
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /etc/cni/
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /etc/kubernetes/manifests
+<span class="token function">rm</span> <span class="token parameter variable">-rf</span> /etc/cni/</pre></div></code-block><div id="bkF6K111yidqC6vyhWhqkx" class="wolai-block wolai-text"><div><span class="inline-wrap"></span><br/></div></div></details><div id="jmLqBfZFHWg19sGoPJBLMo" class="wolai-block wolai-text"><div><span class="inline-wrap"></span><br/></div></div></details></details><div id="uNVJ5zJ9wAb936YTx3rVCX" class="wolai-block wolai-text"><div><span class="inline-wrap">添加环境变量到</span><span class="inline-wrap"><code>/etc/profile</code></span></div></div><code-block id="qYJVaQ5RTMxvEZ239efekK" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+<span class="token assign-left variable">etcd_home</span><span class="token operator">=</span>/usr/local/services/etcd-v3.5.10
+<span class="token assign-left variable">kubernetes_home</span><span class="token operator">=</span>/usr/local/services/kubernetes-1.29.0/server
+<span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span><span class="token environment constant">$PATH</span><span class="token builtin class-name">:</span><span class="token variable">$etcd_home</span><span class="token builtin class-name">:</span><span class="token variable">$kubernetes_home</span>/bin</pre></div></code-block></details><details id="rcyLRuT5wVPK9ajbV5GVwx" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">1.19.5</span></summary><details id="oXn2kBEf1Zfg75g9hVmSj5" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">linux（x86）</span></summary><details id="hjkrh6BxcXPKYrUfjv8mGN" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">k8s</span></summary><code-block id="SkQDcs1onTBbgCk3MW3Zm" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token function">wget</span> https://cdn.dl.k8s.io/release/v1.19.5/kubernetes-server-linux-amd64.tar.gz</pre></div></code-block></details></details></details><div id="iZ583JK7bDEa6cbfvhPS1V" class="wolai-block wolai-text"><div><span class="inline-wrap"></span><br/></div></div></article><footer></footer></body></html>

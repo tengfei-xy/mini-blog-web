@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../../../css/wolai.css"/><title>19c-dbca - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="19c-dbca" class="main-title"></div></div></header><article><code-block id="9YHBQfqUZoYJKFHN6HSCCt" class="wolai-block"><div class="wolai-pre"><div data-lang="Ini" class="marker"></div><pre><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">oracle@ora1 db_1</span><span class="token punctuation">]</span></span>$ cat ./dbca.rsp.new 
+<span class="token comment">##############################################################################</span>
+<span class="token comment">##                                                                          ##</span>
+<span class="token comment">##                            DBCA response file                            ##</span>
+<span class="token comment">##                            ------------------                            ##</span>
+<span class="token comment">## Copyright(c) Oracle Corporation 1998,2019. All rights reserved.         ##</span>
+<span class="token comment">##                                                                          ##</span>
+<span class="token comment">## Specify values for the variables listed below to customize 			    ##</span>
+<span class="token comment">## your installation.                                         			    ##</span>
+<span class="token comment">##                                                            			    ##</span>
+<span class="token comment">## Each variable is associated with a comment. The comment    			    ##</span>
+<span class="token comment">## can help to populate the variables with the appropriate   			    ##</span>
+<span class="token comment">## values.                                                  			    ##</span>
+<span class="token comment">##                                                               		##</span>
+<span class="token comment">## IMPORTANT NOTE: This file contains plain text passwords and   		##</span>
+<span class="token comment">## should be secured to have read permission only by oracle user 		##</span>
+<span class="token comment">## or db administrator who owns this installation.               		##</span>
+<span class="token comment">##############################################################################</span>
+<span class="token comment">#-------------------------------------------------------------------------------</span>
+<span class="token comment"># Do not change the following system generated value. </span>
+<span class="token comment">#-------------------------------------------------------------------------------</span>
+<span class="token key attr-name">responseFileVersion</span><span class="token punctuation">=</span><span class="token value attr-value">/oracle/assistants/rspfmt_dbca_response_schema_v19.0.0</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : gdbName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Global database name of the database</span>
+<span class="token comment"># Valid values  : &lt;db_name>.&lt;db_domain> - when database domain isn't NULL</span>
+<span class="token comment">#                 &lt;db_name>             - when database domain is NULL</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">gdbName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : sid</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : System identifier (SID) of the database</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : &lt;db_name> specified in GDBNAME</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">sid</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : databaseConfigType</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : database conf type as Single Instance, Real Application Cluster or Real Application Cluster One Nodes database</span>
+<span class="token comment"># Valid values  : SI\RAC\RACONENODE</span>
+<span class="token comment"># Default value : SI</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">databaseConfigType</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : RACOneNodeServiceName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Service is required by application to connect to RAC One </span>
+<span class="token comment">#		  Node Database</span>
+<span class="token comment"># Valid values  : Service Name</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No [required in case DATABASECONFTYPE is set to RACONENODE ]</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">RACOneNodeServiceName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : policyManaged</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Set to true if Database is policy managed and </span>
+<span class="token comment">#		  set to false if  Database is admin managed</span>
+<span class="token comment"># Valid values  : TRUE\FALSE</span>
+<span class="token comment"># Default value : FALSE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">policyManaged</span><span class="token punctuation">=</span>
+
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : createServerPool</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Set to true if new server pool need to be created for database </span>
+<span class="token comment">#		  if this option is specified then the newly created database </span>
+<span class="token comment">#		  will use this newly created serverpool. </span>
+<span class="token comment">#		  Multiple serverpoolname can not be specified for database</span>
+<span class="token comment"># Valid values  : TRUE\FALSE</span>
+<span class="token comment"># Default value : FALSE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">createServerPool</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : serverPoolName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Only one serverpool name need to be specified </span>
+<span class="token comment">#		   if Create Server Pool option is specified. </span>
+<span class="token comment">#		   Comma-separated list of Serverpool names if db need to use</span>
+<span class="token comment">#		   multiple Server pool</span>
+<span class="token comment"># Valid values  : ServerPool name</span>
+
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No [required in case of RAC service centric database]</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">serverPoolName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : cardinality</span>
+<span class="token comment"># Datatype      : Number</span>
+<span class="token comment"># Description   : Specify Cardinality for create server pool operation</span>
+
+<span class="token comment"># Valid values  : any positive Integer value</span>
+<span class="token comment"># Default value : Number of qualified nodes on cluster</span>
+<span class="token comment"># Mandatory     : No [Required when a new serverpool need to be created]</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">cardinality</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : force</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Set to true if new server pool need to be created by force </span>
+<span class="token comment">#		  if this option is specified then the newly created serverpool</span>
+<span class="token comment">#		  will be assigned server even if no free servers are available.</span>
+<span class="token comment">#		  This may affect already running database.</span>
+<span class="token comment">#		  This flag can be specified for Admin managed as well as policy managed db.</span>
+<span class="token comment"># Valid values  : TRUE\FALSE</span>
+<span class="token comment"># Default value : FALSE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">force</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : pqPoolName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Only one serverpool name needs to be specified </span>
+<span class="token comment">#		   if create server pool option is specified. </span>
+<span class="token comment">#		   Comma-separated list of serverpool names if use</span>
+<span class="token comment">#		   server pool. This is required to </span>
+<span class="token comment">#                  create Parallel Query (PQ) database. Applicable to Big Cluster</span>
+<span class="token comment"># Valid values  :  Parallel Query (PQ) pool name</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No [required in case of RAC service centric database]</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">pqPoolName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : pqCardinality</span>
+<span class="token comment"># Datatype      : Number</span>
+<span class="token comment"># Description   : Specify Cardinality for create server pool operation.</span>
+<span class="token comment">#                 Applicable to Big Cluster </span>
+<span class="token comment"># Valid values  : any positive Integer value</span>
+<span class="token comment"># Default value : Number of qualified nodes on cluster</span>
+<span class="token comment"># Mandatory     : No [Required when a new serverpool need to be created]</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">pqCardinality</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : createAsContainerDatabase </span>
+<span class="token comment"># Datatype      : boolean</span>
+<span class="token comment"># Description   : flag to create database as container database </span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : false</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">createAsContainerDatabase</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : numberOfPDBs</span>
+<span class="token comment"># Datatype      : Number</span>
+<span class="token comment"># Description   : Specify the number of pdb to be created</span>
+<span class="token comment"># Valid values  : 0 to 4094</span>
+<span class="token comment"># Default value : 0</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">numberOfPDBs</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : pdbName </span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Specify the pdbname/pdbanme prefix if one or more pdb need to be created</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">pdbName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : useLocalUndoForPDBs </span>
+<span class="token comment"># Datatype      : boolean</span>
+<span class="token comment"># Description   : Flag to create local undo tablespace for all PDB's.</span>
+<span class="token comment"># Valid values  : TRUE\FALSE</span>
+<span class="token comment"># Default value : TRUE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">useLocalUndoForPDBs</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : pdbAdminPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : PDB Administrator user password</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+
+<span class="token key attr-name">pdbAdminPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : nodelist</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Comma-separated list of cluster nodes</span>
+<span class="token comment"># Valid values  : Cluster node names</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No (Yes for RAC database-centric database )</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">nodelist</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : templateName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Name of the template</span>
+<span class="token comment"># Valid values  : Template file name</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">templateName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : sysPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Password for SYS user</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">sysPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : systemPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Password for SYSTEM user</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">systemPassword</span><span class="token punctuation">=</span> 
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : oracleHomeUserPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Password for Windows Service user</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : If Oracle home is installed with windows service user</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">oracleHomeUserPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : emConfiguration</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Enterprise Manager Configuration Type</span>
+<span class="token comment"># Valid values  : CENTRAL|DBEXPRESS|BOTH|NONE</span>
+<span class="token comment"># Default value : NONE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">emConfiguration</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : emExpressPort</span>
+<span class="token comment"># Datatype      : Number</span>
+<span class="token comment"># Description   : Enterprise Manager Configuration Type</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : NONE</span>
+<span class="token comment"># Mandatory     : No, will be picked up from DBEXPRESS_HTTPS_PORT env variable</span>
+<span class="token comment">#                 or auto generates a free port between 5500 and 5599</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">emExpressPort</span><span class="token punctuation">=</span><span class="token value attr-value">5500</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : runCVUChecks</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Specify whether to run Cluster Verification Utility checks</span>
+<span class="token comment">#                 periodically in Cluster environment</span>
+<span class="token comment"># Valid values  : TRUE\FALSE</span>
+<span class="token comment"># Default value : FALSE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">runCVUChecks</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dbsnmpPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Password for DBSNMP user</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes, if emConfiguration is specified or</span>
+<span class="token comment">#                 the value of runCVUChecks is TRUE</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dbsnmpPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : omsHost</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : EM management server host name</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes, if CENTRAL is specified for emConfiguration</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">omsHost</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : omsPort</span>
+<span class="token comment"># Datatype      : Number</span>
+<span class="token comment"># Description   : EM management server port number</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes, if CENTRAL is specified for emConfiguration</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">omsPort</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : emUser</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : EM Admin username to add or modify targets</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes, if CENTRAL is specified for emConfiguration</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">emUser</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : emPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : EM Admin user password</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes, if CENTRAL is specified for emConfiguration</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">emPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dvConfiguration</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Specify "True" to configure and enable Oracle Database vault</span>
+<span class="token comment"># Valid values  : True/False</span>
+<span class="token comment"># Default value : False</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dvConfiguration</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dvUserName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : DataVault Owner</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes, if DataVault option is chosen</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dvUserName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dvUserPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Password for DataVault Owner</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : Yes, if DataVault option is chosen</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dvUserPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dvAccountManagerName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : DataVault Account Manager</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dvAccountManagerName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dvAccountManagerPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Password for  DataVault Account Manager</span>
+<span class="token comment"># Valid values  : Check Oracle19c Administrator's Guide</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dvAccountManagerPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : olsConfiguration</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Specify "True" to configure and enable Oracle Label Security</span>
+<span class="token comment"># Valid values  : True/False</span>
+<span class="token comment"># Default value : False</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">olsConfiguration</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : datafileJarLocation </span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Location of the data file jar </span>
+<span class="token comment"># Valid values  : Directory containing compressed datafile jar</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">datafileJarLocation</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : datafileDestination </span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Location of the data file's</span>
+<span class="token comment"># Valid values  : Directory for all the database files</span>
+<span class="token comment"># Default value : $ORACLE_BASE/oradata</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">datafileDestination</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : recoveryAreaDestination</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Location of the data file's</span>
+<span class="token comment"># Valid values  : Recovery Area location</span>
+<span class="token comment"># Default value : $ORACLE_BASE/flash_recovery_area</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">recoveryAreaDestination</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : storageType</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Specifies the storage on which the database is to be created</span>
+<span class="token comment"># Valid values  : FS (CFS for RAC), ASM</span>
+<span class="token comment"># Default value : FS</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">storageType</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : diskGroupName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Specifies the disk group name for the storage</span>
+<span class="token comment"># Default value : DATA</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">diskGroupName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : asmsnmpPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Password for ASM Monitoring</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">asmsnmpPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : recoveryGroupName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Specifies the disk group name for the recovery area</span>
+<span class="token comment"># Default value : RECOVERY</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">recoveryGroupName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : characterSet</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Character set of the database</span>
+<span class="token comment"># Valid values  : Check Oracle19c National Language Support Guide</span>
+<span class="token comment"># Default value : "US7ASCII"</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">characterSet</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : nationalCharacterSet</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : National Character set of the database</span>
+<span class="token comment"># Valid values  : "UTF8" or "AL16UTF16". For details, check Oracle19c National Language Support Guide</span>
+<span class="token comment"># Default value : "AL16UTF16"</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">nationalCharacterSet</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : registerWithDirService</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Specifies whether to register with Directory Service.</span>
+<span class="token comment"># Valid values  : TRUE \ FALSE</span>
+<span class="token comment"># Default value : FALSE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">registerWithDirService</span><span class="token punctuation">=</span>
+
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dirServiceUserName</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Specifies the name of the directory service user</span>
+<span class="token comment"># Mandatory     : YES, if the value of registerWithDirService is TRUE</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dirServiceUserName</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : dirServicePassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : The password of the directory service user.</span>
+<span class="token comment">#		  You can also specify the password at the command prompt instead of here.</span>
+<span class="token comment"># Mandatory     : YES, if the value of registerWithDirService is TRUE</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">dirServicePassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : walletPassword</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : The password for wallet to created or modified.</span>
+<span class="token comment">#		  You can also specify the password at the command prompt instead of here.</span>
+<span class="token comment"># Mandatory     : YES, if the value of registerWithDirService is TRUE</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">walletPassword</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : listeners</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Specifies list of listeners to register the database with.</span>
+<span class="token comment">#		  By default the database is configured for all the listeners specified in the </span>
+<span class="token comment">#		  $ORACLE_HOME/network/admin/listener.ora 	</span>
+<span class="token comment"># Valid values  : The list should be comma separated like "listener1,listener2".</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">listeners</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : variablesFile </span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : Location of the file containing variable value pair</span>
+<span class="token comment"># Valid values  : A valid file-system file. The variable value pair format in this file </span>
+<span class="token comment">#		  is &lt;variable>=&lt;value>. Each pair should be in a new line.</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">variablesFile</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : variables</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : comma separated list of name=value pairs. Overrides variables defined in variablefile and templates</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">variables</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : initParams</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : comma separated list of name=value pairs. Overrides initialization parameters defined in templates</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">initParams</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : sampleSchema</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : Specifies whether or not to add the Sample Schemas to your database</span>
+<span class="token comment"># Valid values  : TRUE \ FALSE</span>
+<span class="token comment"># Default value : FASLE</span>
+<span class="token comment"># Mandatory     : No</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">sampleSchema</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : memoryPercentage</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : percentage of physical memory for Oracle</span>
+<span class="token comment"># Default value : None</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">memoryPercentage</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : databaseType</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : used for memory distribution when memoryPercentage specified</span>
+<span class="token comment"># Valid values  : MULTIPURPOSE|DATA_WAREHOUSING|OLTP</span>
+<span class="token comment"># Default value : MULTIPURPOSE</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">databaseType</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : automaticMemoryManagement</span>
+<span class="token comment"># Datatype      : Boolean</span>
+<span class="token comment"># Description   : flag to indicate Automatic Memory Management is used</span>
+<span class="token comment"># Valid values  : TRUE/FALSE</span>
+<span class="token comment"># Default value : TRUE</span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">automaticMemoryManagement</span><span class="token punctuation">=</span>
+
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token comment"># Name          : totalMemory</span>
+<span class="token comment"># Datatype      : String</span>
+<span class="token comment"># Description   : total memory in MB to allocate to Oracle</span>
+<span class="token comment"># Valid values  : </span>
+<span class="token comment"># Default value : </span>
+<span class="token comment"># Mandatory     : NO</span>
+<span class="token comment">#-----------------------------------------------------------------------------</span>
+<span class="token key attr-name">totalMemory</span><span class="token punctuation">=</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">oracle@ora1 db_1</span><span class="token punctuation">]</span></span>$ 
+</pre></div></code-block></article><footer></footer></body></html>

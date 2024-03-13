@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/wolai.css"/><title>图片上传 - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="图片上传" class="main-title"></div></div></header><article><code-block id="7GRVTseZct6dAqmTD33R9m" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token constant">DOCTYPE</span> html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>文件上传测试<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>style type<span class="token operator">=</span><span class="token string">"text/css"</span><span class="token operator">></span>
+    #content_div <span class="token punctuation">{</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token literal-property property">left</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">top</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">right</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">bottom</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        text<span class="token operator">-</span>align<span class="token operator">:</span> center
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">upload_dialog_div</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> fixed<span class="token punctuation">;</span>
+        <span class="token literal-property property">left</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">right</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">top</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">bottom</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">overflow</span><span class="token operator">:</span> auto<span class="token punctuation">;</span>
+        <span class="token literal-property property">visibility</span><span class="token operator">:</span> hidden<span class="token punctuation">;</span>
+        background<span class="token operator">-</span>color<span class="token operator">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">,</span> <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        z<span class="token operator">-</span>index<span class="token operator">:</span> <span class="token number">99</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_content_div</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> relative<span class="token punctuation">;</span>
+        <span class="token literal-property property">margin</span><span class="token operator">:</span> auto<span class="token punctuation">;</span>
+        margin<span class="token operator">-</span>top<span class="token operator">:</span> 160px<span class="token punctuation">;</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 400px<span class="token punctuation">;</span>
+        <span class="token literal-property property">height</span><span class="token operator">:</span> 160px<span class="token punctuation">;</span>
+        <span class="token literal-property property">background</span><span class="token operator">:</span> #<span class="token constant">F5F5DC</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_content_upper_div</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token literal-property property">left</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">top</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 400px<span class="token punctuation">;</span>
+        <span class="token literal-property property">height</span><span class="token operator">:</span> 100px<span class="token punctuation">;</span>
+        <span class="token literal-property property">background</span><span class="token operator">:</span> #<span class="token constant">F5F5DC</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_content_lower_div</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token literal-property property">left</span><span class="token operator">:</span> 0px<span class="token punctuation">;</span>
+        <span class="token literal-property property">top</span><span class="token operator">:</span> 100px<span class="token punctuation">;</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 400px<span class="token punctuation">;</span>
+        <span class="token literal-property property">height</span><span class="token operator">:</span> 60px<span class="token punctuation">;</span>
+        <span class="token literal-property property">background</span><span class="token operator">:</span> #<span class="token constant">F5FFDC</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_content_file_div</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token literal-property property">left</span><span class="token operator">:</span> 15px<span class="token punctuation">;</span>
+        <span class="token literal-property property">top</span><span class="token operator">:</span> 20px<span class="token punctuation">;</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 380px<span class="token punctuation">;</span>
+        <span class="token literal-property property">height</span><span class="token operator">:</span> 60px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_file_span</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">float</span><span class="token operator">:</span> left<span class="token punctuation">;</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 120px<span class="token punctuation">;</span>
+        <span class="token literal-property property">height</span><span class="token operator">:</span> 36px<span class="token punctuation">;</span>
+        font<span class="token operator">-</span>size<span class="token operator">:</span> 24px<span class="token punctuation">;</span>
+        text<span class="token operator">-</span>align<span class="token operator">:</span> right<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_file_content</span> <span class="token punctuation">{</span>
+        margin<span class="token operator">-</span>top<span class="token operator">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_content_prog_div</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">position</span><span class="token operator">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token literal-property property">left</span><span class="token operator">:</span> 18px<span class="token punctuation">;</span>
+        <span class="token literal-property property">top</span><span class="token operator">:</span> 57px<span class="token punctuation">;</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 360px<span class="token punctuation">;</span>
+        <span class="token literal-property property">height</span><span class="token operator">:</span> 40px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_prog_span_hit</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">color</span><span class="token operator">:</span> #ff0000<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_prog_content</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 360px<span class="token punctuation">;</span>
+        <span class="token literal-property property">visibility</span><span class="token operator">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_content_span</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">width</span><span class="token operator">:</span> 200px<span class="token punctuation">;</span>
+        <span class="token literal-property property">height</span><span class="token operator">:</span> 60px<span class="token punctuation">;</span>
+        line<span class="token operator">-</span>height<span class="token operator">:</span> 60px<span class="token punctuation">;</span>
+        <span class="token literal-property property">display</span><span class="token operator">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+        <span class="token literal-property property">float</span><span class="token operator">:</span> left<span class="token punctuation">;</span>
+        font<span class="token operator">-</span>size<span class="token operator">:</span> 32px<span class="token punctuation">;</span>
+        text<span class="token operator">-</span>align<span class="token operator">:</span> center<span class="token punctuation">;</span>
+        <span class="token literal-property property">cursor</span><span class="token operator">:</span> pointer<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">.</span><span class="token property-access">style_copyright_a</span> <span class="token punctuation">{</span>
+        text<span class="token operator">-</span>decoration<span class="token operator">:</span> none<span class="token punctuation">;</span>
+        <span class="token literal-property property">color</span><span class="token operator">:</span> #cc00cc<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">function</span> <span class="token function">createHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> xmlHttp <span class="token operator">=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Firefox, Opera 8.0+, Safari</span>
+            xmlHttp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment">// Internet Explorer</span>
+            <span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+                xmlHttp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">"Msxml2.XMLHTTP"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+                    xmlHttp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ActiveXObject</span><span class="token punctuation">(</span><span class="token string">"Microsoft.XMLHTTP"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"您的浏览器不支持AJAX！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword control-flow">return</span> xmlHttp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function">uploadFileToServer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> uploadFile <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_file_id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> uploadTip <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_tip_id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">var</span> uploadProgress <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_progress_id"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>uploadFile<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">==</span> <span class="token string">""</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            uploadTip<span class="token punctuation">.</span><span class="token property-access">innerText</span> <span class="token operator">=</span> <span class="token string">"请选择一个文件"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>uploadFile<span class="token punctuation">.</span><span class="token property-access">files</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">size</span> <span class="token operator">></span> <span class="token number">1024</span> <span class="token operator">&amp;&amp;</span> uploadFile<span class="token punctuation">.</span><span class="token property-access">files</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">size</span> <span class="token operator">&lt;</span> <span class="token punctuation">(</span><span class="token number">40</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword control-flow">try</span> <span class="token punctuation">{</span>
+                <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">FileReader</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">var</span> fReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    fReader<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+                        axios<span class="token punctuation">.</span><span class="token method function property-access">post</span><span class="token punctuation">(</span><span class="token string">"/post/file"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token string-property property">"file_name"</span><span class="token operator">:</span> uploadFile<span class="token punctuation">.</span><span class="token property-access">files</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">,</span><span class="token string-property property">"file"</span><span class="token operator">:</span> e<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">result</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token string-property property">"Content-Type"</span><span class="token operator">:</span> <span class="token string">"multipart/form-data"</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+                            <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+                                <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token punctuation">}</span>
+                    fReader<span class="token punctuation">.</span><span class="token method-variable function-variable method function property-access">onprogress</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                        uploadProgress<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token property-access">loaded</span> <span class="token operator">*</span> <span class="token number">100</span> <span class="token operator">/</span> e<span class="token punctuation">.</span><span class="token property-access">total</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                    fReader<span class="token punctuation">.</span><span class="token method function property-access">readAsDataURL</span><span class="token punctuation">(</span>uploadFile<span class="token punctuation">.</span><span class="token property-access">files</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    uploadProgress<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">visibility</span> <span class="token operator">=</span> <span class="token string">"visible"</span><span class="token punctuation">;</span>
+                    uploadProgress<span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+                    uploadTip<span class="token punctuation">.</span><span class="token property-access">innerText</span> <span class="token operator">=</span> <span class="token string">"浏览器不支持上传文件"</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword control-flow">catch</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                uploadTip<span class="token punctuation">.</span><span class="token property-access">innerText</span> <span class="token operator">=</span> <span class="token string">"文件上传失败"</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+            uploadTip<span class="token punctuation">.</span><span class="token property-access">innerText</span> <span class="token operator">=</span> <span class="token string">"文件不符合要求"</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">showUploadDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> up_dialog <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_dialog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_tip_id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">innerText</span> <span class="token operator">=</span> <span class="token string">"请选择要上传的文件"</span><span class="token punctuation">;</span>
+        <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_progress_id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">visibility</span> <span class="token operator">=</span> <span class="token string">"hidden"</span><span class="token punctuation">;</span>
+        up_dialog<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">visibility</span> <span class="token operator">=</span> <span class="token string">"visible"</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">hideUploadDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">var</span> up_dialog <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_dialog"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">"upload_progress_id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">visibility</span> <span class="token operator">=</span> <span class="token string">"hidden"</span><span class="token punctuation">;</span>
+        up_dialog<span class="token punctuation">.</span><span class="token property-access">style</span><span class="token punctuation">.</span><span class="token property-access">visibility</span> <span class="token operator">=</span> <span class="token string">"hidden"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"content_div"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>br<span class="token operator">></span>
+        <span class="token operator">&lt;</span>br<span class="token operator">></span>
+        <span class="token operator">&lt;</span>br<span class="token operator">></span>
+        <span class="token operator">&lt;</span>br<span class="token operator">></span>
+        <span class="token operator">&lt;</span>br<span class="token operator">></span>
+        <span class="token operator">&lt;</span>a <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_copyright_a"</span> href<span class="token operator">=</span><span class="token string">"javascript:void(0);"</span> onclick<span class="token operator">=</span><span class="token string">"showUploadDialog()"</span><span class="token operator">></span>上传新文件<span class="token operator">&lt;</span><span class="token operator">/</span>a<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+
+    <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"upload_dialog"</span> <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"upload_dialog_div"</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_content_div"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_content_upper_div"</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_content_file_div"</span><span class="token operator">></span>
+                    <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_file_span"</span><span class="token operator">></span> 文件路径：<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+                    <span class="token operator">&lt;</span>input <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_file_content"</span> type<span class="token operator">=</span><span class="token string">"file"</span> id<span class="token operator">=</span><span class="token string">"upload_file_id"</span> <span class="token operator">/</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+                <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_content_prog_div"</span><span class="token operator">></span>
+                    <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_prog_span_hit"</span> id<span class="token operator">=</span><span class="token string">"upload_tip_id"</span><span class="token operator">></span> 请选择要上传的文件 <span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+                    <span class="token operator">&lt;</span>progress <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_prog_content"</span> id<span class="token operator">=</span><span class="token string">"upload_progress_id"</span> value<span class="token operator">=</span><span class="token string">"0"</span> max<span class="token operator">=</span><span class="token string">"100"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>progress<span class="token operator">></span>
+                <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+            <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_content_lower_div"</span><span class="token operator">></span>
+                <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_content_span"</span> onmouseover<span class="token operator">=</span><span class="token string">"this.style.background='#cccccc'"</span>
+                    onmouseout<span class="token operator">=</span><span class="token string">"this.style.background=''"</span> onclick<span class="token operator">=</span><span class="token string">"hideUploadDialog()"</span><span class="token operator">></span>取消<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+                <span class="token operator">&lt;</span>span <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"style_content_span"</span> onmouseover<span class="token operator">=</span><span class="token string">"this.style.background='#F5CCDC'"</span>
+                    onmouseout<span class="token operator">=</span><span class="token string">"this.style.background=''"</span> onclick<span class="token operator">=</span><span class="token string">"uploadFileToServer()"</span><span class="token operator">></span>确定<span class="token operator">&lt;</span><span class="token operator">/</span>span<span class="token operator">></span>
+            <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"https://unpkg.com/axios/dist/axios.min.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span></pre></div></code-block></article><footer></footer></body></html>

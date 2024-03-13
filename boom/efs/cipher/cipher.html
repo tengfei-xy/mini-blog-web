@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/wolai.css"/><title>cipher - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="cipher" class="main-title"></div></div></header><article><code-block id="ezRW6QAhQhWLczmtnoCeAB" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre><span class="token constant">C</span><span class="token operator">:</span>\<span class="token maybe-class-name">Users</span>\administrator<span class="token operator">></span>cipher <span class="token operator">/</span><span class="token operator">?</span>
+显示或更改 <span class="token constant">NTFS</span> 分区上目录 <span class="token punctuation">[</span>文件<span class="token punctuation">]</span> 的加密。
+
+  <span class="token constant">CIPHER</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">E</span> <span class="token operator">|</span> <span class="token operator">/</span><span class="token constant">D</span> <span class="token operator">|</span> <span class="token operator">/</span><span class="token constant">C</span><span class="token punctuation">]</span>
+         <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">S</span><span class="token operator">:</span>directory<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">B</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">H</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>pathname <span class="token punctuation">[</span><span class="token spread operator">...</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">K</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">ECC</span><span class="token operator">:</span><span class="token number">256</span><span class="token operator">|</span><span class="token number">384</span><span class="token operator">|</span><span class="token number">521</span><span class="token punctuation">]</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">R</span><span class="token operator">:</span>filename <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">SMARTCARD</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">ECC</span><span class="token operator">:</span><span class="token number">256</span><span class="token operator">|</span><span class="token number">384</span><span class="token operator">|</span><span class="token number">521</span><span class="token punctuation">]</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">P</span><span class="token operator">:</span>filename<span class="token punctuation">.</span><span class="token property-access">cer</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">U</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">N</span><span class="token punctuation">]</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">W</span><span class="token operator">:</span>directory
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">X</span><span class="token punctuation">[</span><span class="token operator">:</span>efsfile<span class="token punctuation">]</span> <span class="token punctuation">[</span>filename<span class="token punctuation">]</span>
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">Y</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">ADDUSER</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">CERTHASH</span><span class="token operator">:</span>hash <span class="token operator">|</span> <span class="token operator">/</span><span class="token constant">CERTFILE</span><span class="token operator">:</span>filename <span class="token operator">|</span> <span class="token operator">/</span><span class="token constant">USER</span><span class="token operator">:</span>username<span class="token punctuation">]</span>
+         <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">S</span><span class="token operator">:</span>directory<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">B</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">H</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>pathname <span class="token punctuation">[</span><span class="token spread operator">...</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">FLUSHCACHE</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">SERVER</span><span class="token operator">:</span>servername<span class="token punctuation">]</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">REMOVEUSER</span> <span class="token operator">/</span><span class="token constant">CERTHASH</span><span class="token operator">:</span>hash
+         <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">S</span><span class="token operator">:</span>directory<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">B</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">H</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>pathname <span class="token punctuation">[</span><span class="token spread operator">...</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+  <span class="token constant">CIPHER</span> <span class="token operator">/</span><span class="token constant">REKEY</span> <span class="token punctuation">[</span>pathname <span class="token punctuation">[</span><span class="token spread operator">...</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token operator">/</span><span class="token constant">B</span>        如果遇到错误则中止。默认情况下，即使遇到
+          错误，<span class="token constant">CIPHER</span> 也会继续执行。
+<span class="token operator">/</span><span class="token constant">C</span>        显示有关加密文件的信息。
+<span class="token operator">/</span><span class="token constant">D</span>        解密指定的文件或目录。
+<span class="token operator">/</span><span class="token constant">E</span>        加密指定的文件或目录。目录将
+          被标记，这样随后添加的文件就会被加密。
+          如果父目录未加密，则当修改加密的文件时，
+          该文件可能被解密。建议你
+          对文件和父目录进行加密。
+<span class="token operator">/</span><span class="token constant">H</span>        显示具有隐藏属性或系统属性的文件。默认
+          情况下会忽略这些文件。
+<span class="token operator">/</span><span class="token constant">K</span>        创建新的用于 <span class="token constant">EFS</span> 的证书和密钥。如果选择
+          了此选项，则将忽略所有其他选项。
+
+          <span class="token literal-property property">注意</span><span class="token operator">:</span> 在默认情况下，<span class="token operator">/</span><span class="token constant">K</span> 会创建符合当前组策略
+                的证书和密钥。如果指定了 <span class="token constant">ECC</span>，则会使用
+                提供的密钥大小创建自签名的证书。
+
+<span class="token operator">/</span><span class="token constant">N</span>        此选项只能与 <span class="token operator">/</span><span class="token constant">U</span> 一起使用。它将阻止更新
+          密钥。此选项用于查找本地驱动器上的所有
+          加密文件。
+<span class="token operator">/</span><span class="token constant">R</span>        生成一个 <span class="token constant">EFS</span> 恢复密钥和证书，然后将它们写入
+          一个 <span class="token punctuation">.</span><span class="token constant">PFX</span> <span class="token function">文件</span><span class="token punctuation">(</span>包含证书和私钥<span class="token punctuation">)</span>和一个
+           <span class="token punctuation">.</span><span class="token constant">CER</span> <span class="token function">文件</span><span class="token punctuation">(</span>只包含证书<span class="token punctuation">)</span>。管理员可以向
+          <span class="token constant">EFS</span> 恢复策略添加 <span class="token punctuation">.</span><span class="token constant">CER</span> 的内容，
+          为用户创建恢复密钥并导入 <span class="token punctuation">.</span><span class="token constant">PFX</span> 以恢复
+          各个文件。如果指定了 <span class="token constant">SMARTCARD</span>，则会将
+          恢复密钥和证书写入智能卡。将会
+          生成 <span class="token punctuation">.</span><span class="token constant">CER</span> <span class="token function">文件</span><span class="token punctuation">(</span>仅包含证书<span class="token punctuation">)</span>，但不会
+          生成 <span class="token punctuation">.</span><span class="token constant">PFX</span> 文件。
+
+          <span class="token literal-property property">注意</span><span class="token operator">:</span> 在默认情况下，<span class="token operator">/</span><span class="token constant">R</span> 会创建 <span class="token number">2048</span> 位 <span class="token constant">RSA</span> 恢复密钥和
+                证书。如果指定了 <span class="token constant">ECC</span>，则它必须后跟
+                <span class="token number">256</span>、<span class="token number">384</span> 或 <span class="token number">521</span> 大小的密钥。
+
+<span class="token operator">/</span><span class="token constant">P</span>        基于传入的证书创建 base64 编码的恢复
+          策略 blob。此 blob 可用于设置用于 <span class="token constant">MDM</span> 部署
+          的 <span class="token constant">DRA</span> 策略。
+<span class="token operator">/</span><span class="token constant">S</span>        对给定目录以及其中的所有文件和子目录
+          执行指定的操作。
+<span class="token operator">/</span><span class="token constant">U</span>        尝试处理本地驱动器上的所有加密文件。如果用户
+          的文件加密密钥或恢复密钥已更改，这会将其
+          更新为当前的密钥。此选项不能与 <span class="token operator">/</span><span class="token constant">N</span> 以外的其他
+          选项一起使用。
+<span class="token operator">/</span><span class="token constant">W</span>        从整个卷上可用的未使用磁盘空间中删除
+          数据。如果选择了此选项，则会忽略所有其他选项。
+          指定的目录可以是本地卷上的任意位置。如果它
+          是装入点或指向另一个卷中的目录，
+          则该卷上的数据将被删除。
+<span class="token operator">/</span><span class="token constant">X</span>        将 <span class="token constant">EFS</span> 证书和密钥备份到 filename 文件中。如果提供
+          了 efsfile，将会备份当前用户的用于
+          加密此文件的证书。否则，将会备份用户的当前 <span class="token constant">EFS</span>
+           证书和密钥。
+<span class="token operator">/</span><span class="token constant">Y</span>        在本地电脑上显示当前的 <span class="token constant">EFS</span> 证书缩略图。
+<span class="token operator">/</span><span class="token constant">ADDUSER</span>  向指定的加密文件添加用户。如果提供
+          了 <span class="token constant">CERTHASH</span>，cipher 将搜索带有此 <span class="token constant">SHA1</span> 哈希的
+          证书。如果提供了 <span class="token constant">CERTFILE</span>，cipher 将从文件
+          中提取证书。如果提供了 <span class="token constant">USER</span>，cipher 将尝试
+          在 <span class="token maybe-class-name">Active</span> <span class="token maybe-class-name">Directory</span> 域服务中查找用户的
+          证书。
+<span class="token operator">/</span><span class="token constant">FLUSHCACHE</span>
+          清除指定服务器上的调用用户的 <span class="token constant">EFS</span> 密钥缓存。
+          如果未提供 servername，cipher 会清除本地计算机上
+          该用户的密钥缓存。
+<span class="token operator">/</span><span class="token constant">REKEY</span>    更新指定的加密文件以使用配置的
+          当前 <span class="token constant">EFS</span> 密钥。
+<span class="token operator">/</span><span class="token constant">REMOVEUSER</span>
+          从指定的文件中删除用户。<span class="token constant">CERTHASH</span> 必须是
+          要删除的证书的 <span class="token constant">SHA1</span> 哈希。
+
+directory 目录路径。
+filename  不带扩展名的文件名。
+pathname  指定一个模式、文件或目录。
+efsfile   加密的文件路径。
+
+如果在不带参数的情况下使用，<span class="token constant">CIPHER</span> 将显示
+当前目录及其包含的所有文件的加密状态。你可以使用多个目录
+名和通配符。多个参数之间必须有空格。</pre></div></code-block></article><footer></footer></body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>注释 - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="注释" class="main-title"></div></div></header><article><h1 id="5zoX1TjhS8pbe6cBn2GvzL" class="wolai-block"><span class="inline-wrap">文档注释作用</span><details id="fKHVezEAcsjXeDx8gCpmJB" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">一般文档测试</span></summary><div id="vQpATmhzDQsgFnw8qeCpVU" class="wolai-block wolai-text"><div><span class="inline-wrap">rust<span class="jill"></span>代码</span></div></div><code-block id="m7mRdqedMLyr8S27nUKcDa" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/// `add_one` 将指定值加1</span>
+<span class="token comment">///</span>
+<span class="token comment">/// # Examples11</span>
+<span class="token comment">///</span>
+<span class="token comment">/// ```</span>
+<span class="token comment">/// let arg = 5;</span>
+<span class="token comment">/// let answer = world_hello::compute::add_one(arg);</span>
+<span class="token comment">///</span>
+<span class="token comment">/// assert_eq!(6, answer);</span>
+<span class="token comment">/// ```</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">add_one</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    x <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+</pre></div></code-block><div id="2AV56hQJDS4wpmsWGaUJPb" class="wolai-block wolai-text"><div><span class="inline-wrap">进行测试</span></div></div><code-block id="2Xxn759izJPGvsnusbVF56" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>$ <span class="token function">cargo</span> <span class="token builtin class-name">test</span> </pre></div></code-block><div id="psJvYt8JV7LLysNNt5pwq3" class="wolai-block wolai-text"><div><span class="inline-wrap">测试结果</span></div></div><code-block id="epS816egEPTQDiDen9zQiP" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token class-name">Doc</span><span class="token operator">-</span>tests world_hello
+
+running <span class="token number">2</span> tests
+test src<span class="token operator">/</span>compute<span class="token punctuation">.</span>rs <span class="token operator">-</span> <span class="token namespace">compute<span class="token punctuation">::</span></span><span class="token function">add_one</span> <span class="token punctuation">(</span>line <span class="token number">8</span><span class="token punctuation">)</span> <span class="token punctuation">...</span> ok
+test src<span class="token operator">/</span>compute<span class="token punctuation">.</span>rs <span class="token operator">-</span> <span class="token namespace">compute<span class="token punctuation">::</span></span><span class="token function">add_two</span> <span class="token punctuation">(</span>line <span class="token number">22</span><span class="token punctuation">)</span> <span class="token punctuation">...</span> ok
+
+test result<span class="token punctuation">:</span> ok<span class="token punctuation">.</span> <span class="token number">2</span> passed<span class="token punctuation">;</span> <span class="token number">0</span> failed<span class="token punctuation">;</span> <span class="token number">0</span> ignored<span class="token punctuation">;</span> <span class="token number">0</span> measured<span class="token punctuation">;</span> <span class="token number">0</span> filtered out<span class="token punctuation">;</span> finished <span class="token keyword">in</span> <span class="token number">1</span><span class="token punctuation">.</span>00s
+</pre></div></code-block></details><details id="yJrCehnCguKJ2wLRKDq6C" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">造成<span class="jill"></span>panic<span class="jill"></span>的测试</span></summary><div id="8McbEomAKfmGu2StW8UpwH" class="wolai-block wolai-text"><div><span class="inline-wrap">代码</span></div></div><code-block id="hrCJhpnwuv4yStGSPN9wSA" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/// # Panics</span>
+<span class="token comment">///</span>
+<span class="token comment">/// The function panics if the second argument is zero.</span>
+<span class="token comment">///</span>
+<span class="token comment">/// ```rust</span>
+<span class="token comment">/// // panics on division by zero</span>
+<span class="token comment">/// world_hello::compute::div(10, 0);</span>
+<span class="token comment">/// ```</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">div</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> b <span class="token operator">==</span> <span class="token number">0</span> <span class="token punctuation">{</span>
+        <span class="token macro property">panic!</span><span class="token punctuation">(</span><span class="token string">"Divide-by-zero error"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    a <span class="token operator">/</span> b
+<span class="token punctuation">}</span></pre></div></code-block><div id="jVUWx4m5z4F3oGZmTvowEE" class="wolai-block wolai-text"><div><span class="inline-wrap">测试结果</span></div></div><code-block id="phoUMMRHPad5DhXTTT6gHP" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span> src<span class="token operator">/</span>compute<span class="token punctuation">.</span>rs <span class="token operator">-</span> <span class="token namespace">compute<span class="token punctuation">::</span></span><span class="token function">div</span> <span class="token punctuation">(</span>line <span class="token number">38</span><span class="token punctuation">)</span> stdout <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token class-name">Test</span> executable <span class="token function">failed</span> <span class="token punctuation">(</span>exit code <span class="token number">101</span><span class="token punctuation">)</span><span class="token punctuation">.</span>
+
+stderr<span class="token punctuation">:</span>
+thread <span class="token lifetime-annotation symbol">'main</span>' panicked at <span class="token lifetime-annotation symbol">'Divide</span><span class="token operator">-</span>by<span class="token operator">-</span>zero error'<span class="token punctuation">,</span> src<span class="token operator">/</span>compute<span class="token punctuation">.</span>rs<span class="token punctuation">:</span><span class="token number">44</span><span class="token punctuation">:</span><span class="token number">9</span>
+note<span class="token punctuation">:</span> run with `<span class="token constant">RUST_BACKTRACE</span><span class="token operator">=</span><span class="token number">1</span>` environment variable to display a backtrace</pre></div></code-block><div id="rhCCaUFVJLxRHAMuuTe5e3" class="wolai-block wolai-text"><div><span class="inline-wrap">如果想要通过这种测试，可以添加 </span><span class="inline-wrap"><code>should_panic</code></span><span class="inline-wrap">：</span></div></div><code-block id="oFSXGtT8Lsv4HZX85jTdZi" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/// # Panics</span>
+<span class="token comment">///</span>
+<span class="token comment">/// The function panics if the second argument is zero.</span>
+<span class="token comment">///</span>
+<span class="token comment">/// ```rust,should_panic</span>
+<span class="token comment">/// // panics on division by zero</span>
+<span class="token comment">/// world_hello::compute::div(10, 0);</span>
+<span class="token comment">/// ```</span></pre></div></code-block></details><details id="rY5mjjWpURgmLA1qVz3Y3i" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">代码跳转</span></summary><details id="rWwxYwKvhfHvipQtcPddF" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">跳到标准库</span></summary><code-block id="vVsFK2umn6yTnuNpQnoaPF" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/// `add_one` 返回一个[`Option`]类型</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">add_one</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">Option</span><span class="token operator">&lt;</span><span class="token keyword">i32</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token class-name">Some</span><span class="token punctuation">(</span>x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></pre></div></code-block></details><details id="wXMjgtsEw62A8h61SCKRVK" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">路径的方式跳转</span></summary><code-block id="43HmwJs82KA755bwwYTY63" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token keyword">use</span> <span class="token namespace">std<span class="token punctuation">::</span>sync<span class="token punctuation">::</span>mpsc<span class="token punctuation">::</span></span><span class="token class-name">Receiver</span><span class="token punctuation">;</span>
+
+<span class="token comment">/// [`Receiver&lt;T>`]   [`std::future`].</span>
+<span class="token comment">///</span>
+<span class="token comment">///  [`std::future::Future`] [`Self::recv()`].</span>
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">AsyncReceiver</span><span class="token operator">&lt;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    sender<span class="token punctuation">:</span> <span class="token class-name">Receiver</span><span class="token operator">&lt;</span><span class="token class-name">T</span><span class="token operator">></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">impl</span><span class="token operator">&lt;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token class-name">AsyncReceiver</span><span class="token operator">&lt;</span><span class="token class-name">T</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">pub</span> <span class="token keyword">async</span> <span class="token keyword">fn</span> <span class="token function-definition function">recv</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token class-name">T</span> <span class="token punctuation">{</span>
+        <span class="token macro property">unimplemented!</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></div></code-block></details><details id="m7zBhaMicB9NdcVEyeezBU" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">同名向跳转</span></summary><code-block id="5XC6u2FaLJxGAYCDVNUmRf" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/// 跳转到结构体  [`Foo`](struct@Foo)</span>
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">Bar</span><span class="token punctuation">;</span>
+
+<span class="token comment">/// 跳转到同名函数 [`Foo`](fn@Foo)</span>
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">Foo</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">/// 跳转到同名宏 [`foo!`]</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">Foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token attribute attr-name">#[macro_export]</span>
+<span class="token macro property">macro_rules!</span> foo <span class="token punctuation">{</span>
+  <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></div></code-block></details></details><details id="eCDqcBSVdguBtGmCGndRi" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">文档搜索别名</span></summary><code-block id="4m2VMzcCWEZBZWymF69iAK" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token attribute attr-name">#[doc(alias = <span class="token string">"x"</span>)]</span>
+<span class="token attribute attr-name">#[doc(alias = <span class="token string">"big"</span>)]</span>
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">BigX</span><span class="token punctuation">;</span>
+
+<span class="token attribute attr-name">#[doc(alias(<span class="token string">"y"</span>, <span class="token string">"big"</span>))]</span>
+<span class="token keyword">pub</span> <span class="token keyword">struct</span> <span class="token type-definition class-name">BigY</span><span class="token punctuation">;</span></pre></div></code-block></details></h1><h1 id="NHMLaiovC265MBCvKvPuw" class="wolai-block"><span class="inline-wrap">代码注释</span><details id="qNwDPCcN7uFK5xGrBUfEzx" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">行注释</span></summary><code-block id="pNRUPDqW9rBAB3EL8TwSmf" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 我是Sun...</span>
+    <span class="token comment">// face</span>
+    <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">"sunface"</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token number">18</span><span class="token punctuation">;</span> <span class="token comment">// 今年好像是18岁</span>
+<span class="token punctuation">}</span></pre></div></code-block></details><details id="8ncfGkQCNTcEGsi5Ux6TxJ" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">块注释</span></summary><code-block id="7gVajeojVfr8nbVuXhGATL" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token keyword">fn</span> <span class="token function-definition function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">/*
+        我
+        是
+        S
+        u
+        n
+        ... 哎，好长!
+    */</span>
+    <span class="token keyword">let</span> name <span class="token operator">=</span> <span class="token string">"sunface"</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token string">"???"</span><span class="token punctuation">;</span> <span class="token comment">// 今年其实。。。挺大了</span>
+<span class="token punctuation">}</span></pre></div></code-block></details></h1><h1 id="7tF9eRxsAcsFFwZ8GR8J9x" class="wolai-block"><span class="inline-wrap">文档注释</span><aside id="2nk6qUuccbJbKaixzujx4Q" class="bg-cultured wolai-block"><div data-symbol="📌" class="icon"></div><span class="inline-wrap">1. 文档注释需要位于 </span><span class="inline-wrap"><code>lib</code></span><span class="inline-wrap"> 类型的包中，例如 </span><span class="inline-wrap"><code>src/lib.rs</code></span><span class="inline-wrap"> 中
+2. 文档注释可以使用 </span><span class="inline-wrap"><code>markdown</code></span><span class="inline-wrap">语法！例如 </span><span class="inline-wrap"><code># Examples</code></span><span class="inline-wrap"> 的标题，以及代码块高亮
+3. </span><span class="inline-wrap">被注释的对象需要使用 </span><span class="inline-wrap"><code>pub</code></span><span class="inline-wrap"> 对外可见，记住：文档注释是给用户看的，</span><span class="inline-wrap"><b>内部实现细节不应该被暴露出去</b></span></aside><details id="rqyoPqdMpP5L2QWNd87MJE" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">文档行注释</span></summary><code-block id="vhfvPnzMoDpyzk7fx422HD" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/// `add_one` 将指定值加1</span>
+<span class="token comment">///</span>
+<span class="token comment">/// # Examples</span>
+<span class="token comment">///</span>
+<span class="token comment">/// ```</span>
+<span class="token comment">/// let arg = 5;</span>
+<span class="token comment">/// let answer = my_crate::add_one(arg);</span>
+<span class="token comment">///</span>
+<span class="token comment">/// assert_eq!(6, answer);</span>
+<span class="token comment">/// ```</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">add_one</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    x <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span></pre></div></code-block></details><details id="5zfqhbVqyvFccGDAakRS8b" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">文档块注释</span></summary><code-block id="iTjckicEBVXtHDiFyzfEGp" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/** `add_two` 将指定值加2
+
+
+```
+let arg = 5;
+let answer = my_crate::add_two(arg);
+
+assert_eq!(7, answer);
+```
+*/</span>
+<span class="token keyword">pub</span> <span class="token keyword">fn</span> <span class="token function-definition function">add_two</span><span class="token punctuation">(</span>x<span class="token punctuation">:</span> <span class="token keyword">i32</span><span class="token punctuation">)</span> <span class="token punctuation">-></span> <span class="token keyword">i32</span> <span class="token punctuation">{</span>
+    x <span class="token operator">+</span> <span class="token number">2</span>
+<span class="token punctuation">}</span></pre></div></code-block></details><details id="9TQHctKS4Nxf1sUoYoGvZR" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">查看文档</span></summary><code-block id="renj9Myh9KzkED9tmSzLLT" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">cargo</span> doc <span class="token parameter variable">--open</span></pre></div></code-block></details></h1><h1 id="28iLeQ4JqmyLGLVuthBxK2" class="wolai-block"><span class="inline-wrap">包注释</span><details id="bWp7N9ZCwpaBH2xHtHiWHJ" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">包行注释 </span><span class="inline-wrap"><code>//!</code></span><span class="inline-wrap"> </span></summary><code-block id="dYckD2RkVnXsTamUassXTL" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">//! 计算一些你口算算不出来的复杂算术题</span>
+
+
+<span class="token comment">/// `add_one`将指定值加1</span>
+<span class="token comment">///</span></pre></div></code-block></details><details id="jXYunBMQpZ2tW8CaJYV6rU" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">块注释 </span><span class="inline-wrap"><code>/*! ... */</code></span><span class="inline-wrap">。</span></summary><code-block id="wh5V8Mr6FvV32Mmpd3N7in" class="wolai-block"><div class="wolai-pre"><div data-lang="Rust" class="marker"></div><pre><span class="token comment">/*! lib包是world_hello二进制包的依赖包，
+ 里面包含了compute等有用模块 */</span>
+
+<span class="token keyword">pub</span> <span class="token keyword">mod</span> <span class="token module-declaration namespace">compute</span><span class="token punctuation">;</span></pre></div></code-block></details></h1><div id="2Qz3E9M2NT5raYf3YMdrke" class="wolai-block wolai-text"><div><span class="inline-wrap"></span><br/></div></div></article><footer></footer></body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>sc - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="sc" class="main-title"></div></div></header><article><div id="sLK1uY1e9WoUqboU6iPFk1" class="wolai-block wolai-text"><div><span class="blue inline-wrap">定义</span><span class="inline-wrap">：SC 是用来与服务控制管理器和服务进行通信的命令行程序。</span></div></div><details id="eqvRYDMVVsjXKkrZ2NjcER" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">用法说明</span></summary><details id="MGSWe3htdfHYjDcWpq8ib" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap"><code>sc</code></span></summary><div id="tHDZgS6X8GATQx6NKBgqup" class="wolai-block wolai-text"><div><span class="inline-wrap">sc </span><span class="inline-wrap">&lt;server&gt;</span><span class="inline-wrap"> [command] [service name] </span><span class="inline-wrap">&lt;option1&gt;</span><span class="inline-wrap"> </span><span class="inline-wrap">&lt;option2&gt;</span><span class="inline-wrap">...
+</span><span class="inline-wrap">&lt;server&gt;</span><span class="inline-wrap"> 选项的格式为 &quot;\ServerName&quot;</span></div></div><div id="tMSf7CAqdwmCRN1wa5B9o9" class="wolai-block wolai-text"><div><span class="inline-wrap">query-----------查询服务的状态，
+或枚举服务类型的状态。
+queryex---------查询服务的扩展状态，
+或枚举服务类型的状态。
+start-----------启动服务。
+pause-----------向服务发送 PAUSE 控制请求。
+interrogate-----向服务发送 INTERROGATE 控制请求。
+continue--------向服务发送 CONTINUE 控制请求。
+stop------------向服务发送 STOP 请求。
+config----------更改服务的配置(永久)。
+description-----更改服务的描述。
+failure---------更改失败时服务执行的操作。
+failureflag-----更改服务的失败操作标志。
+sidtype---------更改服务的服务 SID 类型。
+privs-----------更改服务的所需特权。
+managedaccount--更改服务以将服务帐户密码
+标记为由 LSA 管理。
+qc--------------查询服务的配置信息。
+qdescription----查询服务的描述。
+qfailure--------查询失败时服务执行的操作。
+qfailureflag----查询服务的失败操作标志。
+qsidtype--------查询服务的服务 SID 类型。
+qprivs----------查询服务的所需特权。
+qtriggerinfo----查询服务的触发器参数。
+qpreferrednode--查询服务的首选 NUMA 节点。
+qmanagedaccount-查询服务是否将帐户
+与 LSA 管理的密码结合使用。
+qprotection-----查询服务的进程保护级别。
+quserservice----查询用户服务模板的本地实例。
+delete ----------(从注册表中)删除服务。
+create----------创建服务(并将其添加到注册表中)。
+control---------向服务发送控制。
+sdshow----------显示服务的安全描述符。
+sdset-----------设置服务的安全描述符。
+showsid---------显示与任意名称对应的服务 SID 字符串。
+triggerinfo-----配置服务的触发器参数。
+preferrednode---设置服务的首选 NUMA 节点。
+GetDisplayName--获取服务的 DisplayName。
+GetKeyName------获取服务的 ServiceKeyName。
+EnumDepend------枚举服务依赖关系。</span></div></div><div id="9BMyX1T7mSBLjEh5gHHKxX" class="wolai-block wolai-text"><div><span class="inline-wrap">以下命令不需要服务名称:
+sc </span><span class="inline-wrap">&lt;server&gt;</span><span class="inline-wrap"> </span><span class="inline-wrap">&lt;command&gt;</span><span class="inline-wrap"> </span><span class="inline-wrap">&lt;option&gt;</span><span class="inline-wrap">
+boot------------(ok | bad)指示是否应将上一次启动另存为
+最近一次已知的正确启动配置
+Lock------------锁定服务数据库
+QueryLock-------查询 SCManager 数据库的 LockStatus</span></div></div></details><details id="m5266MG6XGSWtFT3EDLSQR" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap"><code>sc create</code></span></summary><h3 id="uMPZgoix8EBw1m2iqWDisQ" class="wolai-block"><span class="inline-wrap">描述</span></h3><div id="t6FkKVxiipetS4EiS5GrGz" class="wolai-block wolai-text"><div><span class="inline-wrap">在注册表和服务数据库中创建服务项。</span></div></div><h3 id="xmw8Thig5d7i5KTMqAV87A" class="wolai-block"><span class="inline-wrap">用法</span></h3><div id="1H6hxA7hRgWuqjQuL45JLa" class="wolai-block wolai-text"><div><span class="inline-wrap">sc </span><span class="inline-wrap">&lt;server&gt;</span><span class="inline-wrap"> create [service name] [binPath= ] </span><span class="inline-wrap">&lt;option1&gt;</span><span class="inline-wrap"> </span><span class="inline-wrap">&lt;option2&gt;</span><span class="inline-wrap">...</span></div></div><h3 id="6G3VC813Ejdn9bQgY8E6Wg" class="wolai-block"><span class="inline-wrap">参数选项</span></h3><div id="7vHQhWXx3dQYZ9k99GaiNP" class="wolai-block wolai-text"><div><span class="inline-wrap">注意：选项名称包括等号。
+等号和值之间需要一个空格。
+type= &lt;own|share|interact|kernel|filesys|rec|userown|usershare&gt;
+(默认 = own)
+start= &lt;boot|system|auto|demand|disabled|delayed-auto&gt;
+(默认 = demand)
+error= &lt;normal|severe|critical|ignore&gt;
+(默认 = normal)
+binPath= &lt;.exe 文件的 BinaryPathName&gt;
+group= </span><span class="inline-wrap">&lt;LoadOrderGroup&gt;</span><span class="inline-wrap">
+tag= &lt;yes|no&gt;
+depend= &lt;依存关系(以 / (斜杠)分隔)&gt;
+obj= &lt;AccountName|ObjectName&gt;
+(默认= LocalSystem)
+DisplayName= &lt;显示名称&gt;
+password= &lt;密码&gt;
+[官方说明]</span></div></div></details><details id="QjJvNmQBDiUwaGd398ctp" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap"><code>sc start</code></span></summary><div id="upD9ScxgHES8oU5NCoTAwf" class="wolai-block wolai-text"><div><span class="inline-wrap">sc start MyService</span></div></div><div id="qmMAQD62UbMqToji57pbTV" class="wolai-block wolai-text"><div><span class="inline-wrap">QUERY 和 QUERYEX 选项:
+如果查询命令带服务名称，将返回该服务的状态。其他选项不适合这种情况。如
+果查询命令不带参数或带下列选项之一，将枚举此服务。
+type= 要枚举的服务的类型(driver, service, userservice, all)
+(默认 = service)
+state= 要枚举的服务的状态 (inactive, all)
+(默认 = active)
+bufsize= 枚举缓冲区的大小(以字节计)
+(默认 = 4096)
+ri=  开始枚举的恢复索引号
+(默认 = 0)
+group= 要枚举的服务组
+(默认 = all groups)</span></div></div></details><details id="wugyjDpnNfbKPK4LoDWGvw" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap"><code>sc query</code></span></summary><div id="f4YTBv1BDigySJgGuu5Ths" class="wolai-block wolai-text"><div><span class="inline-wrap">sc query                - 枚举活动服务和驱动程序的状态
+sc query eventlog       - 显示 eventlog 服务的状态
+sc queryex eventlog     - 显示 eventlog 服务的扩展状态
+sc query type= driver   - 仅枚举活动驱动程序
+sc query type= service  - 仅枚举 Win32 服务
+sc query state= all     - 枚举所有服务和驱动程序
+sc query bufsize= 50    - 枚举缓冲区为 50 字节
+sc query ri= 14         - 枚举时恢复索引 = 14
+sc queryex group= &quot;&quot;    - 枚举不在组内的活动服务
+sc query type= interact - 枚举所有不活动服务
+sc query type= driver group= NDIS     - 枚举所有 NDIS 驱动程序</span></div></div></details><details id="fvkfkDW1M6EP3zG7Vvtc94" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap"><code>sc config</code></span></summary><div id="2tsJDZR3fbSFeHthEgQLej" class="wolai-block wolai-text"><div><span class="inline-wrap"></span><br/></div></div><div id="aTq3ac6e2yxvR6WBsPaHa8" class="wolai-block wolai-text"><div><span class="inline-wrap">描述:
+        在注册表和服务数据库中修改服务项。
+用法:
+        sc &lt;server&gt; config [service name] &lt;option1&gt; &lt;option2&gt;...
+
+选项:
+注意: 选项名称包括等号。
+      等号和值之间需要一个空格。
+ type= &lt;own|share|interact|kernel|filesys|rec|adapt&gt;
+ start= &lt;boot|system|auto|demand|disabled|delayed-auto&gt;
+ error= &lt;normal|severe|critical|ignore&gt;
+ binPath= &lt;BinaryPathName&gt;
+ group= &lt;LoadOrderGroup&gt;
+ tag= &lt;yes|no&gt;
+ depend= &lt;依存关系(以 / (斜杠) 分隔)&gt;
+ obj= &lt;AccountName|ObjectName&gt;
+ DisplayName= &lt;显示名称&gt;
+ password= &lt;密码&gt;</span></div></div></details></details><details id="gRH3shQyDRqJTvxfzMUhdp" class="wolai-block"><summary><div class="marker"></div><span class="inline-wrap">示例</span></summary><div id="w2iSAsMnm57MRHsa4BPQct" class="wolai-block wolai-text"><div><span class="inline-wrap">停止服务</span></div></div><code-block id="93Qe3WpD6ucVDyWmHbB5ni" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all">sc stop eventlog</pre></div></code-block></details></article><footer></footer></body></html>

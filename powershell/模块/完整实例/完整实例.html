@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/wolai.css"/><title>完整实例 - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="完整实例" class="main-title"></div></div></header><article><code-block id="9WF6uMev6DkompZemLcpnY" class="wolai-block"><div class="wolai-pre"><div data-lang="Powershell" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token comment">&lt;#
+.Synopsis
+   简短描述
+.DESCRIPTION
+   详细描述
+.EXAMPLE
+   如何使用此 cmdlet 的示例
+.EXAMPLE
+   另一个如何使用此 cmdlet 的示例
+.INPUTS
+   到此 cmdlet 的输入(如果有)
+.OUTPUTS
+   来自此 cmdlet 的输出(如果有)
+.NOTES
+   一般注释
+.COMPONENT
+   此 cmdlet 所属的组件
+.ROLE
+   此 cmdlet 所属的角色
+.FUNCTIONALITY
+   最准确描述此 cmdlet 的功能
+#></span>
+<span class="token keyword">function</span> Verb-Noun
+<span class="token punctuation">{</span>
+    <span class="token punctuation">[</span>CmdletBinding<span class="token punctuation">(</span>DefaultParameterSetName=<span class="token string">'Parameter Set 1'</span><span class="token punctuation">,</span> 
+                  SupportsShouldProcess=<span class="token boolean">$true</span><span class="token punctuation">,</span> 
+                  PositionalBinding=<span class="token boolean">$false</span><span class="token punctuation">,</span>
+                  HelpUri = <span class="token string">'http://www.microsoft.com/'</span><span class="token punctuation">,</span>
+                  ConfirmImpact=<span class="token string">'Medium'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+    <span class="token namespace">[Alias()]</span>
+    <span class="token namespace">[OutputType([String])]</span>
+    <span class="token keyword">Param</span>
+    <span class="token punctuation">(</span>
+        <span class="token comment"># Param1 帮助描述</span>
+        <span class="token punctuation">[</span>Parameter<span class="token punctuation">(</span>Mandatory=<span class="token boolean">$true</span><span class="token punctuation">,</span> 
+                   ValueFromPipeline=<span class="token boolean">$true</span><span class="token punctuation">,</span>
+                   ValueFromPipelineByPropertyName=<span class="token boolean">$true</span><span class="token punctuation">,</span> 
+                   ValueFromRemainingArguments=<span class="token boolean">$false</span><span class="token punctuation">,</span> 
+                   Position=0<span class="token punctuation">,</span>
+                   ParameterSetName=<span class="token string">'Parameter Set 1'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token namespace">[ValidateNotNull()]</span>
+        <span class="token namespace">[ValidateNotNullOrEmpty()]</span>
+        <span class="token namespace">[ValidateCount(0,5)]</span>
+        <span class="token punctuation">[</span>ValidateSet<span class="token punctuation">(</span><span class="token string">"sun"</span><span class="token punctuation">,</span> <span class="token string">"moon"</span><span class="token punctuation">,</span> <span class="token string">"earth"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token punctuation">[</span>Alias<span class="token punctuation">(</span><span class="token string">"p1"</span><span class="token punctuation">)</span><span class="token punctuation">]</span> 
+        <span class="token variable">$Param1</span><span class="token punctuation">,</span>
+
+        <span class="token comment"># Param2 帮助描述</span>
+        <span class="token punctuation">[</span>Parameter<span class="token punctuation">(</span>ParameterSetName=<span class="token string">'Parameter Set 1'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token namespace">[AllowNull()]</span>
+        <span class="token namespace">[AllowEmptyCollection()]</span>
+        <span class="token namespace">[AllowEmptyString()]</span>
+        <span class="token namespace">[ValidateScript({$true})]</span>
+        <span class="token namespace">[ValidateRange(0,5)]</span>
+        <span class="token namespace">[int]</span>
+        <span class="token variable">$Param2</span><span class="token punctuation">,</span>
+
+        <span class="token comment"># Param3 帮助描述</span>
+        <span class="token punctuation">[</span>Parameter<span class="token punctuation">(</span>ParameterSetName=<span class="token string">'Another Parameter Set'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token punctuation">[</span>ValidatePattern<span class="token punctuation">(</span><span class="token string">"[a-z]*"</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+        <span class="token namespace">[ValidateLength(0,15)]</span>
+        <span class="token namespace">[String]</span>
+        <span class="token variable">$Param3</span>
+    <span class="token punctuation">)</span>
+
+    <span class="token keyword">Begin</span>
+    <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">Process</span>
+    <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$pscmdlet</span><span class="token punctuation">.</span>ShouldProcess<span class="token punctuation">(</span><span class="token string">"Target"</span><span class="token punctuation">,</span> <span class="token string">"Operation"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">End</span>
+    <span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></div></code-block><h2 id="f1fc3WpeR9T46WrpWQMRR8" class="wolai-block"><span class="inline-wrap">参数帮助描述</span></h2><div id="jmXHzDzx4xbD9mPTXxLCHN" class="wolai-block wolai-text"><div><span class="inline-wrap">CmdletBinding 功能绑定</span><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.cmdletbindingattribute?redirectedfrom=MSDN&amp;view=powershellsdk-7.0.0"><span>链接说明</span></a></span></div></div><div id="esW43nF5LRh5yZF8nW2cjj" class="wolai-block wolai-text"><div><span class="inline-wrap">Mandatory 必须参数</span></div></div><div id="r2XX7bDKNyLdsi8XAUTerL" class="wolai-block wolai-text"><div><span class="inline-wrap">ValueFromPipeline 参数来自管道</span></div></div><div id="eCcSaDk1pdFTP3pLZB6RmK" class="wolai-block wolai-text"><div><span class="inline-wrap">ValueFromPipelineByPropertyName 参数来自属性（命令行）</span></div></div><div id="m3rJiS6vhnoHXFs4NHYrPV" class="wolai-block wolai-text"><div><span class="inline-wrap">ValueFromRemainingArguments 参数来自数组</span></div></div><div id="q8sCEA79wPBQz2XR7neKXA" class="wolai-block wolai-text"><div><span class="inline-wrap">ParameterSetName  参数互斥</span><span class="inline-wrap"><a href="https://www.cnblogs.com/hjbf/p/10734218.html"><span>链接说明</span></a></span></div></div><div id="4DuEaMCFQed4Th4CFYrkds" class="wolai-block wolai-text"><div><span class="inline-wrap">ValidateCount 接收参数数量</span><span class="inline-wrap"><a href="https://docs.microsoft.com/zh-cn/powershell/scripting/developer/cmdlet/how-to-validate-an-argument-count?view=powershell-7"><span>链接说明</span></a></span></div></div><div id="tAdX7dMD7ZmkVhisc5pbxb" class="wolai-block wolai-text"><div><span class="inline-wrap">ValidateSet 选择可能的值</span><span class="inline-wrap"><a href="https://docs.microsoft.com/zh-cn/powershell/scripting/developer/cmdlet/validateset-attribute-declaration?view=powershell-7"><span>链接说明</span></a></span></div></div><div id="rQHWieTDo8FEkA1x6T1ifL" class="wolai-block wolai-text"><div><span class="inline-wrap">ValidatePattern 使用<span class="jill"></span>Regex<span class="jill"></span>验证</span></div></div><div id="jYMGSk85AhBjr5ZH9zZrK5" class="wolai-block wolai-text"><div><span class="inline-wrap">ValidataScript 参数验证 </span><span class="inline-wrap"><a href="http://cn.voidcc.com/question/p-dhlqegao-uu.html"><span>连接说明</span></a></span></div></div><div id="991W5M5zxonPT7RypTvzzu" class="wolai-block wolai-text"><div><span class="inline-wrap">ValidateLength 参数长度</span></div></div><h2 id="iz59BGMh8vV4gUk423d8Tz" class="wolai-block"><span class="inline-wrap"><a href="https://docs.microsoft.com/zh-cn/powershell/scripting/developer/cmdlet/cmdlet-attributes?view=powershell-6"><span>cmdlet<span class="jill"></span>属性</span></a></span></h2><div id="waCFszKuZ2Sc5MqWMsaaDn" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/attributes-in-cmdlet-code?view=powershell-6"><span>Attributes in Cmdlet Code</span></a></span><span class="inline-wrap"> 介绍使用 cmdlet 代码中的属性的好处</span></div></div><div id="m76xcriBLeW41B9ksbLrWM" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/attribute-types?view=powershell-6"><span>Attribute Types</span></a></span><span class="inline-wrap"> 描述可以修饰 cmdlet 类的不同属性。</span></div></div><div id="u34ZaruB2A2P64Z2U8P3Dx" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/alias-attribute-declaration?view=powershell-6"><span>Alias Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何为 cmdlet 参数名称定义别名。</span></div></div><div id="2RwYPvTMN7vqhRc4YZ5X6t" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-attribute-declaration?view=powershell-6"><span>Cmdlet Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何将 .NET Framework 类定义为 cmdlet。</span></div></div><div id="eoQzJzqivP1NaVggrdVr4C" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/credential-attribute-declaration?view=powershell-6"><span>Credential Attribute Declaration</span></a></span><span class="inline-wrap"> 介绍如何添加对将字符串输入转换为</span><span class="inline-wrap"><a href="https://docs.microsoft.com/zh-cn/dotnet/api/System.Management.Automation.PSCredential"><span>system.web</span></a></span><span class="inline-wrap">对象的支持</span></div></div><div id="x2Y1tkXouP6eBbHaCH3RLr" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/outputtype-attribute-declaration?view=powershell-6"><span>OutputType attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何指定 cmdlet 返回的 .NET Framework 类型。</span></div></div><div id="394DmSR6t13KBaA8M3W58b" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/parameter-attribute-declaration?view=powershell-6"><span>Parameter Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何定义 cmdlet 的参数。</span></div></div><div id="asw5Zox1HfHCiwX13UdNAQ" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/validatecount-attribute-declaration?view=powershell-6"><span>ValidateCount Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何定义参数允许的参数数量。</span></div></div><div id="q4LLVUGYu5aF7Ysg6syNmY" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/validatelength-attribute-declaration?view=powershell-6"><span>ValidateLength Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何定义参数参数的长度（以字符为字符）。</span></div></div><div id="dqGGNn3h7eb9PmLjnkRGRG" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/validatepattern-attribute-declaration?view=powershell-6"><span>ValidatePattern Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何定义参数参数的有效模式。</span></div></div><div id="hHCB7WzDotvfgS6Cy55iMq" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/validaterange-attribute-declaration?view=powershell-6"><span>ValidateRange Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何定义参数参数的有效范围。</span></div></div><div id="fMFMrLZbDjCPsXegzG4xHu" class="wolai-block wolai-text"><div><span class="inline-wrap"><a href="https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/validateset-attribute-declaration?view=powershell-6"><span>ValidateSet Attribute Declaration</span></a></span><span class="inline-wrap"> 描述如何定义参数参数的可能值。</span></div></div><h2 id="3z557Y6HepU69URzVRcGb5" class="wolai-block"><span class="inline-wrap">引用</span></h2></article><footer></footer></body></html>

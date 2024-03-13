@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>msiexec - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="msiexec" class="main-title"></div></div></header><article><code-block id="djM1z3b1wsXVuojJMHRck6" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre>msiexec <span class="token operator">/</span>i \\adserver\msi\puppet<span class="token operator">-</span>agent<span class="token operator">-</span><span class="token number">6.8</span><span class="token number">.0</span><span class="token operator">-</span>x64<span class="token punctuation">.</span><span class="token property-access">msi</span> <span class="token operator">/</span>quiet <span class="token operator">/</span>norestart <span class="token operator">/</span>l\<span class="token operator">*</span> desktop<span class="token operator">/</span>log2<span class="token punctuation">.</span><span class="token property-access">log</span> <span class="token constant">PUPPET</span>\_MASTER\_SERVER<span class="token operator">=</span>puppet<span class="token punctuation">.</span><span class="token property-access">monster</span><span class="token punctuation">.</span><span class="token property-access">com</span></pre></div></code-block><h2 id="aF9BAtK6CDM4kki1Ey2XXH" class="wolai-block"><span class="inline-wrap">格式</span></h2><div id="kDz6T2mSDNtMDGFfwCrVfH" class="wolai-block wolai-text"><div><span class="inline-wrap">msiexec /Option </span><span class="inline-wrap">&lt;Required Parameter&gt;</span><span class="inline-wrap"> [Optional Parameter]</span></div></div><h2 id="8GZKpQG2X3zX4JBsAaMjMj" class="wolai-block"><span class="inline-wrap">安装选项</span></h2><div id="3o19QqwJBS2NcaGu6mteTT" class="wolai-block wolai-text"><div><span class="inline-wrap">&lt;/package | /i&gt; &lt;Product.msi&gt;
+安装或配置产品
+/a &lt;Product.msi&gt;
+管理安装 - 在网络上安装产品
+/j&lt;u|m&gt; &lt;Product.msi&gt; [/t </span><span class="inline-wrap">&lt;Transform List&gt;</span><span class="inline-wrap">] [/g </span><span class="inline-wrap">&lt;Language ID&gt;</span><span class="inline-wrap">]
+公布产品 - m 公布到所有用户，u 公布到当前用户
+&lt;/uninstall | /x&gt; &lt;Product.msi | ProductCode&gt;
+卸载产品</span></div></div><h2 id="uxYvL2S1Jg93giQHiqU5n6" class="wolai-block"><span class="inline-wrap">显示选项</span></h2><div id="mYrqQ4UJm69K28Vt8Vho4z" class="wolai-block wolai-text"><div><span class="inline-wrap">/quiet
+安静模式，无用户交互
+/passive
+无人参与模式 - 只显示进度栏
+/q[n|b|r|f]
+设置用户界面级别
+n - 无用户界面
+b - 基本界面
+r - 精简界面
+f - 完整界面(默认值)
+/help
+帮助信息</span></div></div><h2 id="jJu267ByqZgjCnZKWgXvES" class="wolai-block"><span class="inline-wrap">重新启动选项</span></h2><div id="omdQfhMPiYKekQHZ5JwGnY" class="wolai-block wolai-text"><div><span class="inline-wrap">/norestart
+安装完成后不重新启动
+/promptrestart
+必要时提示用户重新启动
+/forcerestart
+安装后始终重新启动计算机</span></div></div><h2 id="oDACerwbnjeGb1Ep9T6sHm" class="wolai-block"><span class="inline-wrap">日志选项</span></h2><div id="v1TEDz14fAJKRxae1Yjx2G" class="wolai-block wolai-text"><div><span class="inline-wrap">/l[i|w|e|a|r|u|c|m|o|p|v|x|+|!|</span><span class="inline-wrap"><i>] </i></span><span class="inline-wrap">&lt;LogFile&gt;</span><span class="inline-wrap"><i>
+i - 状态消息
+w - 非致命警告
+e - 所有错误消息
+a - 操作的启动
+r - 操作特定记录
+u - 用户请求
+c - 初始用户界面参数
+m - 内存不足或致命退出信息
+o - 磁盘空间不足消息
+p - 终端属性
+v - 详细输出
+x - 额外调试信息
++ - 扩展到现有日志文件
+! - 每一行刷新到日志
+* - 记录所有信息，除了 v 和 x 选项
+/log </i></span><span class="inline-wrap">&lt;LogFile&gt;</span><span class="inline-wrap"><i>
+与 /l</i></span><span class="inline-wrap"> </span><span class="inline-wrap">&lt;LogFile&gt;</span><span class="inline-wrap"> 相同</span></div></div><h2 id="8WHkssA7jcgC6Fdp5N3dgR" class="wolai-block"><span class="inline-wrap">更新选项</span></h2><div id="i6WzAoSQ73Hwwbmzxt1im3" class="wolai-block wolai-text"><div><span class="inline-wrap">/update &lt;Update1.msp&gt;[;Update2.msp]
+应用更新
+/uninstall </span><span class="inline-wrap">&lt;PatchCodeGuid&gt;</span><span class="inline-wrap">[;Update2.msp] /package &lt;Product.msi | ProductCode&gt;
+删除产品的更新</span></div></div><h2 id="nGG3GFJsj342YyLSUen8Q5" class="wolai-block"><span class="inline-wrap">修复选项</span></h2><div id="whXKxm63XeTAb1Z6LiLzzp" class="wolai-block wolai-text"><div><span class="inline-wrap">/f[p|e|c|m|s|o|d|a|u|v] &lt;Product.msi | ProductCode&gt;
+修复产品
+p - 仅当文件丢失时
+o - 如果文件丢失或安装了更旧的版本(默认值)
+e - 如果文件丢失或安装了相同或更旧的版本
+d - 如果文件丢失或安装了不同版本
+c - 如果文件丢失或较验和与计算的值不匹配
+a - 强制重新安装所有文件
+u - 所有必要的用户特定注册表项(默认值)
+m - 所有必要的计算机特定注册表项(默认值)
+s - 所有现有的快捷键方式(默认值)
+v - 从源运行并重新缓存本地安装包
+设置公共属性
+[PROPERTY=PropertyValue]</span></div></div></article><footer></footer></body></html>

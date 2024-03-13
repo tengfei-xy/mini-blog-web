@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/wolai.css"/><title>集群-3.1.1-OBD（三节点） - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="集群-3.1.1-OBD（三节点）" class="main-title"></div></div></header><article><h1 id="kgdUT6xbUto66dK5RYqzx9" class="wolai-block"><span class="inline-wrap">OBD<span class="jill"></span>启动集群</span></h1><div id="7CBb5GwUxQ8BoF6bKFBoM9" class="wolai-bookmark wolai-block"><a href="https://github.com/oceanbase/obdeploy">https://github.com/oceanbase/obdeploy</a><div class="info-box"><div class="text-pane"><div data-title="https://github.com/oceanbase/obdeploy"></div><div class="icon-host"></div></div><div class="preview-pane"></div></div></div><div id="j2hLafWcgtL3AuZhcj7NN9" class="wolai-bookmark wolai-block"><a href="https://www.kancloud.cn/pm1028/kubenetes/2295331">https://www.kancloud.cn/pm1028/kubenetes/2295331</a><div class="info-box"><div class="text-pane"><div data-title="https://www.kancloud.cn/pm1028/kubenetes/2295331"></div><div class="icon-host"></div></div><div class="preview-pane"></div></div></div><h1 id="8QK7Ro2XUXN1DuFgE6CqWq" class="wolai-block"><span class="inline-wrap">一、配置信息</span></h1><div id="fjW1MgApJCAWbipFSeVS8L" class="wolai-block wolai-simple-table"><table><thead><tr><th style="width: 185px"><span class="inline-wrap">主机名</span></th><th style="width: 185px"><span class="inline-wrap">IP</span></th><th style="width: 185px"><span class="inline-wrap">规格</span></th><th style="width: 185px"><span class="inline-wrap">活动网卡名</span></th></tr></thead><tbody><tr><td><span class="inline-wrap">ob1</span></td><td><span class="inline-wrap">192.168.3.71</span></td><td><span class="inline-wrap">8C25G</span></td><td><span class="inline-wrap">eth0</span></td></tr><tr><td><span class="inline-wrap">ob2</span></td><td><span class="inline-wrap">192.168.3.72</span></td><td><span class="inline-wrap">6C25G</span></td><td><span class="inline-wrap">eth0</span></td></tr><tr><td><span class="inline-wrap">ob3</span></td><td><span class="inline-wrap">192.168.3.73</span></td><td><span class="inline-wrap">6C25G</span></td><td><span class="inline-wrap">eth0</span></td></tr></tbody></table></div><h1 id="hMDjkxzVk974X6DP2xniw9" class="wolai-block"><span class="inline-wrap">二、各节点 系统配置</span></h1><ol class="wolai-block"><li id="ra6H9abJB74Jucc9WcqNz4"><div class="marker"></div><span class="inline-wrap">各个节点修改主机名</span><code-block id="fSdKA1ZNi5xPpevPY2Pvzj" class="wolai-block"><div class="wolai-pre"><div data-lang="Shell" class="marker"></div><pre><span class="token function">hostname</span> ob1
+hostnamectl set-hostname ob1</pre></div></code-block></li><li id="h58F2yh69Z63GHWnWp5Wxc"><div class="marker"></div><span class="inline-wrap">关闭防火墙、SELINUX</span><code-block id="tBfdxRiR2sKGnXWZdqU45B" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>systemctl stop firewalld <span class="token operator">&amp;&amp;</span> systemctl disable firewalld
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">'s/SELINUX=enforcing/SELINUX=disabled/g'</span> /etc/selinux/config <span class="token operator">&amp;&amp;</span>  setenforce <span class="token number">0</span></pre></div></code-block></li><li id="rJqz6J4qJrzRjVY5gsT5uH"><div class="marker"></div><span class="inline-wrap">yum<span class="jill"></span>配置</span><ul class="wolai-block"><li id="9uiTryB8TN7oGpA9vVKkYc"><div class="marker"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path></svg></div><span class="inline-wrap">直接安装</span><code-block id="uh7F8SzpZq2LwxM4eYe9yB" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>yum <span class="token function">install</span> <span class="token parameter variable">-y</span> ntp net-tools telnet <span class="token function">expect</span> gcc gcc-c++ <span class="token function">lsof</span> mariadb</pre></div></code-block></li><li id="1JPz76CcxfHFPR6rJMA3Vy"><div class="marker"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path></svg></div><span class="inline-wrap">oceanbase<span class="jill"></span>源添加（仅仅部署<span class="jill"></span>OBD<span class="jill"></span>的服务器执行即可）</span><code-block id="5SmdXvJY6i8S9o5WGjTmrG" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>yum-config-manager --add-repo https://mirrors.aliyun.com/oceanbase/OceanBase.repo</pre></div></code-block></li></ul></li><li id="eLMc7TgFXa5C7dJJtx3dnk"><div class="marker"></div><span class="inline-wrap">设置<span class="jill"></span>limits.conf</span><code-block id="o3g2Eh4Fy672PKTgio3NHe" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">cat</span> <span class="token operator">>></span> /etc/security/limits.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+* soft nofile 655350
+* hard nofile 655350
+* soft stack 20480
+* hard stack 20480
+* soft nproc 655360
+* hard nproc 655360
+* soft core unlimited
+* hard core unlimited
+EOF</span></pre></div></code-block></li><li id="5Ln8hSo9Sj7vDfkm9JUrva"><div class="marker"></div><span class="inline-wrap">设置内核参数</span><code-block id="m1PGwpj9S4uZazFBFV3SRQ" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">cat</span> <span class="token operator">>></span> /etc/sysctl.conf <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+fs.aio-max-nr = 1048576
+net.core.somaxconn = 2048
+net.core.netdev_max_backlog = 10000
+net.core.rmem_default = 16777216
+net.core.wmem_default = 16777216
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+
+net.ipv4.ip_local_port_range = 3500 65535
+net.ipv4.ip_forward = 0
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.default.accept_source_route = 0
+net.ipv4.tcp_syncookies = 0
+net.ipv4.tcp_rmem = 4096 87380 16777216
+net.ipv4.tcp_wmem = 4096 65536 16777216
+net.ipv4.tcp_max_syn_backlog = 16384
+net.ipv4.tcp_fin_timeout = 15
+net.ipv4.tcp_max_syn_backlog = 16384
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_slow_start_after_idle=0
+
+vm.swappiness = 0
+kernel.core_pattern = /data/1/core-%e-%p-%t
+vm.min_free_kbytes = 2097152
+vm.max_map_count=655360
+EOF</span>
+<span class="token function">sysctl</span> <span class="token parameter variable">-p</span></pre></div></code-block></li><li id="3JYT74VKf9434JZz2jZLmC"><div class="marker"></div><span class="inline-wrap">时间同步</span><span class="inline-wrap">
+</span><span class="inline-wrap">节点一执行</span><code-block id="mWDPH8pN3TG64uAh3XYEN6" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">cat</span> <span class="token operator">></span> /etc/ntp.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+driftfile /var/lib/ntp/drift
+server 127.127.1.0 
+#Fudge 127.127.1.0 stratum 10
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
+EOF</span></pre></div></code-block><div id="9XqdVNx1f7nTNDpVqH3LM8" class="wolai-block wolai-text"><div><span class="inline-wrap">其他节点执行</span></div></div><code-block id="w7znogoh3LYchjzCNfeTjF" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">cat</span> <span class="token operator">></span> /etc/ntp.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF
+driftfile /var/lib/ntp/drift
+restrict 127.0.0.1 
+restrict ::1
+server 192.168.3.71
+Fudge 192.168.3.71 stratum 10
+includefile /etc/ntp/crypto/pw
+keys /etc/ntp/keys
+disable monitor
+EOF</span>
+systemctl restart ntpd</pre></div></code-block><div id="7w29dn5TcYbNSc6ueQWykM" class="wolai-block wolai-text"><div><span class="inline-wrap">在每个节点开机自启<span class="jill"></span>ntp<span class="jill"></span>服务</span></div></div><code-block id="16fNsJQx76Rjmp4Fhx4ZNh" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre>systemctl enable ntpd</pre></div></code-block><div id="exLGbPDhxj78NDze2if25s" class="wolai-block wolai-text"><div><span class="inline-wrap">单个各个节点的<span class="jill"></span>offest<span class="jill"></span>小于<span class="jill"></span>30<span class="jill"></span>时，可以避免部署集群因超时而报错</span></div></div><code-block id="vPAAcVU5vwXu3LBTcW9ptx" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre><span class="token punctuation">[</span>root@ob2 <span class="token operator">~</span><span class="token punctuation">]</span># ntpq <span class="token operator">-</span>p
+     remote           refid      st t when poll reach   delay   offset  jitter
+<span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span><span class="token operator">===</span>
+ <span class="token number">192.168</span><span class="token number">.3</span><span class="token number">.71</span>    <span class="token constant">LOCAL</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>         <span class="token number">6</span> u   <span class="token number">24</span>   <span class="token number">64</span>    <span class="token number">1</span>    <span class="token number">0.305</span>   <span class="token operator">-</span><span class="token number">0.006</span>   <span class="token number">0.000</span>
+</pre></div></code-block></li><li id="8F2TfN2UQUWcJvAWNGP8RR"><div class="marker"></div><span class="inline-wrap">root<span class="jill"></span>互信</span><code-block id="pr4sX7jLSTGrU4FT2CBRFQ" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>ssh-keygen
+ssh-copy-id root@192.168.3.71
+ssh-copy-id root@192.168.3.72
+ssh-copy-id root@192.168.3.73</pre></div></code-block></li></ol><h3 id="cUdQ43bosASGtHXx4U68xw" class="wolai-block"><span class="inline-wrap">三、OBD<span class="jill"></span>部署集群</span></h3><ol class="wolai-block"><li id="aHT3qkoGhnsQKx4gZLas2x"><div class="marker"></div><span class="inline-wrap">安装<span class="jill"></span>ODB</span><ul class="wolai-block"><li id="kEy6LxksDteqKZptb1f6Zs"><div class="marker"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path></svg></div><span class="inline-wrap">本地方式</span><code-block id="dXLwQZ43eey92xfTp4KeVQ" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token function">rpm</span> <span class="token parameter variable">-ivh</span> ob-deploy-1.1.2-1.el7.x86_64.rpm</pre></div></code-block></li><li id="1ZexrPnmU53mXe4XXMp5Ps"><div class="marker"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 14.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"></path></svg></div><span class="inline-wrap">yum<span class="jill"></span>方式</span><code-block id="hZF89qrzntArknZ8raMTPF" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre>yum install <span class="token operator">-</span>y ob<span class="token operator">-</span>deploy</pre></div></code-block></li></ul></li><li id="p74kYk2VjCytEpmvpJ2ytw"><div class="marker"></div><span class="inline-wrap">ob-mini.yaml：三节点小规格的</span><span class="inline-wrap"><a href="https://github.com/oceanbase/obdeploy/blob/master/example/mini-distributed-example.yaml"><span>部署配置文件</span></a></span><span class="inline-wrap">
+</span><span class="inline-wrap">注：下列配置文件包含<span class="jill"></span>obproxy，可以删除</span><code-block id="66PhsjJFaS8J1B4HzooMzG" class="wolai-block"><div class="wolai-pre"><div data-lang="Yaml" class="marker"></div><pre><span class="token comment">## Only need to configure when remote login is required</span>
+<span class="token comment"># user:</span>
+<span class="token comment">#   username: your username</span>
+<span class="token comment">#   password: your password if need</span>
+<span class="token comment">#   key_file: your ssh-key file path if need</span>
+<span class="token comment">#   port: your ssh port, default 22</span>
+<span class="token comment">#   timeout: ssh connection timeout (second), default 30</span>
+<span class="token key atrule">oceanbase-ce</span><span class="token punctuation">:</span>
+  <span class="token key atrule">servers</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> server1
+      <span class="token comment"># Please don't use hostname, only IP can be supported</span>
+      <span class="token key atrule">ip</span><span class="token punctuation">:</span> 192.168.3.71
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> server2
+      <span class="token key atrule">ip</span><span class="token punctuation">:</span> 192.168.3.72
+    <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> server3
+      <span class="token key atrule">ip</span><span class="token punctuation">:</span> 192.168.3.73
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token comment"># Please set devname as the network adaptor's name whose ip is  in the setting of severs.</span>
+    <span class="token comment"># if set severs as "127.0.0.1", please set devname as "lo"</span>
+    <span class="token comment"># if current ip is 192.168.1.10, and the ip's network adaptor's name is "eth0", please use "eth0"</span>
+    <span class="token key atrule">devname</span><span class="token punctuation">:</span> eth0
+    <span class="token key atrule">cluster_id</span><span class="token punctuation">:</span> <span class="token number">1</span>
+    <span class="token comment"># please set memory limit to a suitable value which is matching resource. </span>
+    <span class="token key atrule">memory_limit</span><span class="token punctuation">:</span> 20G <span class="token comment"># The maximum running memory for an observer</span>
+    <span class="token key atrule">system_memory</span><span class="token punctuation">:</span> 4G <span class="token comment"># The reserved system memory. system_memory is reserved for general tenants. The default value is 30G.</span>
+    <span class="token key atrule">stack_size</span><span class="token punctuation">:</span> 512K
+    <span class="token key atrule">cpu_count</span><span class="token punctuation">:</span> <span class="token number">16</span>
+    <span class="token key atrule">cache_wash_threshold</span><span class="token punctuation">:</span> 1G
+    <span class="token key atrule">__min_full_resource_pool_memory</span><span class="token punctuation">:</span> <span class="token number">268435456</span>
+    <span class="token key atrule">workers_per_cpu_quota</span><span class="token punctuation">:</span> <span class="token number">6</span>
+    <span class="token key atrule">schema_history_expire_time</span><span class="token punctuation">:</span> 1d
+    <span class="token comment"># The value of net_thread_count had better be same as cpu's core number. </span>
+    <span class="token key atrule">net_thread_count</span><span class="token punctuation">:</span> <span class="token number">4</span>
+    <span class="token key atrule">major_freeze_duty_time</span><span class="token punctuation">:</span> Disable
+    <span class="token key atrule">minor_freeze_times</span><span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token key atrule">enable_separate_sys_clog</span><span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token key atrule">enable_merge_by_turn</span><span class="token punctuation">:</span> <span class="token boolean important">FALSE</span>
+    <span class="token key atrule">datafile_disk_percentage</span><span class="token punctuation">:</span> <span class="token number">20</span> <span class="token comment"># The percentage of the data_dir space to the total disk space. This value takes effect only when datafile_size is 0. The default value is 90.</span>
+    <span class="token key atrule">syslog_level</span><span class="token punctuation">:</span> INFO <span class="token comment"># System log level. The default value is INFO.</span>
+    <span class="token key atrule">enable_syslog_wf</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># Print system logs whose levels are higher than WARNING to a separate log file. The default value is true.</span>
+    <span class="token key atrule">enable_syslog_recycle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> <span class="token comment"># Enable auto system log recycling or not. The default value is false.</span>
+    <span class="token key atrule">max_syslog_file_count</span><span class="token punctuation">:</span> <span class="token number">4</span> <span class="token comment"># The maximum number of reserved log files before enabling auto recycling. The default value is 0.</span>
+    <span class="token key atrule">root_password</span><span class="token punctuation">:</span> bb123456 <span class="token comment"># root user password, can be empty</span>
+  <span class="token key atrule">server1</span><span class="token punctuation">:</span>
+    <span class="token key atrule">mysql_port</span><span class="token punctuation">:</span> <span class="token number">2881</span> <span class="token comment"># External port for OceanBase Database. The default value is 2881. DO NOT change this value after the cluster is started.</span>
+    <span class="token key atrule">rpc_port</span><span class="token punctuation">:</span> <span class="token number">2882</span> <span class="token comment"># Internal port for OceanBase Database. The default value is 2882. DO NOT change this value after the cluster is started.</span>
+    <span class="token comment">#  The working directory for OceanBase Database. OceanBase Database is started under this directory. This is a required field.</span>
+    <span class="token key atrule">home_path</span><span class="token punctuation">:</span> /root/observer
+    <span class="token comment"># The directory for data storage. The default value is $home_path/store.</span>
+    <span class="token comment"># data_dir: /data</span>
+    <span class="token comment"># The directory for clog, ilog, and slog. The default value is the same as the data_dir value.</span>
+    <span class="token comment"># redo_dir: /redo</span>
+    <span class="token key atrule">zone</span><span class="token punctuation">:</span> zone1
+  <span class="token key atrule">server2</span><span class="token punctuation">:</span>
+    <span class="token key atrule">mysql_port</span><span class="token punctuation">:</span> <span class="token number">2881</span> <span class="token comment"># External port for OceanBase Database. The default value is 2881. DO NOT change this value after the cluster is started.</span>
+    <span class="token key atrule">rpc_port</span><span class="token punctuation">:</span> <span class="token number">2882</span> <span class="token comment"># Internal port for OceanBase Database. The default value is 2882. DO NOT change this value after the cluster is started.</span>
+    <span class="token comment">#  The working directory for OceanBase Database. OceanBase Database is started under this directory. This is a required field.</span>
+    <span class="token key atrule">home_path</span><span class="token punctuation">:</span> /root/observer
+    <span class="token comment"># The directory for data storage. The default value is $home_path/store.</span>
+    <span class="token comment"># data_dir: /data</span>
+    <span class="token comment"># The directory for clog, ilog, and slog. The default value is the same as the data_dir value.</span>
+    <span class="token comment"># redo_dir: /redo</span>
+    <span class="token key atrule">zone</span><span class="token punctuation">:</span> zone2
+  <span class="token key atrule">server3</span><span class="token punctuation">:</span>
+    <span class="token key atrule">mysql_port</span><span class="token punctuation">:</span> <span class="token number">2881</span> <span class="token comment"># External port for OceanBase Database. The default value is 2881. DO NOT change this value after the cluster is started.</span>
+    <span class="token key atrule">rpc_port</span><span class="token punctuation">:</span> <span class="token number">2882</span> <span class="token comment"># Internal port for OceanBase Database. The default value is 2882. DO NOT change this value after the cluster is started.</span>
+    <span class="token comment">#  The working directory for OceanBase Database. OceanBase Database is started under this directory. This is a required field.</span>
+    <span class="token key atrule">home_path</span><span class="token punctuation">:</span> /root/observer
+    <span class="token comment"># The directory for data storage. The default value is $home_path/store.</span>
+    <span class="token comment"># data_dir: /data</span>
+    <span class="token comment"># The directory for clog, ilog, and slog. The default value is the same as the data_dir value.</span>
+    <span class="token comment"># redo_dir: /redo</span>
+    <span class="token key atrule">zone</span><span class="token punctuation">:</span> zone3
+    
+    
+    
+    
+<span class="token key atrule">obproxy</span><span class="token punctuation">:</span>
+  <span class="token comment"># Set dependent components for the component.</span>
+  <span class="token comment"># When the associated configurations are not done, OBD will automatically get the these configurations from the dependent components.</span>
+  <span class="token key atrule">depends</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> oceanbase<span class="token punctuation">-</span>ce
+  <span class="token key atrule">servers</span><span class="token punctuation">:</span>
+    <span class="token punctuation">-</span> 192.168.3.71
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">listen_port</span><span class="token punctuation">:</span> <span class="token number">2883</span> <span class="token comment"># External port. The default value is 2883.</span>
+    <span class="token key atrule">prometheus_listen_port</span><span class="token punctuation">:</span> <span class="token number">2884</span> <span class="token comment"># The Prometheus port. The default value is 2884.</span>
+    <span class="token key atrule">home_path</span><span class="token punctuation">:</span> /root/obproxy
+    <span class="token comment"># oceanbase root server list</span>
+    <span class="token comment"># format: ip:mysql_port;ip:mysql_port. When a depends exists, OBD gets this value from the oceanbase-ce of the depends.</span>
+    <span class="token key atrule">rs_list</span><span class="token punctuation">:</span> 192.168.3.71<span class="token punctuation">:</span>2881;192.168.3.72<span class="token punctuation">:</span>2881;192.168.3.73<span class="token punctuation">:</span><span class="token number">2881</span>
+    <span class="token key atrule">enable_cluster_checkout</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token comment"># observer cluster name, consistent with oceanbase-ce's appname. When a depends exists, OBD gets this value from the oceanbase-ce of the depends.</span>
+    <span class="token key atrule">cluster_name</span><span class="token punctuation">:</span> obcluster
+    <span class="token key atrule">skip_proxy_sys_private_check</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">obproxy_sys_password</span><span class="token punctuation">:</span> bb123456 <span class="token comment"># obproxy sys user password, can be empty. When a depends exists, OBD gets this value from the oceanbase-ce of the depends.</span>
+    <span class="token key atrule">observer_sys_password</span><span class="token punctuation">:</span> bb123456 <span class="token comment"># proxyro user pasword, consistent with oceanbase-ce's proxyro_password, can be empty. When a depends exists, OBD gets this value from the oceanbase-ce of the depends.</span></pre></div></code-block></li><li id="1peftwpSdzwCwGUQZZ9ug1"><div class="marker"></div><span class="inline-wrap">部署集群</span><code-block id="2dRnvDjLBBzxg5wAxoiHm9" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token punctuation">[</span>root@ob1 ~<span class="token punctuation">]</span><span class="token comment"># obd cluster deploy lo -c ./ob-mini.yaml</span>
+Package obproxy-3.2.0 is available.
+<span class="token function">install</span> obproxy-3.2.0 <span class="token keyword">for</span> <span class="token builtin class-name">local</span> ok
++-----------------------------------------------------------------------------+
+<span class="token operator">|</span>                                   Packages                                  <span class="token operator">|</span>
++--------------+---------+---------+------------------------------------------+
+<span class="token operator">|</span> Repository   <span class="token operator">|</span> Version <span class="token operator">|</span> Release <span class="token operator">|</span> Md5                                      <span class="token operator">|</span>
++--------------+---------+---------+------------------------------------------+
+<span class="token operator">|</span> oceanbase-ce <span class="token operator">|</span> <span class="token number">3.1</span>.1   <span class="token operator">|</span> <span class="token number">4</span>.el7   <span class="token operator">|</span> f19f8bfb67723712175fb0dfd60579196b3168f1 <span class="token operator">|</span>
+<span class="token operator">|</span> obproxy      <span class="token operator">|</span> <span class="token number">3.2</span>.0   <span class="token operator">|</span> <span class="token number">1</span>.el7   <span class="token operator">|</span> 8d5c6978f988935dc3da1dbec208914668dcf3b2 <span class="token operator">|</span>
++--------------+---------+---------+------------------------------------------+
+Repository integrity check ok
+Parameter check ok
+Open <span class="token function">ssh</span> connection ok
+Remote oceanbase-ce-3.1.1-f19f8bfb67723712175fb0dfd60579196b3168f1 repository <span class="token function">install</span> ok
+Remote oceanbase-ce-3.1.1-f19f8bfb67723712175fb0dfd60579196b3168f1 repository lib check ok
+Remote obproxy-3.2.0-8d5c6978f988935dc3da1dbec208914668dcf3b2 repository <span class="token function">install</span> ok
+Remote obproxy-3.2.0-8d5c6978f988935dc3da1dbec208914668dcf3b2 repository lib check ok
+Cluster status check ok
+Initializes observer work home ok
+Initializes obproxy work home ok
+lo deployed</pre></div></code-block></li><li id="hZjQvQY3ku44UguJQHi7ao"><div class="marker"></div><span class="inline-wrap">查看集群</span><code-block id="7n7kovYgMFPG55j4hDUpmK" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token comment"># 参看obd管理的集群列表</span>
+<span class="token punctuation">[</span>root@ob1 ~<span class="token punctuation">]</span><span class="token comment"># obd cluster list</span>
++------------------------------------------------+
+<span class="token operator">|</span>                  Cluster List                  <span class="token operator">|</span>
++------+-----------------------+-----------------+
+<span class="token operator">|</span> Name <span class="token operator">|</span> Configuration Path    <span class="token operator">|</span> Status <span class="token punctuation">(</span>Cached<span class="token punctuation">)</span> <span class="token operator">|</span>
++------+-----------------------+-----------------+
+<span class="token operator">|</span> lo   <span class="token operator">|</span> /root/.obd/cluster/lo <span class="token operator">|</span> deployed        <span class="token operator">|</span>
++------+-----------------------+-----------------+
+
+<span class="token comment"># 查看 lo 集群状态</span>
+<span class="token punctuation">[</span>root@ob1 ~<span class="token punctuation">]</span><span class="token comment"># obd cluster display lo</span>
+Deploy <span class="token string">"lo"</span> is deployed
+</pre></div></code-block></li><li id="3pjhyc2fRmrshcuefLRvQV"><div class="marker"></div><span class="inline-wrap">启动集群</span><code-block id="dg6cwcqh7GCvjfTpamgBXP" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre><span class="token punctuation">[</span>root@ob1 ~<span class="token punctuation">]</span><span class="token comment"># obd cluster start lo</span>
+Get <span class="token builtin class-name">local</span> repositories and plugins ok
+Open <span class="token function">ssh</span> connection ok
+Cluster param config check ok
+Check before start observer ok
+<span class="token punctuation">[</span>WARN<span class="token punctuation">]</span> <span class="token punctuation">(</span><span class="token number">192.168</span>.3.71<span class="token punctuation">)</span> clog and data use the same disk <span class="token punctuation">(</span>/<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>WARN<span class="token punctuation">]</span> <span class="token punctuation">(</span><span class="token number">192.168</span>.3.72<span class="token punctuation">)</span> clog and data use the same disk <span class="token punctuation">(</span>/<span class="token punctuation">)</span>
+<span class="token punctuation">[</span>WARN<span class="token punctuation">]</span> <span class="token punctuation">(</span><span class="token number">192.168</span>.3.73<span class="token punctuation">)</span> clog and data use the same disk <span class="token punctuation">(</span>/<span class="token punctuation">)</span>
+
+Check before start obproxy ok
+Start observer ok
+observer program health check ok
+Connect to observer ok
+Initialize cluster
+Cluster bootstrap ok
+Wait <span class="token keyword">for</span> observer init ok
++--------------------------------------------------+
+<span class="token operator">|</span>                     observer                     <span class="token operator">|</span>
++--------------+---------+------+-------+----------+
+<span class="token operator">|</span> <span class="token function">ip</span>           <span class="token operator">|</span> version <span class="token operator">|</span> port <span class="token operator">|</span> zone  <span class="token operator">|</span> status   <span class="token operator">|</span>
++--------------+---------+------+-------+----------+
+<span class="token operator">|</span> <span class="token number">192.168</span>.3.71 <span class="token operator">|</span> <span class="token number">3.1</span>.1   <span class="token operator">|</span> <span class="token number">2881</span> <span class="token operator">|</span> zone1 <span class="token operator">|</span> inactive <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">192.168</span>.3.72 <span class="token operator">|</span> <span class="token number">3.1</span>.1   <span class="token operator">|</span> <span class="token number">2881</span> <span class="token operator">|</span> zone2 <span class="token operator">|</span> active   <span class="token operator">|</span>
+<span class="token operator">|</span> <span class="token number">192.168</span>.3.73 <span class="token operator">|</span> <span class="token number">3.1</span>.1   <span class="token operator">|</span> <span class="token number">2881</span> <span class="token operator">|</span> zone3 <span class="token operator">|</span> active   <span class="token operator">|</span>
++--------------+---------+------+-------+----------+
+
+Start obproxy ok
+obproxy program health check ok
+Connect to obproxy ok
+Initialize cluster
++------------------------------------------------+
+<span class="token operator">|</span>                    obproxy                     <span class="token operator">|</span>
++--------------+------+-----------------+--------+
+<span class="token operator">|</span> <span class="token function">ip</span>           <span class="token operator">|</span> port <span class="token operator">|</span> prometheus_port <span class="token operator">|</span> status <span class="token operator">|</span>
++--------------+------+-----------------+--------+
+<span class="token operator">|</span> <span class="token number">192.168</span>.3.71 <span class="token operator">|</span> <span class="token number">2883</span> <span class="token operator">|</span> <span class="token number">2884</span>            <span class="token operator">|</span> active <span class="token operator">|</span>
++--------------+------+-----------------+--------+
+lo running</pre></div></code-block><blockquote id="pcE2rxsLtxsVP8s2seyeoH" class="wolai-block"><span class="inline-wrap">如果 </span><span class="inline-wrap"><code>start</code></span><span class="inline-wrap"> 命令执行失败，可以销毁集群</span></blockquote><code-block id="2Zv3XxxjUpz4ggq5Y3E6mE" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre>obd cluster stop lo
+obd cluster destroy lo</pre></div></code-block></li></ol><h3 id="71enJ6339NrybnAmaPTkx9" class="wolai-block"><span class="inline-wrap">补充</span></h3><div id="5HhHsYL53PyU4WqBesRUbM" class="wolai-block wolai-text"><div><span class="inline-wrap">连接到单节点</span></div></div><code-block id="7fw3WGvQdhpYgNCpqQteoH" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre>obclient <span class="token operator">-</span>h192<span class="token punctuation">.</span><span class="token number">168.3</span><span class="token number">.71</span> <span class="token operator">-</span>uroot@sys <span class="token operator">-</span><span class="token constant">P2881</span> <span class="token operator">-</span><span class="token constant">A</span></pre></div></code-block><div id="ojedYK6tC7SKsm9AJ52SDG" class="wolai-block wolai-text"><div><span class="inline-wrap">连接到集群</span></div></div><code-block id="bLdfu747EEVycCsGnLYDfu" class="wolai-block"><div class="wolai-pre"><div data-lang="Bash" class="marker"></div><pre>obclient <span class="token parameter variable">-h192.168.3.71</span> -uroot@sys<span class="token comment">#obcluster -P2883 -A -pbb123456</span></pre></div></code-block></article><footer></footer></body></html>

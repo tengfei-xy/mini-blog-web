@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../../css/wolai.css"/><title>PCTA题目 - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="PCTA题目" class="main-title"></div></div></header><article><h1 id="aiDQK8hjGRuNR8NeWgD5pP" class="wolai-block"><span class="inline-wrap">单选</span></h1><blockquote id="hMmrTw3K5QXnzEwyF6FrJQ" class="wolai-block"><span class="inline-wrap">下面哪个配置是使用<span class="jill"></span>DM<span class="jill"></span>进行分表分库合并操作所必须的</span><span class="inline-wrap">
+</span><span class="inline-wrap">A.全量开启复制</span><span class="inline-wrap">
+</span><span class="inline-wrap">B.Binlog event filter</span><span class="inline-wrap">
+</span><span class="inline-wrap">C.Block &amp; Allow Lites</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D.Table routing</b></span></blockquote><blockquote id="9VEK96VRshR8uxpUKV3AS9" class="wolai-block"><span class="inline-wrap">下面那个操作能够检查<span class="jill"></span>DM<span class="jill"></span>源库（上游）是否符合配置要求</span><span class="inline-wrap">
+</span><span class="inline-wrap">A.Tiup dmctl --master-addr 172.16.10.71:8261 query-status test</span><span class="inline-wrap">
+</span><span class="inline-wrap">B.Tiup dmctl --master-addr 172.16.10.71:8261 start-task test</span><span class="inline-wrap">
+</span><span class="inline-wrap">C.Tiup dmctl --master-addr 172.16.10.71:8261 resume-task test</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D.Tiup dmctl --master-addr 172.16.10.71:8261 operate-source</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">E.以上都不对</span></blockquote><blockquote id="uf3dUtypirEhTu4dTzgmQ1" class="wolai-block"><span class="inline-wrap">对于<span class="jill"></span>TiDB Binlog<span class="jill"></span>的各个组件，描述正确的为？</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>A.Drainner<span class="jill"></span>支持向<span class="jill"></span>TiDB，MySQL，Kafka<span class="jill"></span>或者本地存储同步</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">B.Pump<span class="jill"></span>组件只接受<span class="jill"></span>Binlog，但是不会存储，直接传递到<span class="jill"></span>Drainer<span class="jill"></span>节点</span><span class="inline-wrap">
+</span><span class="inline-wrap">C.Pump<span class="jill"></span>组件中存储的<span class="jill"></span>Binlog<span class="jill"></span>是无序的</span><span class="inline-wrap">
+</span><span class="inline-wrap">D.Pump<span class="jill"></span>支持<span class="jill"></span>TiDB<span class="jill"></span>的<span class="jill"></span>MySQL<span class="jill"></span>两种<span class="jill"></span>Binlog<span class="jill"></span>格式</span></blockquote><blockquote id="9ePTs7eurctadp15HLcotU" class="wolai-block"><span class="inline-wrap">下面那种备份只能按照热备份进行</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、SQL<span class="jill"></span>语句备份</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、操作系统拷贝</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、系统快照</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、复制</b></span></blockquote><blockquote id="fygyBiNUbo3po6j4V9Ejnr" class="wolai-block"><span class="inline-wrap">根据下面条件，当你选择备份策略恢复时，下列最合适的选项为？ - 但宕机时间为零 - 数据量较大（大于<span class="jill"></span>1TB）</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、复制</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、snapshots（快照）</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>C、BR<span class="jill"></span>备份工具</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">D、Mydumper<span class="jill"></span>或者<span class="jill"></span>dumpling<span class="jill"></span>备份工具</span></blockquote><blockquote id="ehw7Gt3VRhqydDt4mXZqiV" class="wolai-block"><span class="inline-wrap">下列正确描述备份恢复工具<span class="jill"></span>BR<span class="jill"></span>原理的是</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、各个节点的备份无法做到一致，需要应用日志，将备份集恢复到一致的时间点</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、BR<span class="jill"></span>工具需要连接到<span class="jill"></span>TiDB<span class="jill"></span>节点，之后直接对<span class="jill"></span>TiKV<span class="jill"></span>节点的<span class="jill"></span>SST<span class="jill"></span>文件备份</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、当<span class="jill"></span>TiKV<span class="jill"></span>的<span class="jill"></span>leader<span class="jill"></span>节点繁忙时，会自动从其他副本进行读取</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、BR<span class="jill"></span>工具会直接连接到<span class="jill"></span>TiKV<span class="jill"></span>节点进行<span class="jill"></span>SST<span class="jill"></span>文件备份</b></span></blockquote><blockquote id="3Q7KzVDt37vdtiH7K3nHh5" class="wolai-block"><span class="inline-wrap">使用<span class="jill"></span>TiUP<span class="jill"></span>工具部署<span class="jill"></span>TIDB<span class="jill"></span>数据库，下面哪个要求不是必须的？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、如果没有配置节点互信，需要手动指定用户名和密码</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、在<span class="jill"></span>deploy<span class="jill"></span>命令中，需要指定数据库版本号</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、需要指定初始化集群拓扑文件</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、TiDb，TiKV<span class="jill"></span>和<span class="jill"></span>PD<span class="jill"></span>节点最少各为<span class="jill"></span>3<span class="jill"></span>个</b></span></blockquote><blockquote id="waMFdoupqxRyg9mxPpoqLj" class="wolai-block"><span class="inline-wrap">使用命令<span class="jill"></span>Tiup cluster stop ${cluster-name}<span class="jill"></span>来停止<span class="jill"></span>TiDB Cluster<span class="jill"></span>时，各种节点停止顺序为</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、PD-&gt;TIKV-&gt;TiDB-&gt;TIFlash</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>B、TiFlash-&gt;TiDB-TiKV-&gt;PD</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">C、TiKV-&gt;TiFlash-&gt;TiDB-&gt;PD</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、以上都不对</span></blockquote><blockquote id="fQn1qnH8UeriWofHSDWc2D" class="wolai-block"><span class="inline-wrap">下列<span class="jill"></span>MySQL<span class="jill"></span>语法<span class="jill"></span>TiDB<span class="jill"></span>数据库支持的为？</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>A、show grants for</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">B、触发器相关语法</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、函数相关语法</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、show slave status</span></blockquote><blockquote id="nTrpPcvpXc3Rz3qixKV8V9" class="wolai-block"><span class="inline-wrap">下面特性是分布式计算引擎的是</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、支持<span class="jill"></span>MVCC</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、分布式事务<span class="jill"></span>ID<span class="jill"></span>的分配，提供全局唯一序列</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>C、负责执行计划的选择</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">D、负责<span class="jill"></span>Region<span class="jill"></span>的再平衡调度</span></blockquote><blockquote id="7XCh4bVtpt5tAWRGimTdSN" class="wolai-block"><span class="inline-wrap">下面那个是关于<span class="jill"></span>TiDB<span class="jill"></span>的<span class="jill"></span>Region<span class="jill"></span>的正确描述</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、当<span class="jill"></span>Region<span class="jill"></span>的大小低于一定限制的时候，Region<span class="jill"></span>的数据会分散到其他<span class="jill"></span>Region<span class="jill"></span>上</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、当<span class="jill"></span>Region<span class="jill"></span>的大小超过一定限制时候（默认<span class="jill"></span>144MB），多出限制的数据库会分散到其他较小的<span class="jill"></span>Region<span class="jill"></span>上</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、当新加入<span class="jill"></span>TiKV<span class="jill"></span>节点后，是由于<span class="jill"></span>TiDBServer<span class="jill"></span>来调度数据平衡</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、Region<span class="jill"></span>中的<span class="jill"></span>leader<span class="jill"></span>提供了读写服务</b></span></blockquote><blockquote id="dnBmSCZAk9FURu1spvFXJy" class="wolai-block"><span class="inline-wrap">TIDB-Server<span class="jill"></span>实现的功能有</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、TIDB<span class="jill"></span>数据库的全局授时</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、负责<span class="jill"></span>TiKV<span class="jill"></span>节点数据的平衡</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、进行基于成本的优化</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、包含协作处理器进行计算与预处理</b></span></blockquote><blockquote id="8CVbjZuPBPSKLXK7tzfnwn" class="wolai-block"><span class="inline-wrap">下面哪项正确描述了<span class="jill"></span>TiDB<span class="jill"></span>的下推计算</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>A、TiDB<span class="jill"></span>的下推计算由<span class="jill"></span>TiDB<span class="jill"></span>的<span class="jill"></span>Coprocessor<span class="jill"></span>组件完成</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">B、下推计算是将数据放到<span class="jill"></span>TiDBServer<span class="jill"></span>中完成</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、下推计算机会降低<span class="jill"></span>IO<span class="jill"></span>带宽需求，对于网络带宽不会降低</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、不需要在<span class="jill"></span>SQL<span class="jill"></span>中有任何显式声明会自动评估使用下推计算</span></blockquote><blockquote id="77B9PTE8MW6w7ZZEdbNip3" class="wolai-block"><span class="inline-wrap">在<span class="jill"></span>OLAP<span class="jill"></span>场景中，TiDB-Server<span class="jill"></span>会有的问题是什么？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、无法做到多表<span class="jill"></span>join</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、并发支持较差</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、无法使用非结构化数据</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、对于大量中间结果的情况，内存消耗较大</b></span></blockquote><blockquote id="abbFQxtx5oN7RHaTa5EVRj" class="wolai-block"><span class="inline-wrap">下面那种数据库结果支持了列式存储引擎<span class="jill"></span>TiFlash<span class="jill"></span>的准实时更新？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、B+ tree</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>B、LSM tree</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">C、Delta tree</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、Binary tree</span></blockquote><blockquote id="qc5G9NC1XCWgYzaJmEad9e" class="wolai-block"><span class="inline-wrap">下面哪些特点不属于<span class="jill"></span>TiSpark<span class="jill"></span>节点</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、对于重量级别的报表和<span class="jill"></span>Adhoc<span class="jill"></span>操作非常有效</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、需要在列存储上完成</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>C、支持重量级查询，但是高并发无法支持</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">D、目前可以读取<span class="jill"></span>TiKV<span class="jill"></span>上的数据</span></blockquote><blockquote id="pwUJ1uM3xLeuSwitgpoqFh" class="wolai-block"><span class="inline-wrap">哪些是关于<span class="jill"></span>TIDB<span class="jill"></span>两地三中中心容灾方案特性的错误描述？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、PRO<span class="jill"></span>可以做到为<span class="jill"></span>0</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、强一致性同步</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>C、支持<span class="jill"></span>Paxos<span class="jill"></span>协议</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">D、使用了<span class="jill"></span>Raft<span class="jill"></span>协议</span></blockquote><blockquote id="9bh85DfE9GRc9FwJWyZUVo" class="wolai-block"><span class="inline-wrap">下面那个选项，正确描述了<span class="jill"></span>TiDB<span class="jill"></span>在实现跨<span class="jill"></span>IDC<span class="jill"></span>的场景中的应用？</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>A、单表可以跨机柜多点写入</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">B、复制是基于<span class="jill"></span>Multi-Raft<span class="jill"></span>和<span class="jill"></span>Paxos<span class="jill"></span>两种协议完成的</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、复制分片无法在跨机柜维度打散</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、Master<span class="jill"></span>节点发生故障后，整个集群需要发生切换</span></blockquote><blockquote id="ge7UNEHESyJ7yeWQj4EyER" class="wolai-block"><span class="inline-wrap">哪些选项正确描述了<span class="jill"></span>TiDB<span class="jill"></span>数据库的集群配置？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、存储在<span class="jill"></span>TiKV<span class="jill"></span>节点中</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>B、修改后必须重启节点生效</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">C、除了持久化到配置文件中</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、相比系统参数，只有<span class="jill"></span>Global<span class="jill"></span>和<span class="jill"></span>Session<span class="jill"></span>作用域</span></blockquote><blockquote id="pWg4Fn42zpVdKzaa1hwAhk" class="wolai-block"><span class="inline-wrap">下面那个操作修改&#39;test&#39;@&#39;172.16.6.212&#39;的密码为<span class="jill"></span>tidb<span class="jill"></span>是无效的</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、使用&#39;test&#39;@&#39;172.16.6.212&#39;用户登录，之后执行 set password=password(&#39;tidb&#39;);</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、grant all pprivileges on </span><span class="inline-wrap"><i>.</i></span><span class="inline-wrap"> to &#39;jack&#39;@‘172.16.6.212’ identified bu &#39;mysql&#39;;</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、ALTER USER &#39;test&#39;@172.16.6.212 IDENTIFIED BY &#39;tidb&#39;;</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、SET PASSWORD FOR ‘test’@&#39;172.16.6.212&#39;=&#39;tidb&#39;</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">D、以上都可以</span></blockquote><blockquote id="gbnsDHwPe1LVwbN8W48Svx" class="wolai-block"><span class="inline-wrap">下面哪个关于<span class="jill"></span>TiDB<span class="jill"></span>数据库各个节点上的文件的描述是错误？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、所有的节点都有配置文件，例如<span class="jill"></span>PD<span class="jill"></span>节点，TiKV<span class="jill"></span>节点和<span class="jill"></span>TiDB<span class="jill"></span>节点</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>B、所有节点都有数据文件，例如<span class="jill"></span>PD<span class="jill"></span>节点，TiKV<span class="jill"></span>节点和<span class="jill"></span>TiDB<span class="jill"></span>节点</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">C、所有节点都有日志文件，例如<span class="jill"></span>PD<span class="jill"></span>节点，TiKV<span class="jill"></span>节点和<span class="jill"></span>TiDB<span class="jill"></span>节点</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、以上都不对</span></blockquote><blockquote id="7hcsZooLAfxTR4nAm51w1w" class="wolai-block"><span class="inline-wrap">下面哪个监控需求，Prometheus+Grafana<span class="jill"></span>无法实现</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、所有<span class="jill"></span>SQL<span class="jill"></span>查询的耗时等执行信息</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>B、Region<span class="jill"></span>的健康状态</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">C、组件及主机运维状态</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、慢查询<span class="jill"></span>SQL<span class="jill"></span>语句</span></blockquote><blockquote id="gjNdxxqXjmW5BQNW8pGcLp" class="wolai-block"><span class="inline-wrap">下面哪个项目可以帮助我们了解到<span class="jill"></span>Regions<span class="jill"></span>的数量和<span class="jill"></span>Region<span class="jill"></span>的健康状态</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、Prometheus + Grafana<span class="jill"></span>中的<span class="jill"></span>PD<span class="jill"></span>项目</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、Prometheus + Grafana<span class="jill"></span>中的<span class="jill"></span>Service Port Status<span class="jill"></span>项目</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、Prometheus + Grafana<span class="jill"></span>中的<span class="jill"></span>TiKV<span class="jill"></span>项目</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、TiDB DashBoard<span class="jill"></span>中的<span class="jill"></span>TiKV<span class="jill"></span>项目</b></span></blockquote><blockquote id="j5km8iMhcVqfKgAHNhB7gK" class="wolai-block"><span class="inline-wrap">下面哪个操作在<span class="jill"></span>TiDB<span class="jill"></span>数据库的不停机版本升级过程中是不做的？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、检查<span class="jill"></span>TiUP<span class="jill"></span>版本、如有必要则升级</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、使用<span class="jill"></span>tiup cluster upgrade 进行升级</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、检查<span class="jill"></span>TiUP Cluster 拓扑配置文件，如有必要必须修改</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、执行脚本升级系统数据字典</b></span></blockquote><blockquote id="x7kZGmUticQkx6BJRXvtjQ" class="wolai-block"><span class="inline-wrap">下列哪些选项需求是<span class="jill"></span>TiDBLighting<span class="jill"></span>工具无法满足的</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、能够将<span class="jill"></span>CSV<span class="jill"></span>文件导入到任何版本的<span class="jill"></span>TiDB<span class="jill"></span>数据库</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>B、支持读取<span class="jill"></span>TiDB Binlog<span class="jill"></span>日志，可以进行增量导入</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">C、可以在目标表不为空情况下进行导入</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、能够直接将<span class="jill"></span>Dumpling<span class="jill"></span>工具导出的文件，加载进<span class="jill"></span>TiKV<span class="jill"></span>集群</span></blockquote><blockquote id="wh4NxJn7gUyBaiqSA3pCL9" class="wolai-block"><span class="inline-wrap">根据条件，选择合适的<span class="jill"></span>TiDB Lightniing<span class="jill"></span>后端模式？-目标表为空-后端数据库版本为<span class="jill"></span>TiDB V5.0.0 - 数据量<span class="jill"></span>5T，要求最快速导入</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>A、Local-backend</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">B、Import-backend</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、TiDB-backend</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、数据量过大，无法支持</span></blockquote><blockquote id="2og27FYTvL2f4FiGUPGdom" class="wolai-block"><span class="inline-wrap">关于<span class="jill"></span>TiCDC<span class="jill"></span>的原理和架构，以下说法正确的有</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、TiCDC<span class="jill"></span>的源端（上游）如果是<span class="jill"></span>MySQL<span class="jill"></span>数据库， 则<span class="jill"></span>Capture<span class="jill"></span>读取的是<span class="jill"></span>MySQL<span class="jill"></span>的<span class="jill"></span>Binlog</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、TiCDC<span class="jill"></span>集群中的一个<span class="jill"></span>Capture<span class="jill"></span>对应一个同步任务</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、TiCDC<span class="jill"></span>可以支持多个同步任务，每个任务的目标端（下游）可以不同</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、并不是所有的<span class="jill"></span>Capture<span class="jill"></span>都会对<span class="jill"></span>ChangeData<span class="jill"></span>排序</span></blockquote><blockquote id="mmTKVWzCtdbnPe4Bsg3dGq" class="wolai-block"><span class="inline-wrap">关于<span class="jill"></span>CDC，DM<span class="jill"></span>和<span class="jill"></span>TIDB Binlog<span class="jill"></span>的去呗和共性正确的是哪个？</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、源数据库（上游）如果是<span class="jill"></span>MySQL，可以考虑<span class="jill"></span>DM<span class="jill"></span>和<span class="jill"></span>TIDB Binlog<span class="jill"></span>进行同步</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、TICDC，DM<span class="jill"></span>和<span class="jill"></span>TIDB Binlog<span class="jill"></span>都是依靠<span class="jill"></span>Binlog<span class="jill"></span>来同步数据的</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、TiCDC，DM<span class="jill"></span>和<span class="jill"></span>TiDB Binlog<span class="jill"></span>都可以向<span class="jill"></span>Kafka<span class="jill"></span>同步数据</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、三种工具的目标数据（下游）都可以是<span class="jill"></span>TiDB<span class="jill"></span>数据库</b></span></blockquote><h1 id="cFyExKNrtAaEqhzbFNqdC3" class="wolai-block"><span class="inline-wrap">多选</span></h1><blockquote id="7emgXSfzV22dXZKN6GsHE6" class="wolai-block"><span class="inline-wrap">30</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="idi48CWpfrFiD4MigZqoHN" class="wolai-block"><span class="inline-wrap">31</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="iaNWwskwcS3mrYkiYwiYrj" class="wolai-block"><span class="inline-wrap">32</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="iXnryUPrbXLxVgTgaU6GWe" class="wolai-block"><span class="inline-wrap">33</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="pimzvW1BXqhD1Cw5yG9rB5" class="wolai-block"><span class="inline-wrap">34A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="tuFheADbwwbiwzNvJYfs4D" class="wolai-block"><span class="inline-wrap">35</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="xvAtzYq9DQmH5d4vNZH2DV" class="wolai-block"><span class="inline-wrap">36</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="iafrdPsUMMe7E16CNXcfcu" class="wolai-block"><span class="inline-wrap">37<span class="jill"></span>下列那些场景备份恢复工具<span class="jill"></span>BR<span class="jill"></span>不适用</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>A、只备份某个<span class="jill"></span>Schema<span class="jill"></span>下面的全部表</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">B、数据量较大并且不允许停机</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、要求备份集在不进行回复时可以进行验证</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、需要备份结果集在<span class="jill"></span>MySQL<span class="jill"></span>或者<span class="jill"></span>MariaDB<span class="jill"></span>上进行恢复</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">E、要求支持增量备份</span></blockquote><blockquote id="kFLNZ2WKVfqFEbLGj3sgg5" class="wolai-block"><span class="inline-wrap">38<span class="jill"></span>使用<span class="jill"></span>BR<span class="jill"></span>工具进行单库单表备份恢复，下面正确的有</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、RateLimit<span class="jill"></span>参数可以用来限制单个<span class="jill"></span>TiKV<span class="jill"></span>执行备份的最大熟虑（单位<span class="jill"></span>MiB/s）</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、BR<span class="jill"></span>工具只能备份单库，无法完成单表的备份</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、数据会被校验，但是未回复的时候每个节点补鞥呢只读自己存储的数据</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、br backup 命令用户完成备份，用<span class="jill"></span>db<span class="jill"></span>参数和<span class="jill"></span>table<span class="jill"></span>指定库名和表名</span><span class="inline-wrap">
+</span><span class="inline-wrap">E、log-file<span class="jill"></span>参数必须制定，否则会影响一致性</span></blockquote><blockquote id="ipNunZpVLCFUpxtkt9GAiN" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="6fFYfaznrQFUjadCdqgD1q" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="6AvyH9S5nmt8hDG6UC71Aq" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="528fDRgq6WbifSzRvpsyov" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="2CG9X3CuPrhvc99rjwtbut" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="vupNYV78TxaQFVfJJjkzVR" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="1GWGxFrtL9PFu4GiGoXG1M" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="vGaKJVQnjoQTD9HvHqpdte" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="iENg15eSfWBGU59iKVXmnv" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="pje4sNaaGbsRv1qcPxokEZ" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="2tXPiDAdLwpMkK479CupwP" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="rh8uMYyySfrk7UThWDcwTF" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="dxstSPfm3JEQUKPPKCJ1gS" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="xgEBHM6CvUa4ebHqDpUT4S" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="3ixskSrdptbf6ub6ZBq8eA" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="xb6nn8FvGVd5n5pKAASTYD" class="wolai-block"><span class="inline-wrap">A、</span><span class="inline-wrap">
+</span><span class="inline-wrap">B、</span><span class="inline-wrap">
+</span><span class="inline-wrap">C、</span><span class="inline-wrap">
+</span><span class="inline-wrap">D、</span></blockquote><blockquote id="uZ52ZFFT9oD1jGcWjd6gh8" class="wolai-block"><span class="inline-wrap">59 关于<span class="jill"></span>TiCDC<span class="jill"></span>的特性有哪些（选择<span class="jill"></span>3<span class="jill"></span>项）</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>A、不依靠<span class="jill"></span>Binlog<span class="jill"></span>实现同步</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">B、支持分表分库的合并操作</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>C、同步的表至少包含一个有效索引（主键或非空唯一索引，且不存在虚拟生成列）</b></span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>D、如果集群中有多个<span class="jill"></span>Capture，则可以实现故障转移</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">E、可以过滤掉指定的操作，比如<span class="jill"></span>delte，truncate<span class="jill"></span>和<span class="jill"></span>drop</span></blockquote><blockquote id="gHRFK5CV7ryFALR13MfPVe" class="wolai-block"><span class="inline-wrap">60<span class="jill"></span>在使用<span class="jill"></span>TiCDC<span class="jill"></span>时，下面正确的操作是？（选择<span class="jill"></span>2<span class="jill"></span>项）</span><span class="inline-wrap">
+</span><span class="inline-wrap">A、TiCDC<span class="jill"></span>集群无法随着<span class="jill"></span>TIDB Cluster<span class="jill"></span>部署，只能扩容部署</span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>B、在创建同步任务是，changefeed-id 是必须项</b></span><span class="inline-wrap">
+</span><span class="inline-wrap"><b>C、更新同步任务前，需要暂停任务，之后在恢复任务</b></span><span class="inline-wrap">
+</span><span class="inline-wrap">D、我们可以通过<span class="jill"></span>Grafana<span class="jill"></span>的<span class="jill"></span>TICDC<span class="jill"></span>面版进行同步任务的监控</span></blockquote></article><footer></footer></body></html>

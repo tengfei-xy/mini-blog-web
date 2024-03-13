@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hans-CN"><head><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=Edge"/><link rel="stylesheet" type="text/css" href="../../css/modern-norm.min.css"/><link rel="stylesheet" type="text/css" href="../../css/prism.min.css"/><link rel="stylesheet" type="text/css" href="../../css/katex.min.css"/><link rel="stylesheet" type="text/css" href="../../css/wolai.css"/><title>choice - wolai 笔记</title><link rel="shortcut icon" href="data:image/svg+xml,%3Csvg xmlns=&apos;http://www.w3.org/2000/svg&apos; viewBox=&apos;0 0 800 800&apos;%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23fff;%7D%3C/style%3E%3C/defs%3E%3Cg%3E%3Cpath class=&apos;cls-1&apos; d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Z&apos;/%3E%3Cpath d=&apos;M610.08,0c66,0,90,6.88,114.13,19.79a134.62,134.62,0,0,1,56,56l2.28,4.4C793.93,103,800,127.88,800,189.92V610.08l-.08,11.56c-.78,57.38-7.58,79.89-19.71,102.57a134.62,134.62,0,0,1-56,56l-4.4,2.28C697,793.93,672.12,800,610.08,800H189.92l-11.56-.08c-57.38-.78-79.89-7.58-102.57-19.71a134.62,134.62,0,0,1-56-56l-2.28-4.4C6.44,697.75.4,673.72,0,616L0,189.92c0-66,6.88-90,19.79-114.13a134.62,134.62,0,0,1,56-56l4.4-2.28C102.25,6.44,126.28.4,184,0Zm4.72,88.9H185.2L172.42,89c-32.78.62-43.68,3.24-54.71,9.14a45.84,45.84,0,0,0-19.54,19.54c-6.61,12.36-9.11,24.55-9.27,67.49V614.8L89,627.58c.62,32.78,3.24,43.68,9.14,54.71a45.84,45.84,0,0,0,19.54,19.54c12.36,6.61,24.55,9.11,67.49,9.27H610.08c46.79,0,59.41-2.44,72.21-9.28a45.84,45.84,0,0,0,19.54-19.54c6.61-12.36,9.11-24.55,9.27-67.49V189.92c0-46.79-2.44-59.41-9.28-72.21a45.84,45.84,0,0,0-19.54-19.54C669.93,91.56,657.74,89.06,614.8,88.9ZM233.33,493.33A73.34,73.34,0,1,1,160,566.67,73.35,73.35,0,0,1,233.33,493.33Z&apos;/%3E%3C/g%3E%3C/svg%3E"></link></head><body class="full-width small-font less-lead"><header><div class="image"></div><div class="title"><div class="banner"><div class="icon"></div></div><div data-title="choice" class="main-title"></div></div></header><article><code-block id="ummA3u58wdpmz34NEumLG6" class="wolai-block"><div class="wolai-pre"><div data-lang="纯文本" class="marker"></div><pre style="white-space: pre-wrap; word-break: break-all"><span class="token constant">CHOICE</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">C</span> choices<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">N</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">CS</span><span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">T</span> timeout <span class="token operator">/</span><span class="token constant">D</span> choice<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">/</span><span class="token constant">M</span> text<span class="token punctuation">]</span>
+
+<span class="token literal-property property">描述</span><span class="token operator">:</span>
+    该工具允许用户从选择列表选择一个项目并返回所选项目的索引。
+
+<span class="token literal-property property">参数列表</span><span class="token operator">:</span>
+   <span class="token operator">/</span><span class="token constant">C</span>    choices       指定要创建的选项列表。默认列表是 <span class="token string">"YN"</span>。
+
+   <span class="token operator">/</span><span class="token constant">N</span>                  在提示符中隐藏选项列表。提示前面的消息得到显示，
+                       选项依旧处于启用状态。
+
+   <span class="token operator">/</span><span class="token constant">CS</span>                 允许选择分大小写的选项。在默认情况下，这个工具
+                       是不分大小写的。
+
+   <span class="token operator">/</span><span class="token constant">T</span>    timeout       做出默认选择之前，暂停的秒数。可接受的值是从 <span class="token number">0</span>
+                       到 <span class="token number">9999</span>。如果指定了 <span class="token number">0</span>，就不会有暂停，默认选项
+                       会得到选择。
+
+   <span class="token operator">/</span><span class="token constant">D</span>    choice        在 nnnn 秒之后指定默认选项。字符必须在用 <span class="token operator">/</span><span class="token constant">C</span> 选
+                       项指定的一组选择中<span class="token punctuation">;</span> 同时，必须用 <span class="token operator">/</span><span class="token constant">T</span> 指定 nnnn。
+
+   <span class="token operator">/</span><span class="token constant">M</span>    text          指定提示之前要显示的消息。如果没有指定，工具只
+                       显示提示。
+
+   <span class="token operator">/</span><span class="token operator">?</span>                  显示此帮助消息。
+
+   <span class="token literal-property property">注意</span><span class="token operator">:</span>
+   <span class="token constant">ERRORLEVEL</span> 环境变量被设置为从选择集选择的键索引。列出的第一个选
+   择返回 <span class="token number">1</span>，第二个选择返回 <span class="token number">2</span>，等等。如果用户按的键不是有效的选择，
+   该工具会发出警告响声。如果该工具检测到错误状态，它会返回 <span class="token number">255</span> 的
+   <span class="token constant">ERRORLEVEL</span> 值。如果用户按 <span class="token maybe-class-name">Ctrl</span><span class="token operator">+</span><span class="token maybe-class-name">Break</span> 或 <span class="token maybe-class-name">Ctrl</span><span class="token operator">+</span><span class="token constant">C</span> 键，该工具会返回 <span class="token number">0</span>
+   的 <span class="token constant">ERRORLEVEL</span> 值。在一个批程序中使用 <span class="token constant">ERRORLEVEL</span> 参数时，将参数降
+   序排列。
+
+<span class="token literal-property property">示例</span><span class="token operator">:</span>
+   <span class="token constant">CHOICE</span> <span class="token operator">/</span><span class="token operator">?</span>
+   <span class="token constant">CHOICE</span> <span class="token operator">/</span><span class="token constant">C</span> <span class="token constant">YNC</span> <span class="token operator">/</span><span class="token constant">M</span> <span class="token string">"确认请按 Y，否请按 N，或者取消请按 C。"</span>
+   <span class="token constant">CHOICE</span> <span class="token operator">/</span><span class="token constant">T</span> <span class="token number">10</span> <span class="token operator">/</span><span class="token constant">C</span> ync <span class="token operator">/</span><span class="token constant">CS</span> <span class="token operator">/</span><span class="token constant">D</span> y
+   <span class="token constant">CHOICE</span> <span class="token operator">/</span><span class="token constant">C</span> ab <span class="token operator">/</span><span class="token constant">M</span> <span class="token string">"选项 1 请选择 a，选项 2 请选择 b。"</span>
+   <span class="token constant">CHOICE</span> <span class="token operator">/</span><span class="token constant">C</span> ab <span class="token operator">/</span><span class="token constant">N</span> <span class="token operator">/</span><span class="token constant">M</span> <span class="token string">"选项 1 请选择 a，选项 2 请选择 b。"</span></pre></div></code-block></article><footer></footer></body></html>
